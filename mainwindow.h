@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "voiture.h"
-#include "categorie.h"
+#include "employee.h"
+#include "departement.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -14,23 +14,31 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-
     ~MainWindow();
-private slots:
-    void on_ajouter_clicked();
-    void on_supprimer_clicked();
-    void on_modifier_clicked();
-    void on_trie_clicked();
 
-    void on_ajouter_categorie_clicked();
-    void on_supprimer_categorie_clicked();
-    void on_modifier_categorie_clicked();
-    void on_trie_categorie_clicked();
-    void on_recherche_clicked();
+private slots:
+    void on_pb_ajouter_clicked();
+
+    void on_pb_supprimer_clicked();
+
+    void on_pb_modifier_clicked();
+
+    void on_pb_recherche_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pb_ajouter_2_clicked();
+
+    void on_pb_supprimer_2_clicked();
+
+    void on_pb_modifier_2_clicked();
+
+    void on_pb_recherche_2_clicked();
+
 private:
     Ui::MainWindow *ui;
-    voiture tmpvoiture;
-    categorie tmpcategorie;
+    Employee tmpemployee;
+    departement tmpdep;
 };
 
 #endif // MAINWINDOW_H
