@@ -1,44 +1,40 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "employee.h"
-#include "departement.h"
 #include <QMainWindow>
+#include "assurances.h"
+#include "assureurs.h"
 
-namespace Ui {
-class MainWindow;
-}
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
-    void on_pb_ajouter_clicked();
+    void on_tri_croissant_clicked();
 
-    void on_pb_supprimer_clicked();
+    void on_tri_decroissant_clicked();
 
-    void on_pb_modifier_clicked();
+    void on_boutton_rechercher_clicked();
 
-    void on_pb_recherche_clicked();
+    void on_assureurs_currentChanged(int index);
 
-    void on_pushButton_2_clicked();
+    void on_ajouter_pb_clicked();
 
-    void on_pb_ajouter_2_clicked();
+    void on_supprimer_pb_clicked();
 
-    void on_pb_supprimer_2_clicked();
+    void on_modifier_pb_clicked();
 
-    void on_pb_modifier_2_clicked();
-
-    void on_pb_recherche_2_clicked();
+    void on_statistiques_clicked();
 
 private:
     Ui::MainWindow *ui;
-    Employee tmpemployee;
-    departement tmpdep;
+    assurances tmpassurances;
 };
-
 #endif // MAINWINDOW_H
