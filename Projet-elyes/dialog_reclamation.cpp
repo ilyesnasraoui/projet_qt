@@ -115,7 +115,7 @@ void Dialog_Reclamation::on_AJOUTERC_clicked()
 
 void Dialog_Reclamation::on_modifierc_clicked()
 {
-    contrat tmp(ui->CINC_3->text().toInt(),ui->DATEDEBUT->date(),ui->DATEFIN->date(),ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),3)).toInt(),ui->MONTANT->text().toInt(),ui->QUOTIENT->text().toInt(),ui->IDV_3->text().toInt(),ui->NUM->text().toInt());
+    contrat tmp(ui->CINC_3->text().toInt(),ui->DATEDEBUT->date(),ui->DATEFIN->date(),ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),3)).toInt(),ui->MONTANT->text().toInt(),ui->QUOTIENT->text().toInt(),ui->IDV_3->text().toInt(),ui->NUM->text().toInt());
     if(tmp.modifier())
     {
         ui->data2->setModel(tmp.afficher());
@@ -134,7 +134,7 @@ void Dialog_Reclamation::on_modifierc_clicked()
 void Dialog_Reclamation::on_Supprimerc_clicked()
 {
     contrat tmp;
-    if(tmp.supprimer(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),3)).toInt()))
+    if(tmp.supprimer(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),3)).toInt()))
     {
         ui->data2->setModel(tmp.afficher());
         QMessageBox::information(nullptr, QObject::tr("supprimé une reclamation"),

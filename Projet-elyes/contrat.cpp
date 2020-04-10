@@ -45,7 +45,7 @@ bool contrat::supprimer(int idc)
 bool contrat::modifier()
 {
     QSqlQuery query;
-    query.prepare("UPDATE contrat SET CINC=:cinc, DATEDEBUT=:datedebut, DATEFIN=:datefin, MONTANT=:montant, QUOTIENT=:quotient, IDV=:idv, NUM=:num "
+    query.prepare("UPDATE CONTRAT SET CINC=:cinc, DATEDEBUT=:datedebut, DATEFIN=:datefin, MONTANT=:montant, QUOTIENT=:quotient, IDV=:idv, NUM=:num "
                         "WHERE IDC=:idc");
     query.bindValue(":cinc", cinc);
     query.bindValue(":datedebut", datedebut);
@@ -64,7 +64,7 @@ QSqlQueryModel *contrat::afficher()
 
     model->setQuery("select * from CONTRAT");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("CINC"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("DATEDEBUT "));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("DATEDEBUT"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("DATEFIN"));
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("IDC"));
     model->setHeaderData(4, Qt::Horizontal, QObject::tr("MONTANT"));

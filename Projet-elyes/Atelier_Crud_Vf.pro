@@ -26,23 +26,18 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-    etudiant.cpp \
     connexion.cpp \
     reclamation.cpp \
     dialog_reclamation.cpp \
     contrat.cpp
 
 HEADERS += \
-        mainwindow.h \
-    etudiant.h \
     connexion.h \
     reclamation.h \
     dialog_reclamation.h \
     contrat.h
 
 FORMS += \
-        mainwindow.ui \
     dialog_reclamation.ui
 
 # Default rules for deployment.
