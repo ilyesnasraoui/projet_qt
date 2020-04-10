@@ -35,6 +35,10 @@ private slots:
 
     void on_comboBox_activated(int index);
 
+    void on_pushButton_11_clicked();
+
+    void on_pushButton_10_clicked();
+
 private:
     Ui::MainWindow *ui;
     client tmpclient;

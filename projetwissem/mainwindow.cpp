@@ -152,3 +152,13 @@ void MainWindow::on_comboBox_activated(int index)
 {
 
 }
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
