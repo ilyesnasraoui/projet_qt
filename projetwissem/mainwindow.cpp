@@ -7,7 +7,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+
     ui->setupUi(this);
+     ui->tabclient->setModel(tmpclient.afficher());//refresh
 }
 
 MainWindow::~MainWindow()
@@ -105,7 +107,8 @@ void MainWindow::on_tabclient_activated(const QModelIndex &index)
 
 void MainWindow::on_tabclient_clicked(const QModelIndex &index)
 {
-
+    ui->lineEditcin->setText(ui->tabclient->model()->data(ui->tabclient->model()->index(ui->tabclient->currentIndex().row(),0)).toString());
+    ui->lineEditcins->setText(ui->tabclient->model()->data(ui->tabclient->model()->index(ui->tabclient->currentIndex().row(),0)).toString());
 }
 
 void MainWindow::on_commandLinkButton_3_clicked()

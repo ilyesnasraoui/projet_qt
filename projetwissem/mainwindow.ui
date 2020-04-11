@@ -266,6 +266,9 @@ background-color: rgb(255, 255, 255);</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEditcins">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>560</x>
