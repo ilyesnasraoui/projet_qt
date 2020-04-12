@@ -28,12 +28,16 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     client.cpp \
-    connexion.cpp
+    connexion.cpp \
+    voiture.cpp \
+    categorie.cpp
 
 HEADERS += \
         mainwindow.h \
     connexion.h \
-    client.h
+    client.h \
+    voiture.h \
+    categorie.h
 
 FORMS += \
         mainwindow.ui
