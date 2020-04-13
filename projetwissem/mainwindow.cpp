@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "client.h"
 #include <QMessageBox>
+#include<smtp.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -95,7 +96,15 @@ client cl(cin,nom,prenom,tel,age,email) ;
         {bool test=cl.ajouter();
         if (!(test))
         {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
-                           QObject::tr("CIN deja existant \n"), QMessageBox::Cancel);}}
+                           QObject::tr("CIN deja existant \n"), QMessageBox::Cancel);}
+        else
+        {Smtp* smtp = new Smtp("testwissem11@gmail.com", "wissem123", "smtp.gmail.com", 465);
+
+            connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+            QString corps="cher(e) "+nom+" "+prenom+" \n Bienvenue chez smart rent car \n merci pour votre inscription voici ___dt comme solde de bienvenue";
+
+        smtp->sendMail("nachts554@gmail.com", email , "Bienvenue chez SRC" ,corps);}
+      }
     //-----------------------------------------------------------//
 //fin controle saisie
     ui->tabclient->setModel(tmpclient.afficher());//refresh
