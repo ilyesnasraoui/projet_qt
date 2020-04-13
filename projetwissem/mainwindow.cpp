@@ -101,7 +101,7 @@ client cl(cin,nom,prenom,tel,age,email) ;
         {Smtp* smtp = new Smtp("testwissem11@gmail.com", "wissem123", "smtp.gmail.com", 465);
 
             connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
-            QString corps="cher(e) "+nom+" "+prenom+" \n Bienvenue chez smart rent car \n merci pour votre inscription voici ___dt comme solde de bienvenue";
+            QString corps="cher(e) "+nom+" "+prenom+" \n Bienvenue chez smart rent car \n merci pour votre inscription vous avez reçu ___dt comme solde de fidélité suite a votre inscription";
 
         smtp->sendMail("nachts554@gmail.com", email , "Bienvenue chez SRC" ,corps);}
       }
