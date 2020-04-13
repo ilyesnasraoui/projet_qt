@@ -33,7 +33,7 @@
      <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="acceuil">
      <attribute name="title">
@@ -892,6 +892,13 @@ background-color: rgb(255, 255, 255);</string>
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QLabel" name="label_27">
+             <property name="text">
+              <string>email</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </item>
          <item>
@@ -918,6 +925,9 @@ background-color: rgb(255, 255, 255);</string>
            </item>
            <item>
             <widget class="QLineEdit" name="lineEditage"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEditemail"/>
            </item>
           </layout>
          </item>

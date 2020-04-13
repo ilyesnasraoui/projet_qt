@@ -26,13 +26,14 @@ void MainWindow::on_tabWidget_currentChanged(int index)
 void MainWindow::on_commandLinkButton_clicked()
 {
     QString cin= ui->lineEditcin->text();
+    QString email= ui->lineEditemail->text();
     QString nom= ui->lineEditnom->text();
     QString prenom= ui->lineEditprenom->text();
     QString tel= ui->lineEdittel->text();
     int age = ui->lineEditage->text().toInt();
     QString agea = ui->lineEditage->text();
 
-client cl(cin,nom,prenom,tel,age) ;
+client cl(cin,nom,prenom,tel,age,email) ;
 //debut controle saisie
   int verif=0;
    for (int i=0;i<cin.length();i++)
@@ -117,8 +118,9 @@ void MainWindow::on_commandLinkButton_3_clicked()
     QString prenom= ui->lineEditnom->text();
     QString nom= ui->lineEditprenom->text();
     QString tel= ui->lineEdittel->text();
+    QString email= ui->lineEditemail->text();
     int age = ui->lineEditage->text().toInt();
-client cl(cin,nom,prenom,tel,age) ;
+    client cl(cin,nom,prenom,tel,age,email) ;
 
 
 

@@ -8,7 +8,7 @@ class client
 {
 public:
     client();
-    client(QString,QString,QString,QString,int);
+    client(QString,QString,QString,QString,int,QString);
 
     QString get_cin();
     QString get_tel();
@@ -22,7 +22,7 @@ QSqlQueryModel * chercher(QString);
     QSqlQueryModel * afficher();
     QSqlQueryModel * tri(int);
 private:
-    QString nom,prenom,cin,tel;
+    QString nom,prenom,cin,tel,email;
     int age;
 };
 
