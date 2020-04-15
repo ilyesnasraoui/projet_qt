@@ -4,6 +4,7 @@
 #include <categorie.h>
 #include <voiture.h>
 #include <QMainWindow>
+#include<fidelite.h>
 
 namespace Ui {
 class MainWindow;
@@ -55,8 +56,12 @@ private slots:
 
         void on_commandLinkButton_4_clicked();
 
+        void on_tabfidelite_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
+    fidelite tmpfid ;
+
     client tmpclient;
     voiture tmpvoiture;
         categorie tmpcategorie;

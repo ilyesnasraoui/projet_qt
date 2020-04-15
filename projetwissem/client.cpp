@@ -16,6 +16,7 @@ client::client(QString cin,QString nom ,QString prenom,QString tel,int age,QStri
     this->age=age;
 }
 
+
 QString client::get_nom(){return  nom;}
 QString client::get_prenom(){return prenom;}
 QString client::get_cin(){return  cin;}

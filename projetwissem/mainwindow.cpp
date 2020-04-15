@@ -1,9 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "client.h"
+
 #include <QMessageBox>
 #include<smtp.h>
-#include"fidelite.h"
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
      ui->tabclient->setModel(tmpclient.afficher());//refresh
-    fidelite tmpfid ;
+
      ui->tabfidelite->setModel(tmpfid.afficher());//refresh
      ui->cinf->setModel(tmpfid.setcombobox());//refresh
 
@@ -419,19 +419,35 @@ void MainWindow::on_tableView2_doubleClicked(const QModelIndex &index)
 
 
 void MainWindow::on_commandLinkButton_4_clicked()
-{
+{   QString email ;
     QString cin= ui->cinf->currentText();
     int valeur= ui->valeurfid->text().toInt();
     QDate dated= ui->dated->date();
     QDate datef= ui->datef->date();
-
+client cl(cin,"","","",0,"");
     fidelite f(cin,valeur,dated,datef);
     f.ajouter();
-    fidelite tmpfid ;
+   email=f.send(cin);
+   Smtp* mtp = new Smtp("testwissem11@gmail.com", "wissem123", "smtp.gmail.com", 465);
 
+               connect(mtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+            QString corps="Vous avez reçu "+ui->valeurfid->text()+"Dt comme solde de fidélité valable jusqu'a "+datef.toString("yyyy/MM/dd")+"\n merci pour votre confiance";
+           mtp->sendMail("nachts554@gmail.com", email , "Solde fidélité" ,corps);
     ui->tabfidelite->setModel(tmpfid.afficher());//refresh
     ui->cinf->setModel(tmpfid.setcombobox());//refresh
 
+
+
+
+}
+
+void MainWindow::on_tabfidelite_clicked(const QModelIndex &index)
+{
+    ui->idfid->setText(ui->tabfidelite->model()->data(ui->tabfidelite->model()->index(ui->tabfidelite->currentIndex().row(),0)).toString());
+    ui->cinf->setCurrentText(ui->tabfidelite->model()->data(ui->tabfidelite->model()->index(ui->tabfidelite->currentIndex().row(),1)).toString());
+    ui->valeurfid->setText(ui->tabfidelite->model()->data(ui->tabfidelite->model()->index(ui->tabfidelite->currentIndex().row(),2)).toString());
+    ui->dated->setDate(ui->tabfidelite->model()->data(ui->tabfidelite->model()->index(ui->tabfidelite->currentIndex().row(),3)).toDate());
+    ui->datef->setDate(ui->tabfidelite->model()->data(ui->tabfidelite->model()->index(ui->tabfidelite->currentIndex().row(),4)).toDate());
 
 
 

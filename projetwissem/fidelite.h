@@ -14,6 +14,7 @@ public:
     QDate get_DD();
     QDate get_DF();
     bool ajouter();
+    QString send(QString);
     void supprimer(QString);
     bool modifier();
 QSqlQueryModel * chercher(QString);

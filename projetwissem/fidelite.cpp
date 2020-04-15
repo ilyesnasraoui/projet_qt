@@ -32,6 +32,18 @@ query.bindValue(":value", value);
 return    query.exec();
 }
 
+QString fidelite::send(QString cin)
+{    QSqlQuery query;
+
+    QSqlQueryModel * model= new QSqlQueryModel();
+      query.prepare("select email from client where cin=:cin");
+      query.bindValue(":cin", cin);
+       query.exec();
+      model->setQuery(query);
+       return (model->data(model->index(0,0)).toString()) ;
+
+}
+
 
 QSqlQueryModel * fidelite::afficher()
 {
@@ -40,7 +52,7 @@ QSqlQueryModel * fidelite::afficher()
 model->setQuery("select id,cin,value,dated,datef from fidelite");
 model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
 model->setHeaderData(1, Qt::Horizontal, QObject::tr("cin"));
-model->setHeaderData(2, Qt::Horizontal, QObject::tr("value "));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("valeur (Dt) "));
 model->setHeaderData(3, Qt::Horizontal, QObject::tr("dateD"));
 model->setHeaderData(4, Qt::Horizontal, QObject::tr("dateF"));
 

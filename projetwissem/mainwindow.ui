@@ -981,6 +981,13 @@ background-color: rgb(255, 255, 255);</string>
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_10">
            <item>
+            <widget class="QLabel" name="label_33">
+             <property name="text">
+              <string>numero de fidelité</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLabel" name="label_28">
              <property name="text">
               <string>cin</string>
@@ -1012,6 +1019,13 @@ background-color: rgb(255, 255, 255);</string>
          </item>
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <widget class="QLineEdit" name="idfid">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
            <item>
             <widget class="QComboBox" name="cinf"/>
            </item>
