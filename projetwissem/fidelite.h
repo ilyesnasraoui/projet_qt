@@ -7,7 +7,7 @@ class fidelite
 {
 public:
     fidelite();
-    fidelite(QString,float,QDate,QDate);
+    fidelite(QString,int,QDate,QDate);
 
     QString get_cin();
     float get_value();
@@ -15,14 +15,15 @@ public:
     QDate get_DF();
     bool ajouter();
     void supprimer(QString);
-    void setcombobox();
     bool modifier();
 QSqlQueryModel * chercher(QString);
     QSqlQueryModel * afficher();
+    QSqlQueryModel * setcombobox();
+
     QSqlQueryModel * tri(int);
 private:
     QString cin;
-    float value ;
+    int value ;
     QDate dateD,dateF;
 
 };

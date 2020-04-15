@@ -8,12 +8,17 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
+
 {
 
     ui->setupUi(this);
-     fidelite tmpfid ;
+
      ui->tabclient->setModel(tmpclient.afficher());//refresh
+    fidelite tmpfid ;
      ui->tabfidelite->setModel(tmpfid.afficher());//refresh
+     ui->cinf->setModel(tmpfid.setcombobox());//refresh
+
+
 
 }
 
@@ -402,3 +407,22 @@ void MainWindow::on_tableView2_doubleClicked(const QModelIndex &index)
 
 }
 
+
+void MainWindow::on_commandLinkButton_4_clicked()
+{
+    QString cin= ui->cinf->currentText();
+    int valeur= ui->valeurfid->text().toInt();
+    QDate dated= ui->dated->date();
+    QDate datef= ui->datef->date();
+
+    fidelite f(cin,valeur,dated,datef);
+    f.ajouter();
+    fidelite tmpfid ;
+
+    ui->tabfidelite->setModel(tmpfid.afficher());//refresh
+    ui->cinf->setModel(tmpfid.setcombobox());//refresh
+
+
+
+
+}

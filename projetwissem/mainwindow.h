@@ -53,6 +53,8 @@ private slots:
         void on_tableView_doubleClicked(const QModelIndex &index);
         void on_tableView2_doubleClicked(const QModelIndex &index);
 
+        void on_commandLinkButton_4_clicked();
+
 private:
     Ui::MainWindow *ui;
     client tmpclient;
