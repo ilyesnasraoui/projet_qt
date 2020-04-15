@@ -5,11 +5,13 @@ client::client()
 
 }
 
-client::client(QString cin,QString nom ,QString prenom,QString tel,int age)
+client::client(QString cin,QString nom ,QString prenom,QString tel,int age,QString email)
 {
     this->cin=cin;
     this->nom=nom;
     this->prenom=prenom;
+    this->email=email;
+
     this->tel=tel;
     this->age=age;
 }
@@ -28,12 +30,13 @@ QSqlQuery query;
 
 QString resa= QString::number(age);
 
-query.prepare("INSERT INTO client (cin,nom,prenom,age,tel) "
-                    "VALUES (:cin,:prenom,:nom,:age,:tel)");
+query.prepare("INSERT INTO client (cin,nom,prenom,age,tel,email) "
+                    "VALUES (:cin,:prenom,:nom,:age,:tel,:email)");
 query.bindValue(":cin", cin);
 query.bindValue(":nom", nom);
 query.bindValue(":prenom", prenom);
 query.bindValue(":tel", tel);
+query.bindValue(":email", email);
 query.bindValue(":age", resa);
 return    query.exec();
 }
@@ -52,7 +55,7 @@ query.bindValue(":cin", cin);
 
 bool client::modifier()
 {
-QSqlQuery queryp,queryn,querya,queryt;
+QSqlQuery queryp,queryn,querya,queryt,querye;
 
 
 QString resa= QString::number(age);
@@ -70,6 +73,14 @@ queryn.bindValue(":cin", cin);
 queryn.bindValue(":nom", nom);
 
 queryn.exec();
+}
+
+if ( email !=""){
+querye.prepare("UPDATE client SET email = :email WHERE cin=:cin ");
+querye.bindValue(":cin", cin);
+querye.bindValue(":email", email);
+
+querye.exec();
 }
 if ( tel !=""){
 queryt.prepare("UPDATE client SET tel = :tel WHERE cin=:cin ");

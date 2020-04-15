@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui sql
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -30,14 +31,18 @@ SOURCES += \
     client.cpp \
     connexion.cpp \
     voiture.cpp \
-    categorie.cpp
+    categorie.cpp \
+    smtp.cpp \
+    fidelite.cpp
 
 HEADERS += \
         mainwindow.h \
     connexion.h \
     client.h \
     voiture.h \
-    categorie.h
+    categorie.h \
+    smtp.h \
+    fidelite.h
 
 FORMS += \
         mainwindow.ui

@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "client.h"
 #include <QMessageBox>
+#include<smtp.h>
+#include"fidelite.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -9,7 +11,10 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
+     fidelite tmpfid ;
      ui->tabclient->setModel(tmpclient.afficher());//refresh
+     ui->tabfidelite->setModel(tmpfid.afficher());//refresh
+
 }
 
 MainWindow::~MainWindow()
@@ -26,13 +31,14 @@ void MainWindow::on_tabWidget_currentChanged(int index)
 void MainWindow::on_commandLinkButton_clicked()
 {
     QString cin= ui->lineEditcin->text();
+    QString email= ui->lineEditemail->text();
     QString nom= ui->lineEditnom->text();
     QString prenom= ui->lineEditprenom->text();
     QString tel= ui->lineEdittel->text();
     int age = ui->lineEditage->text().toInt();
     QString agea = ui->lineEditage->text();
 
-client cl(cin,nom,prenom,tel,age) ;
+client cl(cin,nom,prenom,tel,age,email) ;
 //debut controle saisie
   int verif=0;
    for (int i=0;i<cin.length();i++)
@@ -94,7 +100,15 @@ client cl(cin,nom,prenom,tel,age) ;
         {bool test=cl.ajouter();
         if (!(test))
         {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
-                           QObject::tr("CIN deja existant \n"), QMessageBox::Cancel);}}
+                           QObject::tr("CIN deja existant \n"), QMessageBox::Cancel);}
+        else
+        {Smtp* smtp = new Smtp("testwissem11@gmail.com", "wissem123", "smtp.gmail.com", 465);
+
+            connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+            QString corps="cher(e) "+nom+" "+prenom+" \n Bienvenue chez smart rent car \n merci pour votre inscription vous avez reçu ___dt comme solde de fidélité suite a votre inscription";
+
+        smtp->sendMail("nachts554@gmail.com", email , "Bienvenue chez SRC" ,corps);}
+      }
     //-----------------------------------------------------------//
 //fin controle saisie
     ui->tabclient->setModel(tmpclient.afficher());//refresh
@@ -117,8 +131,9 @@ void MainWindow::on_commandLinkButton_3_clicked()
     QString prenom= ui->lineEditnom->text();
     QString nom= ui->lineEditprenom->text();
     QString tel= ui->lineEdittel->text();
+    QString email= ui->lineEditemail->text();
     int age = ui->lineEditage->text().toInt();
-client cl(cin,nom,prenom,tel,age) ;
+    client cl(cin,nom,prenom,tel,age,email) ;
 
 
 
