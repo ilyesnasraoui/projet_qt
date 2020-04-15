@@ -3,6 +3,7 @@
 #include "client.h"
 #include <QMessageBox>
 #include<smtp.h>
+#include"fidelite.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -10,7 +11,10 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
+     fidelite tmpfid ;
      ui->tabclient->setModel(tmpclient.afficher());//refresh
+     ui->tabfidelite->setModel(tmpfid.afficher());//refresh
+
 }
 
 MainWindow::~MainWindow()

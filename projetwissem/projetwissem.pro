@@ -32,7 +32,8 @@ SOURCES += \
     connexion.cpp \
     voiture.cpp \
     categorie.cpp \
-    smtp.cpp
+    smtp.cpp \
+    fidelite.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -40,7 +41,8 @@ HEADERS += \
     client.h \
     voiture.h \
     categorie.h \
-    smtp.h
+    smtp.h \
+    fidelite.h
 
 FORMS += \
         mainwindow.ui
