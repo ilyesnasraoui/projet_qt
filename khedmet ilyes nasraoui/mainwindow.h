@@ -27,6 +27,9 @@ private slots:
     void on_modifier_categorie_clicked();
     void on_trie_categorie_clicked();
     void on_recherche_clicked();
+    void on_tableView_doubleClicked(const QModelIndex &index);
+    void on_tableView2_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     voiture tmpvoiture;

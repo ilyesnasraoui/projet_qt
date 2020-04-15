@@ -12,9 +12,9 @@ voiture::voiture()
     kilometrage=0;
     carburant="";
     prixparjour=0;
-    etat=0;
+    etat="";
 }
-voiture::voiture(int idv,QString marque,QString matricule,int idcategorie,int nbplaces,int anciennete,QString carburant,int kilometrage,QString couleur,int prixparjour,int etat)
+voiture::voiture(int idv,QString marque,QString matricule,int idcategorie,int nbplaces,int anciennete,QString carburant,int kilometrage,QString couleur,int prixparjour,QString etat)
 {
     this->idv=idv;
     this->marque=marque;
@@ -40,7 +40,7 @@ int voiture::get_nbplaces(){return  nbplaces;}
 int voiture::get_anciennete(){return  anciennete;}
 int voiture::get_kilometrage(){return  kilometrage;}
 int voiture::get_prixparjour(){return  prixparjour;}
-int voiture::get_etat(){return  etat;}
+QString voiture::get_etat(){return  etat;}
 
 bool voiture::ajouter()
 {

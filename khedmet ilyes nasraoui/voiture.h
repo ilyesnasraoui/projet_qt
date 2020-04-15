@@ -8,7 +8,7 @@ class voiture
 {
 public:
     voiture();
-    voiture(int,QString,QString,int,int,int,QString,int,QString,int,int);
+    voiture(int,QString,QString,int,int,int,QString,int,QString,int,QString);
     int get_idv();
     QString get_marque();
     QString get_matricule();
@@ -19,7 +19,7 @@ public:
     int get_kilometrage();
     QString get_carburant();
     int get_prixparjour();
-    int get_etat();
+    QString get_etat();
     bool ajouter();
        QSqlQueryModel * afficher();
        bool supprimer(int);
@@ -27,8 +27,8 @@ public:
        QSqlQueryModel * trie ();
        QSqlQueryModel* recherche (QString);
 private:
-       int idv,idcategorie,nbplaces,anciennete,kilometrage,prixparjour,etat;
-           QString marque,matricule,couleur,carburant;
+       int idv,idcategorie,nbplaces,anciennete,kilometrage,prixparjour;
+           QString marque,matricule,couleur,carburant,etat;
 
 };
 
