@@ -28,7 +28,6 @@ query.prepare("INSERT INTO fidelite (cin,value,dated,datef) "
 query.bindValue(":cin", cin);
 query.bindValue(":dated",dateD);
 query.bindValue(":datef", dateF);
-
 query.bindValue(":value", value);
 return    query.exec();
 }
@@ -38,11 +37,13 @@ QSqlQueryModel * fidelite::afficher()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
 
-model->setQuery("select * from fidelite");
-model->setHeaderData(0, Qt::Horizontal, QObject::tr("cin"));
-model->setHeaderData(1, Qt::Horizontal, QObject::tr("value "));
-model->setHeaderData(2, Qt::Horizontal, QObject::tr("dateD"));
-model->setHeaderData(3, Qt::Horizontal, QObject::tr("dateF"));
+model->setQuery("select id,cin,value,dated,datef from fidelite");
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("cin"));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("value "));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("dateD"));
+model->setHeaderData(4, Qt::Horizontal, QObject::tr("dateF"));
+
 
 
     return model;
