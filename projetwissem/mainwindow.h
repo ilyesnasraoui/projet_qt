@@ -58,6 +58,10 @@ private slots:
 
         void on_tabfidelite_clicked(const QModelIndex &index);
 
+        void on_lineEditrecherchef_textChanged(const QString &arg1);
+
+        void on_commandLinkButton_5_clicked();
+
 private:
     Ui::MainWindow *ui;
     fidelite tmpfid ;

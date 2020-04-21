@@ -61,6 +61,30 @@ model->setHeaderData(4, Qt::Horizontal, QObject::tr("dateF"));
     return model;
 }
 
+
+QSqlQueryModel * fidelite::chercher(QString prn)
+{    QSqlQuery query;
+
+    QSqlQueryModel * model= new QSqlQueryModel();
+     prn='%'+prn+'%';
+
+    query.prepare("select id,cin,value,dated,datef from fidelite where (cin LIKE :prn)");
+    query.bindValue(":prn", prn);
+
+    query.exec();
+
+
+model->setQuery(query);
+ model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("cin"));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("valeur (Dt) "));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("dateD"));
+model->setHeaderData(4, Qt::Horizontal, QObject::tr("dateF"));
+
+    return model;
+}
+
+
 QSqlQueryModel * fidelite::setcombobox()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
@@ -69,3 +93,16 @@ QSqlQueryModel * fidelite::setcombobox()
     return model ;
 
 }
+
+void fidelite::supprimer(QString id)
+{
+QSqlQuery query;
+
+
+
+query.prepare("DELETE FROM fidelite WHERE id=:id ");
+query.bindValue(":id", id);
+
+ query.exec();
+}
+

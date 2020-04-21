@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
      ui->tabclient->setModel(tmpclient.afficher());//refresh
+     ui->dated->setDate(QDate::currentDate()); //teb3a wissem
+     ui->datef->setDate(QDate::currentDate()); //teb3a wissem
 
      ui->tabfidelite->setModel(tmpfid.afficher());//refresh
      ui->cinf->setModel(tmpfid.setcombobox());//refresh
@@ -112,7 +114,13 @@ client cl(cin,nom,prenom,tel,age,email) ;
             connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
             QString corps="cher(e) "+nom+" "+prenom+" \n Bienvenue chez smart rent car \n merci pour votre inscription vous avez reçu ___dt comme solde de fidélité suite a votre inscription";
 
-        smtp->sendMail("nachts554@gmail.com", email , "Bienvenue chez SRC" ,corps);}
+        smtp->sendMail("nachts554@gmail.com", email , "Bienvenue chez SRC" ,corps);
+        ui->lineEditcin->setText("");
+        ui->lineEditnom->setText("");
+        ui->lineEditprenom->setText("");
+        ui->lineEdittel->setText("");
+        ui->lineEditage->setText("");
+        ui->lineEditemail->setText("");}
       }
     //-----------------------------------------------------------//
 //fin controle saisie
@@ -127,12 +135,13 @@ void MainWindow::on_tabclient_activated(const QModelIndex &index)
 void MainWindow::on_tabclient_clicked(const QModelIndex &index)
 {
     ui->lineEditcin->setText(ui->tabclient->model()->data(ui->tabclient->model()->index(ui->tabclient->currentIndex().row(),0)).toString());
-    ui->lineEditcins->setText(ui->tabclient->model()->data(ui->tabclient->model()->index(ui->tabclient->currentIndex().row(),0)).toString());
     ui->lineEditnom->setText(ui->tabclient->model()->data(ui->tabclient->model()->index(ui->tabclient->currentIndex().row(),2)).toString());
     ui->lineEditprenom->setText(ui->tabclient->model()->data(ui->tabclient->model()->index(ui->tabclient->currentIndex().row(),1)).toString());
     ui->lineEdittel->setText(ui->tabclient->model()->data(ui->tabclient->model()->index(ui->tabclient->currentIndex().row(),4)).toString());
     ui->lineEditage->setText(ui->tabclient->model()->data(ui->tabclient->model()->index(ui->tabclient->currentIndex().row(),3)).toString());
     ui->lineEditemail->setText(ui->tabclient->model()->data(ui->tabclient->model()->index(ui->tabclient->currentIndex().row(),5)).toString());
+    ui->lineEditcin->setDisabled(1);
+
 
 
 
@@ -153,6 +162,13 @@ void MainWindow::on_commandLinkButton_3_clicked()
 
 
     bool test=cl.modifier();
+    ui->lineEditcin->setText("");
+    ui->lineEditnom->setText("");
+    ui->lineEditprenom->setText("");
+    ui->lineEdittel->setText("");
+    ui->lineEditage->setText("");
+    ui->lineEditemail->setText("");
+    ui->lineEditcin->setEnabled(1);
 
     ui->tabclient->setModel(tmpclient.afficher());//refresh
 }
@@ -161,21 +177,29 @@ void MainWindow::on_lineEditrecherche_textChanged(const QString &arg1)
 {      QString prenom= ui->lineEditrecherche->text();
 
     ui->tabclient->setModel(tmpclient.chercher(prenom));//recherche
+    ui->comboBox->setCurrentText("--");
 }
 
 void MainWindow::on_commandLinkButton_2_clicked()
 { client cl;
-     QString cin= ui->lineEditcins->text();
+     QString cin= ui->lineEditcin->text();
      cl.supprimer(cin);
      ui->tabclient->setModel(tmpclient.afficher());//refresh
-
+    ui->lineEditcin->setText("");
+    ui->lineEditnom->setText("");
+    ui->lineEditprenom->setText("");
+    ui->lineEdittel->setText("");
+    ui->lineEditage->setText("");
+    ui->lineEditemail->setText("");
+    ui->lineEditcin->setEnabled(1);
 }
 
 void MainWindow::on_comboBox_currentIndexChanged(int index)
 {
 
-
+        ui->lineEditrecherche->setText("");
         ui->tabclient->setModel(tmpclient.tri(index));//refresh
+
 
 
 }
@@ -450,5 +474,27 @@ void MainWindow::on_tabfidelite_clicked(const QModelIndex &index)
     ui->datef->setDate(ui->tabfidelite->model()->data(ui->tabfidelite->model()->index(ui->tabfidelite->currentIndex().row(),4)).toDate());
 
 
+
+}
+
+void MainWindow::on_lineEditrecherchef_textChanged(const QString &arg1)
+{
+    QString cin= ui->lineEditrecherchef->text();
+
+        ui->tabfidelite->setModel(tmpfid.chercher(cin));//recherche
+        ui->comboBoxf->setCurrentText("--");
+}
+
+void MainWindow::on_commandLinkButton_5_clicked()
+{
+    fidelite f;
+         QString id= ui->idfid->text();
+         f.supprimer(id);
+         ui->tabfidelite->setModel(tmpfid.afficher());//refresh
+         ui->idfid->setText("");
+         ui->valeurfid->setText("");
+         ui->cinf->setCurrentIndex(0);
+         ui->dated->setDate(QDate::currentDate());
+         ui->datef->setDate(QDate::currentDate());
 
 }
