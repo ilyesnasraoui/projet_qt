@@ -10,7 +10,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 
 {
-
     ui->setupUi(this);
 
      ui->tabclient->setModel(tmpclient.afficher());//refresh
@@ -35,97 +34,7 @@ void MainWindow::on_tabWidget_currentChanged(int index)
 
 }
 
-void MainWindow::on_commandLinkButton_clicked()
-{
-    QString cin= ui->lineEditcin->text();
-    QString email= ui->lineEditemail->text();
-    QString nom= ui->lineEditnom->text();
-    QString prenom= ui->lineEditprenom->text();
-    QString tel= ui->lineEdittel->text();
-    int age = ui->lineEditage->text().toInt();
-    QString agea = ui->lineEditage->text();
 
-client cl(cin,nom,prenom,tel,age,email) ;
-//debut controle saisie
-  int verif=0;
-   for (int i=0;i<cin.length();i++)
-    if ((cin[i]<"0")||(cin[i]>"9"))
-     verif=1; int err=0;
-    if ((verif==1)||(cin.length()!=8))
-        {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
-                       QObject::tr("Num de Cin invalide il faut qu'il: \n-comporte seulement des chiffres \n -comporte exactement 8 chiffres "
-                                   ), QMessageBox::Cancel);
-        err++ ;
-     }
-    //-----------------------------------------------------------//
-    verif=0;
-     for (int i=0;i<tel.length();i++)
-      if ((tel[i]<"0")||(tel[i]>"9"))
-       verif=1;
-      if ((verif==1)||(tel.length()!=8))
-          {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
-                         QObject::tr("Num de Tel invalide il faut qu'il: \n-comporte seulement des chiffres \n -comporte exactement 8 chiffres "
-                                     ), QMessageBox::Cancel);
-          err++ ;
-       }
-      //-----------------------------------------------------------//
-      verif=0;
-       for (int i=0;i<agea.length();i++)
-        if ((agea[i]<"0")||(agea[i]>"9"))
-         verif=1;
-        if (verif==1)
-            {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
-                           QObject::tr("age invalide il faut qu'il: \n-comporte seulement des chiffres \n -soit positif "
-                                       ), QMessageBox::Cancel);
-            err++ ;
-         }
-     verif=0;
-     for(int i=0;i<nom.length();i++)
-         if (((nom[i]<"a")||(nom[i]>"z"))&&((nom[i]<"A")||(nom[i]>"Z"))&&(nom[i]!=" "))
-             verif=1;
-
-    if ((verif==1)||(nom.length()<3)||(nom.length()>20)||(nom[0]==" ")||(nom[nom.length()]==" "))
-       { {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
-                       QObject::tr("prenom invalide if faut qu'il: \n -comporte seulement des lettres alphabétiques ou des espaces \n-longueur comprise entre 3 et 20"
-                                   ), QMessageBox::Cancel); }
-    err++ ;
-    }
-    //-----------------------------------------------------------//
-    verif=0;
-    for(int i=0;i<prenom.length();i++)
-        if (((prenom[i]<"a")||(prenom[i]>"z"))&&((prenom[i]<"A")||(prenom[i]>"Z"))&&(prenom[i]!=" "))
-            verif=1;
-
-   if ((verif==1)||(prenom.length()<3)||(prenom.length()>20)||(prenom[0]==" ")||(prenom[prenom.length()]==" "))
-      { {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
-                      QObject::tr("nom invalide if faut qu'il: \n -comporte seulement des lettres alphabétiques ou des espaces \n-longueur comprise entre 3 et 20"
-                                  ), QMessageBox::Cancel); }
-   err++ ;
-   }
-   //-----------------------------------------------------------//
-      if (err==0)
-        {bool test=cl.ajouter();
-        if (!(test))
-        {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
-                           QObject::tr("CIN deja existant \n"), QMessageBox::Cancel);}
-        else
-        {Smtp* smtp = new Smtp("testwissem11@gmail.com", "wissem123", "smtp.gmail.com", 465);
-
-            connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
-            QString corps="cher(e) "+nom+" "+prenom+" \n Bienvenue chez smart rent car \n merci pour votre inscription vous avez reçu ___dt comme solde de fidélité suite a votre inscription";
-
-        smtp->sendMail("nachts554@gmail.com", email , "Bienvenue chez SRC" ,corps);
-        ui->lineEditcin->setText("");
-        ui->lineEditnom->setText("");
-        ui->lineEditprenom->setText("");
-        ui->lineEdittel->setText("");
-        ui->lineEditage->setText("");
-        ui->lineEditemail->setText("");}
-      }
-    //-----------------------------------------------------------//
-//fin controle saisie
-    ui->tabclient->setModel(tmpclient.afficher());//refresh
-}
 
 void MainWindow::on_tabclient_activated(const QModelIndex &index)
 {
@@ -149,29 +58,7 @@ void MainWindow::on_tabclient_clicked(const QModelIndex &index)
 
 }
 
-void MainWindow::on_commandLinkButton_3_clicked()
-{
-    QString cin= ui->lineEditcin->text();
-    QString prenom= ui->lineEditnom->text();
-    QString nom= ui->lineEditprenom->text();
-    QString tel= ui->lineEdittel->text();
-    QString email= ui->lineEditemail->text();
-    int age = ui->lineEditage->text().toInt();
-    client cl(cin,nom,prenom,tel,age,email) ;
 
-
-
-    bool test=cl.modifier();
-    ui->lineEditcin->setText("");
-    ui->lineEditnom->setText("");
-    ui->lineEditprenom->setText("");
-    ui->lineEdittel->setText("");
-    ui->lineEditage->setText("");
-    ui->lineEditemail->setText("");
-    ui->lineEditcin->setEnabled(1);
-
-    ui->tabclient->setModel(tmpclient.afficher());//refresh
-}
 
 void MainWindow::on_lineEditrecherche_textChanged(const QString &arg1)
 {      QString prenom= ui->lineEditrecherche->text();
@@ -180,19 +67,7 @@ void MainWindow::on_lineEditrecherche_textChanged(const QString &arg1)
     ui->comboBox->setCurrentText("--");
 }
 
-void MainWindow::on_commandLinkButton_2_clicked()
-{ client cl;
-     QString cin= ui->lineEditcin->text();
-     cl.supprimer(cin);
-     ui->tabclient->setModel(tmpclient.afficher());//refresh
-    ui->lineEditcin->setText("");
-    ui->lineEditnom->setText("");
-    ui->lineEditprenom->setText("");
-    ui->lineEdittel->setText("");
-    ui->lineEditage->setText("");
-    ui->lineEditemail->setText("");
-    ui->lineEditcin->setEnabled(1);
-}
+
 
 void MainWindow::on_comboBox_currentIndexChanged(int index)
 {
@@ -497,4 +372,135 @@ void MainWindow::on_commandLinkButton_5_clicked()
          ui->dated->setDate(QDate::currentDate());
          ui->datef->setDate(QDate::currentDate());
 
+}
+
+void MainWindow::on_supprimerclient_clicked()
+{
+    client cl;
+        QString cin= ui->lineEditcin->text();
+        cl.supprimer(cin);
+        ui->tabclient->setModel(tmpclient.afficher());//refresh
+       ui->lineEditcin->setText("");
+       ui->lineEditnom->setText("");
+       ui->lineEditprenom->setText("");
+       ui->lineEdittel->setText("");
+       ui->lineEditage->setText("");
+       ui->lineEditemail->setText("");
+       ui->lineEditcin->setEnabled(1);
+}
+
+void MainWindow::on_ajouterclient_clicked()
+{
+    QString cin= ui->lineEditcin->text();
+    QString email= ui->lineEditemail->text();
+    QString nom= ui->lineEditnom->text();
+    QString prenom= ui->lineEditprenom->text();
+    QString tel= ui->lineEdittel->text();
+    int age = ui->lineEditage->text().toInt();
+    QString agea = ui->lineEditage->text();
+
+client cl(cin,nom,prenom,tel,age,email) ;
+//debut controle saisie
+  int verif=0;
+   for (int i=0;i<cin.length();i++)
+    if ((cin[i]<"0")||(cin[i]>"9"))
+     verif=1; int err=0;
+    if ((verif==1)||(cin.length()!=8))
+        {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
+                       QObject::tr("Num de Cin invalide il faut qu'il: \n-comporte seulement des chiffres \n -comporte exactement 8 chiffres "
+                                   ), QMessageBox::Cancel);
+        err++ ;
+     }
+    //-----------------------------------------------------------//
+    verif=0;
+     for (int i=0;i<tel.length();i++)
+      if ((tel[i]<"0")||(tel[i]>"9"))
+       verif=1;
+      if ((verif==1)||(tel.length()!=8))
+          {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
+                         QObject::tr("Num de Tel invalide il faut qu'il: \n-comporte seulement des chiffres \n -comporte exactement 8 chiffres "
+                                     ), QMessageBox::Cancel);
+          err++ ;
+       }
+      //-----------------------------------------------------------//
+      verif=0;
+       for (int i=0;i<agea.length();i++)
+        if ((agea[i]<"0")||(agea[i]>"9"))
+         verif=1;
+        if (verif==1)
+            {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
+                           QObject::tr("age invalide il faut qu'il: \n-comporte seulement des chiffres \n -soit positif "
+                                       ), QMessageBox::Cancel);
+            err++ ;
+         }
+     verif=0;
+     for(int i=0;i<nom.length();i++)
+         if (((nom[i]<"a")||(nom[i]>"z"))&&((nom[i]<"A")||(nom[i]>"Z"))&&(nom[i]!=" "))
+             verif=1;
+
+    if ((verif==1)||(nom.length()<3)||(nom.length()>20)||(nom[0]==" ")||(nom[nom.length()]==" "))
+       { {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
+                       QObject::tr("prenom invalide if faut qu'il: \n -comporte seulement des lettres alphabétiques ou des espaces \n-longueur comprise entre 3 et 20"
+                                   ), QMessageBox::Cancel); }
+    err++ ;
+    }
+    //-----------------------------------------------------------//
+    verif=0;
+    for(int i=0;i<prenom.length();i++)
+        if (((prenom[i]<"a")||(prenom[i]>"z"))&&((prenom[i]<"A")||(prenom[i]>"Z"))&&(prenom[i]!=" "))
+            verif=1;
+
+   if ((verif==1)||(prenom.length()<3)||(prenom.length()>20)||(prenom[0]==" ")||(prenom[prenom.length()]==" "))
+      { {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
+                      QObject::tr("nom invalide if faut qu'il: \n -comporte seulement des lettres alphabétiques ou des espaces \n-longueur comprise entre 3 et 20"
+                                  ), QMessageBox::Cancel); }
+   err++ ;
+   }
+   //-----------------------------------------------------------//
+      if (err==0)
+        {bool test=cl.ajouter();
+        if (!(test))
+        {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
+                           QObject::tr("CIN deja existant \n"), QMessageBox::Cancel);}
+        else
+        {Smtp* smtp = new Smtp("testwissem11@gmail.com", "wissem123", "smtp.gmail.com", 465);
+
+            connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+            QString corps="cher(e) "+nom+" "+prenom+" \n Bienvenue chez smart rent car \n merci pour votre inscription vous avez reçu ___dt comme solde de fidélité suite a votre inscription";
+
+        smtp->sendMail("nachts554@gmail.com", email , "Bienvenue chez SRC" ,corps);
+        ui->lineEditcin->setText("");
+        ui->lineEditnom->setText("");
+        ui->lineEditprenom->setText("");
+        ui->lineEdittel->setText("");
+        ui->lineEditage->setText("");
+        ui->lineEditemail->setText("");}
+      }
+    //-----------------------------------------------------------//
+//fin controle saisie
+    ui->tabclient->setModel(tmpclient.afficher());//refresh
+}
+
+void MainWindow::on_modifierclient_clicked()
+{
+    QString cin= ui->lineEditcin->text();
+    QString prenom= ui->lineEditnom->text();
+    QString nom= ui->lineEditprenom->text();
+    QString tel= ui->lineEdittel->text();
+    QString email= ui->lineEditemail->text();
+    int age = ui->lineEditage->text().toInt();
+    client cl(cin,nom,prenom,tel,age,email) ;
+
+
+
+    bool test=cl.modifier();
+    ui->lineEditcin->setText("");
+    ui->lineEditnom->setText("");
+    ui->lineEditprenom->setText("");
+    ui->lineEdittel->setText("");
+    ui->lineEditage->setText("");
+    ui->lineEditemail->setText("");
+    ui->lineEditcin->setEnabled(1);
+
+    ui->tabclient->setModel(tmpclient.afficher());//refresh
 }

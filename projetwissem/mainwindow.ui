@@ -30,7 +30,59 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+     <string notr="true">QTabBar 
+{
+	background-color: transparent;
+}
+
+
+QTabWidget::tab-bar 
+{
+	border:none;
+	left: 0px;
+width:1250px;
+
+}
+
+
+QTabBar::tab 
+{
+	color: #fff;
+	padding-left: 15px; 
+	padding-right: 15px; 
+	height: 25px;
+}
+
+
+QTabWidget::pane 
+{
+	border: 1px solid #3a546e; 
+
+}
+
+
+QTabBar::tab:!selected 
+{
+	color: #b1b1b1; 
+	border: px solid #000;
+	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(44, 52, 60, 255),stop:1 rgba(15, 20, 26, 255));
+	margin-top: 3px;
+}
+
+
+QTabBar::tab:selected 
+{
+	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(67, 79, 91, 255),stop:1 rgba(32, 44, 56, 255));
+	border: 1px solid #414141;
+	color: #fff;
+
+}
+
+
+QTabBar::tab:!selected:hover 
+{
+	color: #fff; 
+}</string>
     </property>
     <property name="currentIndex">
      <number>2</number>
@@ -696,6 +748,9 @@ font-size: 22px;
         <height>541</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
@@ -713,23 +768,6 @@ font-size: 22px;
          <string>chercher</string>
         </property>
        </widget>
-       <widget class="QCommandLinkButton" name="commandLinkButton_3">
-        <property name="geometry">
-         <rect>
-          <x>900</x>
-          <y>390</y>
-          <width>141</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">selection-color: rgb(255, 255, 255);
-background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>modifier client</string>
-        </property>
-       </widget>
        <widget class="QComboBox" name="comboBox">
         <property name="geometry">
          <rect>
@@ -738,6 +776,17 @@ background-color: rgb(255, 255, 255);</string>
           <width>73</width>
           <height>27</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+	background-color: #525251;
+	color: #ffffff;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+</string>
         </property>
         <item>
          <property name="text">
@@ -770,19 +819,6 @@ background-color: rgb(255, 255, 255);</string>
          </property>
         </item>
        </widget>
-       <widget class="QCommandLinkButton" name="commandLinkButton_2">
-        <property name="geometry">
-         <rect>
-          <x>560</x>
-          <y>490</y>
-          <width>187</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>supprimer client</string>
-        </property>
-       </widget>
        <widget class="QLineEdit" name="lineEditrecherche">
         <property name="geometry">
          <rect>
@@ -793,35 +829,27 @@ background-color: rgb(255, 255, 255);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">QLineEdit
+{
+	background-color: #525251;
+	color: #ffffff;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+}</string>
         </property>
         <property name="text">
          <string/>
-        </property>
-       </widget>
-       <widget class="QCommandLinkButton" name="commandLinkButton">
-        <property name="geometry">
-         <rect>
-          <x>760</x>
-          <y>390</y>
-          <width>141</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">selection-color: rgb(255, 255, 255);
-background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>Ajouter client</string>
         </property>
        </widget>
        <widget class="QWidget" name="horizontalLayoutWidget">
         <property name="geometry">
          <rect>
           <x>760</x>
-          <y>100</y>
-          <width>321</width>
+          <y>110</y>
+          <width>301</width>
           <height>271</height>
          </rect>
         </property>
@@ -876,6 +904,30 @@ background-color: rgb(255, 255, 255);</string>
           <layout class="QVBoxLayout" name="verticalLayout_9">
            <item>
             <widget class="QLineEdit" name="lineEditcin">
+             <property name="styleSheet">
+              <string notr="true">QLineEdit
+{
+	background-color: #525251;
+	color: #ffffff;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+}
+
+
+QLineEdit::disabled
+{
+	background-color: #404040;
+	color: #656565;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+}</string>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -886,19 +938,154 @@ background-color: rgb(255, 255, 255);</string>
              <property name="enabled">
               <bool>true</bool>
              </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit
+{
+	background-color: #525251;
+	color: #ffffff;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+}
+
+
+QLineEdit::disabled
+{
+	background-color: #404040;
+	color: #656565;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+}
+
+QLineEdit::disabled
+{
+	background-color: #404040;
+	color: #656565;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: #051a39;
+	padding: 2px;
+
+}</string>
+             </property>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEditprenom"/>
+            <widget class="QLineEdit" name="lineEditprenom">
+             <property name="styleSheet">
+              <string notr="true">QLineEdit
+{
+	background-color: #525251;
+	color: #ffffff;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+}
+
+
+QLineEdit::disabled
+{
+	background-color: #404040;
+	color: #656565;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+}</string>
+             </property>
+            </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdittel"/>
+            <widget class="QLineEdit" name="lineEdittel">
+             <property name="styleSheet">
+              <string notr="true">QLineEdit
+{
+	background-color: #525251;
+	color: #ffffff;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+}
+
+
+QLineEdit::disabled
+{
+	background-color: #404040;
+	color: #656565;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+}</string>
+             </property>
+            </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEditage"/>
+            <widget class="QLineEdit" name="lineEditage">
+             <property name="styleSheet">
+              <string notr="true">QLineEdit
+{
+	background-color: #525251;
+	color: #ffffff;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+}
+
+
+QLineEdit::disabled
+{
+	background-color: #404040;
+	color: #656565;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+}</string>
+             </property>
+            </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEditemail"/>
+            <widget class="QLineEdit" name="lineEditemail">
+             <property name="styleSheet">
+              <string notr="true">QLineEdit
+{
+	background-color: #525251;
+	color: #ffffff;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+}
+
+
+QLineEdit::disabled
+{
+	background-color: #404040;
+	color: #656565;
+	border-width: 1px;
+	border-radius: 9px;
+	border-color: #051a39;
+	padding: 2px;
+
+}</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
@@ -927,6 +1114,247 @@ background-color: rgb(255, 255, 255);</string>
          <string>trier par</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="supprimerclient">
+        <property name="geometry">
+         <rect>
+          <x>860</x>
+          <y>450</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(84, 84, 84, 255),stop:1 rgba(59, 59, 59, 255));
+	color: #ffffff;
+	min-width: 80px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: #051a39;
+	padding: 5px;
+
+}
+
+
+QPushButton::flat
+{
+	background-color: transparent;
+	border: none;
+	color: #fff;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #404040;
+	color: #656565;
+	border-color: #051a39;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: rgba(183, 134, 32, 20%);
+	border: 1px solid #b78620;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
+	border: 1px solid #b78620;
+
+}
+
+
+QPushButton::checked
+{
+	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
+	border: 1px solid #222;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>supprimer</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="ajouterclient">
+        <property name="geometry">
+         <rect>
+          <x>780</x>
+          <y>400</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(84, 84, 84, 255),stop:1 rgba(59, 59, 59, 255));
+	color: #ffffff;
+	min-width: 80px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: #051a39;
+	padding: 5px;
+
+}
+
+
+QPushButton::flat
+{
+	background-color: transparent;
+	border: none;
+	color: #fff;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #404040;
+	color: #656565;
+	border-color: #051a39;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: rgba(183, 134, 32, 20%);
+	border: 1px solid #b78620;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
+	border: 1px solid #b78620;
+
+}
+
+
+QPushButton::checked
+{
+	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
+	border: 1px solid #222;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>ajouter</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="modifierclient">
+        <property name="geometry">
+         <rect>
+          <x>940</x>
+          <y>400</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(84, 84, 84, 255),stop:1 rgba(59, 59, 59, 255));
+	color: #ffffff;
+	min-width: 80px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: #051a39;
+	padding: 5px;
+
+}
+
+
+QPushButton::flat
+{
+	background-color: transparent;
+	border: none;
+	color: #fff;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #404040;
+	color: #656565;
+	border-color: #051a39;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: rgba(183, 134, 32, 20%);
+	border: 1px solid #b78620;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
+	border: 1px solid #b78620;
+
+}
+
+
+QPushButton::checked
+{
+	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
+	border: 1px solid #222;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>modifier</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_6">
+        <property name="geometry">
+         <rect>
+          <x>750</x>
+          <y>90</y>
+          <width>331</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: transparent;
+border-radius: 12px;
+border-color: rgb(255, 175, 14);
+	padding: 5px;
+border-width: 3px;
+border-style: solid ;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <zorder>label_6</zorder>
+       <zorder>label_7</zorder>
+       <zorder>comboBox</zorder>
+       <zorder>lineEditrecherche</zorder>
+       <zorder>horizontalLayoutWidget</zorder>
+       <zorder>tabclient</zorder>
+       <zorder>label_23</zorder>
+       <zorder>supprimerclient</zorder>
+       <zorder>ajouterclient</zorder>
+       <zorder>modifierclient</zorder>
       </widget>
       <widget class="QWidget" name="page_2">
        <widget class="QTableView" name="tabfidelite">

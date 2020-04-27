@@ -21,17 +21,14 @@ public:
 private slots:
     void on_tabWidget_currentChanged(int index);
 
-    void on_commandLinkButton_clicked();
 
     void on_tabclient_activated(const QModelIndex &index);
 
     void on_tabclient_clicked(const QModelIndex &index);
 
-    void on_commandLinkButton_3_clicked();
 
     void on_lineEditrecherche_textChanged(const QString &arg1);
 
-    void on_commandLinkButton_2_clicked();
 
     void on_comboBox_currentIndexChanged(int index);
 
@@ -61,6 +58,12 @@ private slots:
         void on_lineEditrecherchef_textChanged(const QString &arg1);
 
         void on_commandLinkButton_5_clicked();
+
+        void on_supprimerclient_clicked();
+
+        void on_ajouterclient_clicked();
+
+        void on_modifierclient_clicked();
 
 private:
     Ui::MainWindow *ui;
