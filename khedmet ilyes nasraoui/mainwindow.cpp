@@ -2,6 +2,21 @@
 #include "ui_mainwindow.h"
 #include "voiture.h"
 #include <QMessageBox>
+#include <QPrinter>
+#include <QPrinter>
+#include <QPainter>
+#include <QPrintDialog>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+
+QT_CHARTS_USE_NAMESPACE
+
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -349,5 +364,161 @@ void MainWindow::on_tableView2_doubleClicked(const QModelIndex &index)
     ui->lineEdit_kilometrage->setText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),7)).toString());
     ui->lineEdit_carburant->setText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),8)).toString());
     ui->lineEdit_prixparjour->setText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),9)).toString());
+    ui->lineEdit->setText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),0)).toString());
+}
 
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+   QString num1 = ui->lineEdit->text();
+    int num = ui->lineEdit->text().toInt();
+
+    QSqlQuery query1;
+   QString idv="";
+   QString matricule="";
+    QString marque="";
+   QString   idcategorie="";
+   QString   nbplaces="";
+   QString   anciennete="";
+   QString couleur="";
+   QString   kilometrage="";
+   QString  carburant="";
+   QString  prixparjour="";
+   QString  etat="";
+    if(num1!=""){
+    query1.prepare("select * from voiture where IDV=:idv");
+   query1.bindValue(":idv", num);
+
+    if (query1.exec())
+    {
+
+        while (query1.next()) {
+
+             idv = query1.value(0).toString();
+             matricule = query1.value(1).toString();
+             marque = query1.value(2).toString();
+             idcategorie = query1.value(3).toString();
+             nbplaces= query1.value(4).toString();
+             anciennete = query1.value(5).toString();
+             couleur = query1.value(6).toString();
+             kilometrage= query1.value(7).toString();
+             carburant = query1.value(8).toString();
+             prixparjour = query1.value(9).toString();
+             etat = query1.value(10).toString();
+
+        }
+    }
+          QPrinter printer(QPrinter::HighResolution);
+              printer.setPageSize(QPrinter::A4);
+
+             QPrintDialog *dialog = new QPrintDialog(&printer);
+              if (dialog->exec() == QDialog::Accepted)
+              {               QPainter painter (&printer);
+                              painter.begin(&printer);
+                              QFont f;
+                               f.setPointSize(20);
+                               f.setBold(true);
+                               painter.setFont(f);
+                               painter.drawText(100, 500, " la fiche du voiture,num°:");
+                               painter.drawText(2000, 520, idv);
+                               f.setPointSize(15);
+                               f.setBold(true);
+                               painter.setFont(f);
+                               painter.drawText(100, 1000, "maruqe :");
+                               painter.drawText(1000, 1000, marque);
+                               painter.drawText(100, 1200, "matricule :");
+                               painter.drawText(1200, 1200, matricule);
+                               painter.drawText(100, 1400, "id categorie :");
+                               painter.drawText(1500, 1400, idcategorie);
+                               painter.drawText(100, 1600, "nbplaces :");
+                               painter.drawText(1500, 1600, nbplaces);
+                               painter.drawText(100, 1800, "annciennete :");
+                               painter.drawText(1500, 1800, anciennete);
+                               painter.drawText(100, 2000, "couleur :");
+                               painter.drawText(1500, 2000, couleur);
+                               painter.drawText(100, 2200, "kilometrage :");
+                               painter.drawText(1500, 2200, kilometrage);
+                               painter.drawText(100, 2400, "carburant :");
+                               painter.drawText(1500, 2400, carburant);
+                               painter.drawText(100, 2600, "prix par jour :");
+                               painter.drawText(1500, 2600, prixparjour);
+
+                              painter.end();
+
+              }}
+    else
+        QMessageBox::critical(nullptr, QObject::tr("Imprimer une reservation"),
+                    QObject::tr("Erreur !.\n"
+                                "Veuillez selectionner une reservation à imprimer .\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+}
+
+
+
+
+
+
+
+
+
+void MainWindow::on_stat_clicked()
+{
+    //![1]
+        QBarSet *set0 = new QBarSet("Fiat palio");
+        QBarSet *set1 = new QBarSet("Mercedes");
+        QBarSet *set2 = new QBarSet("Fiat sienna");
+        QBarSet *set3 = new QBarSet("citroen c5");
+        QBarSet *set4 = new QBarSet("bmw serie 4");
+
+        *set0 << 1 << 2 << 3 << 4 << 5 << 6;
+        *set1 << 5 << 0 << 0 << 4 << 0 << 7;
+        *set2 << 3 << 5 << 8 << 13 << 8 << 5;
+        *set3 << 5 << 6 << 7 << 3 << 4 << 5;
+        *set4 << 9 << 7 << 5 << 3 << 1 << 2;
+    //![1]
+
+    //![2]
+        QBarSeries *series = new QBarSeries();
+        series->append(set0);
+        series->append(set1);
+        series->append(set2);
+        series->append(set3);
+        series->append(set4);
+
+    //![2]
+
+    //![3]
+        QChart *chart = new QChart();
+        chart->addSeries(series);
+        chart->setTitle("Simple barchart example");
+        chart->setAnimationOptions(QChart::SeriesAnimations);
+    //![3]
+
+    //![4]
+        QStringList categories;
+        categories << "Jan" << "Feb" << "Mar" << "Apr" << "May" << "Jun";
+        QBarCategoryAxis *axis = new QBarCategoryAxis();
+        axis->append(categories);
+        chart->createDefaultAxes();
+        chart->setAxisX(axis, series);
+    //![4]
+
+    //![5]
+        chart->legend()->setVisible(true);
+        chart->legend()->setAlignment(Qt::AlignBottom);
+    //![5]
+
+    //![6]
+        QChartView *chartView = new QChartView(chart);
+        chartView->setRenderHint(QPainter::Antialiasing);
+    //![6]
+
+    //![7]
+        ch= new MainWindow (this);
+        ch->setCentralWidget(chartView);
+        ch->resize(420, 300);
+        ch->show();
+    //![7]
 }

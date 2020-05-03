@@ -29,11 +29,16 @@ private slots:
     void on_recherche_clicked();
     void on_tableView_doubleClicked(const QModelIndex &index);
     void on_tableView2_doubleClicked(const QModelIndex &index);
+    void on_pushButton_3_clicked();
+
+
+    void on_stat_clicked();
 
 private:
     Ui::MainWindow *ui;
     voiture tmpvoiture;
     categorie tmpcategorie;
+    MainWindow *ch;
 };
 
 #endif // MAINWINDOW_H
