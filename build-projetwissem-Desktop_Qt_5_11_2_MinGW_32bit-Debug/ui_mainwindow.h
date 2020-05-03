@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QCommandLinkButton>
+#include <QtWidgets/QDateEdit>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -91,13 +92,8 @@ public:
     QStackedWidget *stackedWidget;
     QWidget *page;
     QLabel *label_7;
-    QCommandLinkButton *commandLinkButton_3;
     QComboBox *comboBox;
-    QCommandLinkButton *commandLinkButton_2;
-    QLabel *label_6;
     QLineEdit *lineEditrecherche;
-    QLineEdit *lineEditcins;
-    QCommandLinkButton *commandLinkButton;
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout_4;
     QVBoxLayout *verticalLayout_8;
@@ -106,15 +102,43 @@ public:
     QLabel *label_20;
     QLabel *label_21;
     QLabel *label_22;
+    QLabel *label_27;
     QVBoxLayout *verticalLayout_9;
     QLineEdit *lineEditcin;
     QLineEdit *lineEditnom;
     QLineEdit *lineEditprenom;
     QLineEdit *lineEdittel;
     QLineEdit *lineEditage;
+    QLineEdit *lineEditemail;
     QTableView *tabclient;
     QLabel *label_23;
+    QPushButton *supprimerclient;
+    QPushButton *ajouterclient;
+    QPushButton *modifierclient;
+    QLabel *label_6;
     QWidget *page_2;
+    QTableView *tabfidelite;
+    QWidget *horizontalLayoutWidget_2;
+    QHBoxLayout *horizontalLayout_5;
+    QVBoxLayout *verticalLayout_10;
+    QLabel *label_33;
+    QLabel *label_28;
+    QLabel *label_29;
+    QLabel *label_30;
+    QLabel *label_31;
+    QVBoxLayout *verticalLayout_11;
+    QLineEdit *idfid;
+    QComboBox *cinf;
+    QLineEdit *valeurfid;
+    QDateEdit *dated;
+    QDateEdit *datef;
+    QCommandLinkButton *commandLinkButton_4;
+    QLabel *label_32;
+    QComboBox *comboBoxf;
+    QLabel *label_14;
+    QLineEdit *lineEditrecherchef;
+    QCommandLinkButton *commandLinkButton_5;
+    QLabel *label_15;
     QWidget *employes;
     QWidget *assurance;
     QWidget *location;
@@ -134,7 +158,59 @@ public:
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setGeometry(QRect(0, 0, 1441, 781));
         tabWidget->setCursor(QCursor(Qt::PointingHandCursor));
-        tabWidget->setStyleSheet(QStringLiteral("font: 75 10pt \"MS Shell Dlg 2\";"));
+        tabWidget->setStyleSheet(QLatin1String("QTabBar \n"
+"{\n"
+"	background-color: transparent;\n"
+"}\n"
+"\n"
+"\n"
+"QTabWidget::tab-bar \n"
+"{\n"
+"	border:none;\n"
+"	left: 0px;\n"
+"width:1250px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab \n"
+"{\n"
+"	color: #fff;\n"
+"	padding-left: 15px; \n"
+"	padding-right: 15px; \n"
+"	height: 25px;\n"
+"}\n"
+"\n"
+"\n"
+"QTabWidget::pane \n"
+"{\n"
+"	border: 1px solid #3a546e; \n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:!selected \n"
+"{\n"
+"	color: #b1b1b1; \n"
+"	border: px solid #000;\n"
+"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(44, 52, 60, 255),stop:1 rgba(15, 20, 26, 255));\n"
+"	margin-top: 3px;\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:selected \n"
+"{\n"
+"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(67, 79, 91, 255),stop:1 rgba(32, 44, 56, 255));\n"
+"	border: 1px solid #414141;\n"
+"	color: #fff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:!selected:hover \n"
+"{\n"
+"	color: #fff; \n"
+"}"));
         acceuil = new QWidget();
         acceuil->setObjectName(QStringLiteral("acceuil"));
         tabWidget->addTab(acceuil, QString());
@@ -355,16 +431,12 @@ public:
         stackedWidget = new QStackedWidget(clients);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
         stackedWidget->setGeometry(QRect(150, 0, 1081, 541));
+        stackedWidget->setStyleSheet(QStringLiteral(""));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
         label_7 = new QLabel(page);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setGeometry(QRect(390, 30, 71, 48));
-        commandLinkButton_3 = new QCommandLinkButton(page);
-        commandLinkButton_3->setObjectName(QStringLiteral("commandLinkButton_3"));
-        commandLinkButton_3->setGeometry(QRect(900, 390, 141, 41));
-        commandLinkButton_3->setStyleSheet(QLatin1String("selection-color: rgb(255, 255, 255);\n"
-"background-color: rgb(255, 255, 255);"));
         comboBox = new QComboBox(page);
         comboBox->addItem(QString());
         comboBox->addItem(QString());
@@ -374,28 +446,53 @@ public:
         comboBox->addItem(QString());
         comboBox->setObjectName(QStringLiteral("comboBox"));
         comboBox->setGeometry(QRect(170, 40, 73, 27));
-        commandLinkButton_2 = new QCommandLinkButton(page);
-        commandLinkButton_2->setObjectName(QStringLiteral("commandLinkButton_2"));
-        commandLinkButton_2->setGeometry(QRect(750, 490, 187, 41));
-        label_6 = new QLabel(page);
-        label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(520, 490, 56, 48));
+        comboBox->setStyleSheet(QLatin1String("QComboBox\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"QComboBox::drop-down {\n"
+"	subcontrol-origin: padding;\n"
+"	subcontrol-position: top right;\n"
+"	width: 20px;\n"
+" \n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;\n"
+"}\n"
+"QComboBox QAbstractItemView{\n"
+"	background-color: #4f4f4f;\n"
+"	color: #999999;\n"
+" \n"
+"	selection-background-color: #999999;\n"
+"	selection-color: #4f4f4f;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
         lineEditrecherche = new QLineEdit(page);
         lineEditrecherche->setObjectName(QStringLiteral("lineEditrecherche"));
         lineEditrecherche->setGeometry(QRect(470, 40, 252, 27));
-        lineEditrecherche->setStyleSheet(QStringLiteral(""));
-        lineEditcins = new QLineEdit(page);
-        lineEditcins->setObjectName(QStringLiteral("lineEditcins"));
-        lineEditcins->setEnabled(false);
-        lineEditcins->setGeometry(QRect(560, 500, 181, 27));
-        commandLinkButton = new QCommandLinkButton(page);
-        commandLinkButton->setObjectName(QStringLiteral("commandLinkButton"));
-        commandLinkButton->setGeometry(QRect(760, 390, 141, 41));
-        commandLinkButton->setStyleSheet(QLatin1String("selection-color: rgb(255, 255, 255);\n"
-"background-color: rgb(255, 255, 255);"));
+        lineEditrecherche->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
         horizontalLayoutWidget = new QWidget(page);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(760, 100, 321, 271));
+        horizontalLayoutWidget->setGeometry(QRect(760, 110, 301, 271));
         horizontalLayout_4 = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -429,6 +526,11 @@ public:
 
         verticalLayout_8->addWidget(label_22);
 
+        label_27 = new QLabel(horizontalLayoutWidget);
+        label_27->setObjectName(QStringLiteral("label_27"));
+
+        verticalLayout_8->addWidget(label_27);
+
 
         horizontalLayout_4->addLayout(verticalLayout_8);
 
@@ -437,29 +539,177 @@ public:
         verticalLayout_9->setObjectName(QStringLiteral("verticalLayout_9"));
         lineEditcin = new QLineEdit(horizontalLayoutWidget);
         lineEditcin->setObjectName(QStringLiteral("lineEditcin"));
+        lineEditcin->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
 
         verticalLayout_9->addWidget(lineEditcin);
 
         lineEditnom = new QLineEdit(horizontalLayoutWidget);
         lineEditnom->setObjectName(QStringLiteral("lineEditnom"));
         lineEditnom->setEnabled(true);
+        lineEditnom->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"\n"
+"QLineEdit::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-width: 1px;\n"
+"	border-radius: 3px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
 
         verticalLayout_9->addWidget(lineEditnom);
 
         lineEditprenom = new QLineEdit(horizontalLayoutWidget);
         lineEditprenom->setObjectName(QStringLiteral("lineEditprenom"));
+        lineEditprenom->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
 
         verticalLayout_9->addWidget(lineEditprenom);
 
         lineEdittel = new QLineEdit(horizontalLayoutWidget);
         lineEdittel->setObjectName(QStringLiteral("lineEdittel"));
+        lineEdittel->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
 
         verticalLayout_9->addWidget(lineEdittel);
 
         lineEditage = new QLineEdit(horizontalLayoutWidget);
         lineEditage->setObjectName(QStringLiteral("lineEditage"));
+        lineEditage->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
 
         verticalLayout_9->addWidget(lineEditage);
+
+        lineEditemail = new QLineEdit(horizontalLayoutWidget);
+        lineEditemail->setObjectName(QStringLiteral("lineEditemail"));
+        lineEditemail->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+
+        verticalLayout_9->addWidget(lineEditemail);
 
 
         horizontalLayout_4->addLayout(verticalLayout_9);
@@ -467,13 +717,521 @@ public:
         tabclient = new QTableView(page);
         tabclient->setObjectName(QStringLiteral("tabclient"));
         tabclient->setGeometry(QRect(70, 90, 671, 391));
+        tabclient->setStyleSheet(QLatin1String("QWidget {\n"
+"    background-color: #333333;\n"
+"    color: #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #646464;\n"
+"    padding: 4px;\n"
+"    border: 1px solid #fffff8;\n"
+"    font-size: 14pt;\n"
+"\n"
+"\n"
+"\n"
+"}\n"
+"\n"
+"QTableWidget {\n"
+"    gridline-color: #fffff8;\n"
+"    font-size: 12pt;\n"
+"\n"
+"\n"
+"}\n"
+"\n"
+"QTableWidget QTableCornerButton::section {\n"
+"    background-color: #646464;\n"
+"    border: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #646464;\n"
+"    padding: 4px;\n"
+"    font-size: 10pt;\n"
+"    border-style: none;\n"
+"    border-bottom: 1px solid #fffff8;\n"
+"    border-right: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section:horizontal\n"
+"{\n"
+"    border-top: 1px solid #fffff8;\n"
+"\n"
+"\n"
+"}\n"
+"\n"
+"QHeaderView::section:vertical\n"
+"{\n"
+"\n"
+"    border-left: 1px solid #fffff8;\n"
+"height:100%;\n"
+" \n"
+"}"));
         label_23 = new QLabel(page);
         label_23->setObjectName(QStringLiteral("label_23"));
         label_23->setGeometry(QRect(90, 30, 71, 48));
+        supprimerclient = new QPushButton(page);
+        supprimerclient->setObjectName(QStringLiteral("supprimerclient"));
+        supprimerclient->setGeometry(QRect(860, 450, 93, 28));
+        supprimerclient->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(84, 84, 84, 255),stop:1 rgba(59, 59, 59, 255));\n"
+"	color: #ffffff;\n"
+"	min-width: 80px;\n"
+"	border-style: solid;\n"
+"	border-width: 1px;\n"
+"	border-radius: 7px;\n"
+"	border-color: #051a39;\n"
+"	padding: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::flat\n"
+"{\n"
+"	background-color: transparent;\n"
+"	border: none;\n"
+"	color: #fff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"	background-color: rgba(183, 134, 32, 20%);\n"
+"	border: 1px solid #b78620;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));\n"
+"	border: 1px solid #b78620;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::checked\n"
+"{\n"
+"	background-color: qlineargradient(sprea"
+                        "d:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));\n"
+"	border: 1px solid #222;\n"
+"\n"
+"}"));
+        ajouterclient = new QPushButton(page);
+        ajouterclient->setObjectName(QStringLiteral("ajouterclient"));
+        ajouterclient->setGeometry(QRect(780, 400, 93, 28));
+        ajouterclient->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(84, 84, 84, 255),stop:1 rgba(59, 59, 59, 255));\n"
+"	color: #ffffff;\n"
+"	min-width: 80px;\n"
+"	border-style: solid;\n"
+"	border-width: 1px;\n"
+"	border-radius: 7px;\n"
+"	border-color: #051a39;\n"
+"	padding: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::flat\n"
+"{\n"
+"	background-color: transparent;\n"
+"	border: none;\n"
+"	color: #fff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"	background-color: rgba(183, 134, 32, 20%);\n"
+"	border: 1px solid #b78620;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));\n"
+"	border: 1px solid #b78620;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::checked\n"
+"{\n"
+"	background-color: qlineargradient(sprea"
+                        "d:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));\n"
+"	border: 1px solid #222;\n"
+"\n"
+"}\n"
+""));
+        modifierclient = new QPushButton(page);
+        modifierclient->setObjectName(QStringLiteral("modifierclient"));
+        modifierclient->setGeometry(QRect(940, 400, 93, 28));
+        modifierclient->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(84, 84, 84, 255),stop:1 rgba(59, 59, 59, 255));\n"
+"	color: #ffffff;\n"
+"	min-width: 80px;\n"
+"	border-style: solid;\n"
+"	border-width: 1px;\n"
+"	border-radius: 7px;\n"
+"	border-color: #051a39;\n"
+"	padding: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::flat\n"
+"{\n"
+"	background-color: transparent;\n"
+"	border: none;\n"
+"	color: #fff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"	background-color: rgba(183, 134, 32, 20%);\n"
+"	border: 1px solid #b78620;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));\n"
+"	border: 1px solid #b78620;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::checked\n"
+"{\n"
+"	background-color: qlineargradient(sprea"
+                        "d:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));\n"
+"	border: 1px solid #222;\n"
+"\n"
+"}"));
+        label_6 = new QLabel(page);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(750, 90, 331, 411));
+        label_6->setStyleSheet(QLatin1String("background-color: transparent;\n"
+"border-radius: 12px;\n"
+"border-color: rgb(255, 175, 14);\n"
+"	padding: 5px;\n"
+"border-width: 3px;\n"
+"border-style: solid ;"));
         stackedWidget->addWidget(page);
+        label_6->raise();
+        label_7->raise();
+        comboBox->raise();
+        lineEditrecherche->raise();
+        horizontalLayoutWidget->raise();
+        tabclient->raise();
+        label_23->raise();
+        supprimerclient->raise();
+        ajouterclient->raise();
+        modifierclient->raise();
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
+        tabfidelite = new QTableView(page_2);
+        tabfidelite->setObjectName(QStringLiteral("tabfidelite"));
+        tabfidelite->setGeometry(QRect(70, 90, 661, 391));
+        tabfidelite->setStyleSheet(QLatin1String("QWidget {\n"
+"    background-color: #333333;\n"
+"    color: #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #646464;\n"
+"    padding: 4px;\n"
+"    border: 1px solid #fffff8;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QTableWidget {\n"
+"    gridline-color: #fffff8;\n"
+"    font-size: 12pt;\n"
+"}\n"
+"\n"
+"QTableWidget QTableCornerButton::section {\n"
+"    background-color: #646464;\n"
+"    border: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #646464;\n"
+"    padding: 4px;\n"
+"    font-size: 10pt;\n"
+"    border-style: none;\n"
+"    border-bottom: 1px solid #fffff8;\n"
+"    border-right: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section:horizontal\n"
+"{\n"
+"    border-top: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section:vertical\n"
+"{\n"
+"    border-left: 1px solid #fffff8;\n"
+"height:100%;\n"
+" \n"
+"}"));
+        horizontalLayoutWidget_2 = new QWidget(page_2);
+        horizontalLayoutWidget_2->setObjectName(QStringLiteral("horizontalLayoutWidget_2"));
+        horizontalLayoutWidget_2->setGeometry(QRect(750, 100, 321, 271));
+        horizontalLayout_5 = new QHBoxLayout(horizontalLayoutWidget_2);
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_10 = new QVBoxLayout();
+        verticalLayout_10->setSpacing(6);
+        verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
+        label_33 = new QLabel(horizontalLayoutWidget_2);
+        label_33->setObjectName(QStringLiteral("label_33"));
+
+        verticalLayout_10->addWidget(label_33);
+
+        label_28 = new QLabel(horizontalLayoutWidget_2);
+        label_28->setObjectName(QStringLiteral("label_28"));
+
+        verticalLayout_10->addWidget(label_28);
+
+        label_29 = new QLabel(horizontalLayoutWidget_2);
+        label_29->setObjectName(QStringLiteral("label_29"));
+
+        verticalLayout_10->addWidget(label_29);
+
+        label_30 = new QLabel(horizontalLayoutWidget_2);
+        label_30->setObjectName(QStringLiteral("label_30"));
+
+        verticalLayout_10->addWidget(label_30);
+
+        label_31 = new QLabel(horizontalLayoutWidget_2);
+        label_31->setObjectName(QStringLiteral("label_31"));
+
+        verticalLayout_10->addWidget(label_31);
+
+
+        horizontalLayout_5->addLayout(verticalLayout_10);
+
+        verticalLayout_11 = new QVBoxLayout();
+        verticalLayout_11->setSpacing(6);
+        verticalLayout_11->setObjectName(QStringLiteral("verticalLayout_11"));
+        idfid = new QLineEdit(horizontalLayoutWidget_2);
+        idfid->setObjectName(QStringLiteral("idfid"));
+        idfid->setEnabled(false);
+        idfid->setStyleSheet(QLatin1String("\n"
+"\n"
+"\n"
+"QLineEdit::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+
+        verticalLayout_11->addWidget(idfid);
+
+        cinf = new QComboBox(horizontalLayoutWidget_2);
+        cinf->setObjectName(QStringLiteral("cinf"));
+        cinf->setStyleSheet(QLatin1String("QComboBox\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+""));
+
+        verticalLayout_11->addWidget(cinf);
+
+        valeurfid = new QLineEdit(horizontalLayoutWidget_2);
+        valeurfid->setObjectName(QStringLiteral("valeurfid"));
+        valeurfid->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+
+        verticalLayout_11->addWidget(valeurfid);
+
+        dated = new QDateEdit(horizontalLayoutWidget_2);
+        dated->setObjectName(QStringLiteral("dated"));
+        dated->setStyleSheet(QLatin1String("QDateEdit\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        dated->setCalendarPopup(true);
+
+        verticalLayout_11->addWidget(dated);
+
+        datef = new QDateEdit(horizontalLayoutWidget_2);
+        datef->setObjectName(QStringLiteral("datef"));
+        datef->setStyleSheet(QLatin1String("QDateEdit\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        datef->setCalendarPopup(true);
+
+        verticalLayout_11->addWidget(datef);
+
+
+        horizontalLayout_5->addLayout(verticalLayout_11);
+
+        commandLinkButton_4 = new QCommandLinkButton(page_2);
+        commandLinkButton_4->setObjectName(QStringLiteral("commandLinkButton_4"));
+        commandLinkButton_4->setGeometry(QRect(750, 390, 141, 41));
+        commandLinkButton_4->setStyleSheet(QLatin1String("selection-color: rgb(255, 255, 255);\n"
+"background-color: rgb(255, 255, 255);"));
+        label_32 = new QLabel(page_2);
+        label_32->setObjectName(QStringLiteral("label_32"));
+        label_32->setGeometry(QRect(90, 30, 71, 48));
+        comboBoxf = new QComboBox(page_2);
+        comboBoxf->addItem(QString());
+        comboBoxf->addItem(QString());
+        comboBoxf->addItem(QString());
+        comboBoxf->addItem(QString());
+        comboBoxf->addItem(QString());
+        comboBoxf->addItem(QString());
+        comboBoxf->setObjectName(QStringLiteral("comboBoxf"));
+        comboBoxf->setGeometry(QRect(170, 40, 73, 27));
+        comboBoxf->setStyleSheet(QLatin1String("QComboBox\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"	subcontrol-origin: padding;\n"
+"	subcontrol-position: top right;\n"
+"	width: 20px;\n"
+" \n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+""));
+        label_14 = new QLabel(page_2);
+        label_14->setObjectName(QStringLiteral("label_14"));
+        label_14->setGeometry(QRect(390, 30, 71, 48));
+        lineEditrecherchef = new QLineEdit(page_2);
+        lineEditrecherchef->setObjectName(QStringLiteral("lineEditrecherchef"));
+        lineEditrecherchef->setGeometry(QRect(470, 40, 252, 27));
+        lineEditrecherchef->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        commandLinkButton_5 = new QCommandLinkButton(page_2);
+        commandLinkButton_5->setObjectName(QStringLiteral("commandLinkButton_5"));
+        commandLinkButton_5->setGeometry(QRect(560, 490, 187, 41));
+        label_15 = new QLabel(page_2);
+        label_15->setObjectName(QStringLiteral("label_15"));
+        label_15->setGeometry(QRect(750, 80, 331, 411));
+        label_15->setStyleSheet(QLatin1String("background-color: transparent;\n"
+"border-radius: 12px;\n"
+"border-color: rgb(255, 175, 14);\n"
+"	padding: 5px;\n"
+"border-width: 3px;\n"
+"border-style: solid ;"));
         stackedWidget->addWidget(page_2);
+        label_15->raise();
+        tabfidelite->raise();
+        horizontalLayoutWidget_2->raise();
+        commandLinkButton_4->raise();
+        label_32->raise();
+        comboBoxf->raise();
+        label_14->raise();
+        lineEditrecherchef->raise();
+        commandLinkButton_5->raise();
         tabWidget->addTab(clients, QString());
         employes = new QWidget();
         employes->setObjectName(QStringLiteral("employes"));
@@ -501,7 +1259,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(2);
         tabWidget_2->setCurrentIndex(0);
         stackedWidget->setCurrentIndex(0);
 
@@ -551,7 +1309,6 @@ public:
         pushButton_11->setText(QApplication::translate("MainWindow", "client", nullptr));
         pushButton_10->setText(QApplication::translate("MainWindow", "fid\303\251lit\303\251", nullptr));
         label_7->setText(QApplication::translate("MainWindow", "chercher", nullptr));
-        commandLinkButton_3->setText(QApplication::translate("MainWindow", "modifier client", nullptr));
         comboBox->setItemText(0, QApplication::translate("MainWindow", "--", nullptr));
         comboBox->setItemText(1, QApplication::translate("MainWindow", "cin", nullptr));
         comboBox->setItemText(2, QApplication::translate("MainWindow", "age", nullptr));
@@ -559,18 +1316,37 @@ public:
         comboBox->setItemText(4, QApplication::translate("MainWindow", "prenom", nullptr));
         comboBox->setItemText(5, QApplication::translate("MainWindow", "tel", nullptr));
 
-        commandLinkButton_2->setText(QApplication::translate("MainWindow", "supprimer client", nullptr));
-        label_6->setText(QApplication::translate("MainWindow", "cin", nullptr));
         lineEditrecherche->setText(QString());
-        lineEditcins->setText(QString());
-        commandLinkButton->setText(QApplication::translate("MainWindow", "Ajouter client", nullptr));
         label_18->setText(QApplication::translate("MainWindow", "cin", nullptr));
         label_19->setText(QApplication::translate("MainWindow", "prenom", nullptr));
         label_20->setText(QApplication::translate("MainWindow", "nom", nullptr));
         label_21->setText(QApplication::translate("MainWindow", "tel", nullptr));
         label_22->setText(QApplication::translate("MainWindow", "age", nullptr));
+        label_27->setText(QApplication::translate("MainWindow", "email", nullptr));
         lineEditcin->setText(QString());
         label_23->setText(QApplication::translate("MainWindow", "trier par", nullptr));
+        supprimerclient->setText(QApplication::translate("MainWindow", "supprimer", nullptr));
+        ajouterclient->setText(QApplication::translate("MainWindow", "ajouter", nullptr));
+        modifierclient->setText(QApplication::translate("MainWindow", "modifier", nullptr));
+        label_6->setText(QString());
+        label_33->setText(QApplication::translate("MainWindow", "numero de fidelit\303\251", nullptr));
+        label_28->setText(QApplication::translate("MainWindow", "cin", nullptr));
+        label_29->setText(QApplication::translate("MainWindow", "valeur", nullptr));
+        label_30->setText(QApplication::translate("MainWindow", "dated", nullptr));
+        label_31->setText(QApplication::translate("MainWindow", "datef", nullptr));
+        commandLinkButton_4->setText(QApplication::translate("MainWindow", "Ajouter fid", nullptr));
+        label_32->setText(QApplication::translate("MainWindow", "trier par", nullptr));
+        comboBoxf->setItemText(0, QApplication::translate("MainWindow", "--", nullptr));
+        comboBoxf->setItemText(1, QApplication::translate("MainWindow", "cin", nullptr));
+        comboBoxf->setItemText(2, QApplication::translate("MainWindow", "age", nullptr));
+        comboBoxf->setItemText(3, QApplication::translate("MainWindow", "nom", nullptr));
+        comboBoxf->setItemText(4, QApplication::translate("MainWindow", "prenom", nullptr));
+        comboBoxf->setItemText(5, QApplication::translate("MainWindow", "tel", nullptr));
+
+        label_14->setText(QApplication::translate("MainWindow", "chercher", nullptr));
+        lineEditrecherchef->setText(QString());
+        commandLinkButton_5->setText(QApplication::translate("MainWindow", "supprimer fidelite", nullptr));
+        label_15->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(clients), QApplication::translate("MainWindow", "client", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(employes), QApplication::translate("MainWindow", "employe", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(assurance), QApplication::translate("MainWindow", "assurance", nullptr));
