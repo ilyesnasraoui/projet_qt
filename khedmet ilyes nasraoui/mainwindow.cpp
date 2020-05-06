@@ -369,7 +369,7 @@ void MainWindow::on_tableView2_doubleClicked(const QModelIndex &index)
 
 
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_imprimerr_clicked()
 {
    QString num1 = ui->lineEdit->text();
     int num = ui->lineEdit->text().toInt();

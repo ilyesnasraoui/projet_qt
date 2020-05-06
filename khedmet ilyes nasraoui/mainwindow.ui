@@ -410,7 +410,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="imprimerr">
       <property name="geometry">
        <rect>
         <x>310</x>
