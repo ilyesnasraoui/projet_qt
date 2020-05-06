@@ -39,51 +39,55 @@ public:
     QTabWidget *tabWidget;
     QWidget *acceuil;
     QWidget *categorie;
-    QTabWidget *tabWidget_2;
-    QWidget *tab;
+    QStackedWidget *stackedWidget22;
+    QWidget *page_3;
+    QLabel *label_34;
+    QLineEdit *lineEdit_carburant;
+    QLineEdit *lineEdit_matricule;
+    QLineEdit *lineEdit_kilometrage;
+    QLabel *label_35;
+    QLineEdit *lineEdit_idcategorie;
+    QPushButton *modifier;
+    QLabel *label_36;
+    QLineEdit *lineEdit_16;
+    QPushButton *ajouter;
+    QTableView *tableView2;
+    QLabel *label_37;
+    QLabel *label_38;
+    QLineEdit *lineEdit_couleur;
+    QLineEdit *lineEdit_nbplaces;
+    QPushButton *imprimerr;
+    QPushButton *trie;
     QLineEdit *lineEdit_idv;
     QLineEdit *lineEdit_marque;
-    QLineEdit *lineEdit_matricule;
-    QLineEdit *lineEdit_idcategorie;
-    QLineEdit *lineEdit_nbplaces;
-    QLineEdit *lineEdit_anciennete;
-    QLineEdit *lineEdit_couleur;
-    QLineEdit *lineEdit_kilometrage;
-    QLineEdit *lineEdit_carburant;
+    QLabel *label_39;
     QLineEdit *lineEdit_prixparjour;
-    QLabel *label;
-    QLabel *label_2;
-    QLabel *label_3;
-    QLabel *label_4;
-    QLabel *label_5;
-    QLabel *label_8;
-    QLabel *label_9;
-    QLabel *label_10;
-    QLabel *label_11;
-    QLabel *label_12;
-    QLabel *label_13;
-    QPushButton *ajouter;
+    QPushButton *stat;
+    QLabel *label_40;
     QPushButton *supprimer;
-    QPushButton *pushButton_2;
-    QTableView *tableView2;
-    QPushButton *trie;
-    QLineEdit *lineEdit_16;
-    QPushButton *recherche;
-    QPushButton *modifier;
+    QLineEdit *lineEdit_anciennete;
     QComboBox *combo;
-    QWidget *tab_3;
-    QLineEdit *lineEdit_idc;
-    QLineEdit *lineEdit_type;
+    QLineEdit *lineEdit;
+    QLabel *label_41;
+    QLabel *label_42;
+    QLabel *label_43;
+    QLabel *label_44;
+    QPushButton *recherche;
+    QLabel *label;
+    QWidget *page_6;
     QLineEdit *lineEdit_nbvoitures;
-    QLabel *label_24;
-    QLabel *label_25;
-    QLabel *label_26;
-    QPushButton *ajouter_categorie;
-    QTableView *tableView;
-    QPushButton *supprimer_categorie;
-    QPushButton *trie_categorie;
-    QPushButton *pushButton_4;
     QPushButton *modifier_categorie;
+    QLineEdit *lineEdit_type;
+    QLabel *label_45;
+    QLabel *label_46;
+    QPushButton *supprimer_categorie;
+    QLineEdit *lineEdit_idc;
+    QPushButton *trie_categorie;
+    QLabel *label_47;
+    QTableView *tableView;
+    QPushButton *pushButton_6;
+    QPushButton *voituree;
+    QPushButton *categoriee;
     QWidget *clients;
     QGroupBox *verticalGroupBox;
     QVBoxLayout *verticalLayout;
@@ -216,149 +220,456 @@ public:
         tabWidget->addTab(acceuil, QString());
         categorie = new QWidget();
         categorie->setObjectName(QStringLiteral("categorie"));
-        tabWidget_2 = new QTabWidget(categorie);
-        tabWidget_2->setObjectName(QStringLiteral("tabWidget_2"));
-        tabWidget_2->setGeometry(QRect(20, 10, 1021, 511));
-        tab = new QWidget();
-        tab->setObjectName(QStringLiteral("tab"));
-        lineEdit_idv = new QLineEdit(tab);
-        lineEdit_idv->setObjectName(QStringLiteral("lineEdit_idv"));
-        lineEdit_idv->setGeometry(QRect(100, 60, 113, 22));
-        lineEdit_marque = new QLineEdit(tab);
-        lineEdit_marque->setObjectName(QStringLiteral("lineEdit_marque"));
-        lineEdit_marque->setGeometry(QRect(100, 90, 113, 22));
-        lineEdit_matricule = new QLineEdit(tab);
-        lineEdit_matricule->setObjectName(QStringLiteral("lineEdit_matricule"));
-        lineEdit_matricule->setGeometry(QRect(100, 120, 113, 22));
-        lineEdit_idcategorie = new QLineEdit(tab);
-        lineEdit_idcategorie->setObjectName(QStringLiteral("lineEdit_idcategorie"));
-        lineEdit_idcategorie->setGeometry(QRect(100, 150, 113, 22));
-        lineEdit_nbplaces = new QLineEdit(tab);
-        lineEdit_nbplaces->setObjectName(QStringLiteral("lineEdit_nbplaces"));
-        lineEdit_nbplaces->setGeometry(QRect(370, 60, 113, 22));
-        lineEdit_anciennete = new QLineEdit(tab);
-        lineEdit_anciennete->setObjectName(QStringLiteral("lineEdit_anciennete"));
-        lineEdit_anciennete->setGeometry(QRect(370, 90, 113, 22));
-        lineEdit_couleur = new QLineEdit(tab);
-        lineEdit_couleur->setObjectName(QStringLiteral("lineEdit_couleur"));
-        lineEdit_couleur->setGeometry(QRect(370, 120, 113, 22));
-        lineEdit_kilometrage = new QLineEdit(tab);
-        lineEdit_kilometrage->setObjectName(QStringLiteral("lineEdit_kilometrage"));
-        lineEdit_kilometrage->setGeometry(QRect(370, 150, 113, 22));
-        lineEdit_carburant = new QLineEdit(tab);
+        stackedWidget22 = new QStackedWidget(categorie);
+        stackedWidget22->setObjectName(QStringLiteral("stackedWidget22"));
+        stackedWidget22->setGeometry(QRect(190, 0, 951, 541));
+        page_3 = new QWidget();
+        page_3->setObjectName(QStringLiteral("page_3"));
+        label_34 = new QLabel(page_3);
+        label_34->setObjectName(QStringLiteral("label_34"));
+        label_34->setGeometry(QRect(340, 140, 55, 16));
+        lineEdit_carburant = new QLineEdit(page_3);
         lineEdit_carburant->setObjectName(QStringLiteral("lineEdit_carburant"));
-        lineEdit_carburant->setGeometry(QRect(610, 80, 113, 22));
-        lineEdit_prixparjour = new QLineEdit(tab);
-        lineEdit_prixparjour->setObjectName(QStringLiteral("lineEdit_prixparjour"));
-        lineEdit_prixparjour->setGeometry(QRect(610, 110, 113, 22));
-        label = new QLabel(tab);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(10, 60, 71, 21));
-        label->setStyleSheet(QStringLiteral(""));
-        label_2 = new QLabel(tab);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(10, 90, 61, 20));
-        label_2->setStyleSheet(QStringLiteral(""));
-        label_3 = new QLabel(tab);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(10, 120, 55, 16));
-        label_4 = new QLabel(tab);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(10, 150, 71, 16));
-        label_5 = new QLabel(tab);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(250, 60, 111, 20));
-        label_8 = new QLabel(tab);
-        label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(300, 90, 55, 16));
-        label_9 = new QLabel(tab);
-        label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(310, 120, 55, 16));
-        label_10 = new QLabel(tab);
-        label_10->setObjectName(QStringLiteral("label_10"));
-        label_10->setGeometry(QRect(290, 150, 81, 20));
-        label_11 = new QLabel(tab);
-        label_11->setObjectName(QStringLiteral("label_11"));
-        label_11->setGeometry(QRect(540, 80, 55, 16));
-        label_12 = new QLabel(tab);
-        label_12->setObjectName(QStringLiteral("label_12"));
-        label_12->setGeometry(QRect(524, 110, 71, 20));
-        label_13 = new QLabel(tab);
-        label_13->setObjectName(QStringLiteral("label_13"));
-        label_13->setGeometry(QRect(540, 140, 55, 16));
-        ajouter = new QPushButton(tab);
-        ajouter->setObjectName(QStringLiteral("ajouter"));
-        ajouter->setGeometry(QRect(750, 100, 93, 28));
-        supprimer = new QPushButton(tab);
-        supprimer->setObjectName(QStringLiteral("supprimer"));
-        supprimer->setGeometry(QRect(10, 440, 93, 28));
-        pushButton_2 = new QPushButton(tab);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(750, 440, 93, 28));
-        tableView2 = new QTableView(tab);
-        tableView2->setObjectName(QStringLiteral("tableView2"));
-        tableView2->setGeometry(QRect(10, 180, 831, 221));
-        trie = new QPushButton(tab);
-        trie->setObjectName(QStringLiteral("trie"));
-        trie->setGeometry(QRect(380, 440, 93, 28));
-        lineEdit_16 = new QLineEdit(tab);
-        lineEdit_16->setObjectName(QStringLiteral("lineEdit_16"));
-        lineEdit_16->setGeometry(QRect(590, 30, 113, 22));
-        recherche = new QPushButton(tab);
-        recherche->setObjectName(QStringLiteral("recherche"));
-        recherche->setGeometry(QRect(750, 30, 93, 28));
-        modifier = new QPushButton(tab);
+        lineEdit_carburant->setGeometry(QRect(690, 130, 113, 22));
+        lineEdit_carburant->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        lineEdit_matricule = new QLineEdit(page_3);
+        lineEdit_matricule->setObjectName(QStringLiteral("lineEdit_matricule"));
+        lineEdit_matricule->setGeometry(QRect(180, 170, 113, 22));
+        lineEdit_matricule->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        lineEdit_kilometrage = new QLineEdit(page_3);
+        lineEdit_kilometrage->setObjectName(QStringLiteral("lineEdit_kilometrage"));
+        lineEdit_kilometrage->setGeometry(QRect(450, 200, 113, 22));
+        lineEdit_kilometrage->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        label_35 = new QLabel(page_3);
+        label_35->setObjectName(QStringLiteral("label_35"));
+        label_35->setGeometry(QRect(340, 170, 55, 16));
+        lineEdit_idcategorie = new QLineEdit(page_3);
+        lineEdit_idcategorie->setObjectName(QStringLiteral("lineEdit_idcategorie"));
+        lineEdit_idcategorie->setGeometry(QRect(180, 200, 113, 22));
+        lineEdit_idcategorie->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        modifier = new QPushButton(page_3);
         modifier->setObjectName(QStringLiteral("modifier"));
-        modifier->setGeometry(QRect(170, 440, 93, 28));
-        combo = new QComboBox(tab);
+        modifier->setGeometry(QRect(350, 510, 93, 28));
+        label_36 = new QLabel(page_3);
+        label_36->setObjectName(QStringLiteral("label_36"));
+        label_36->setGeometry(QRect(90, 110, 71, 21));
+        label_36->setStyleSheet(QStringLiteral(""));
+        lineEdit_16 = new QLineEdit(page_3);
+        lineEdit_16->setObjectName(QStringLiteral("lineEdit_16"));
+        lineEdit_16->setGeometry(QRect(620, 50, 113, 22));
+        lineEdit_16->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        ajouter = new QPushButton(page_3);
+        ajouter->setObjectName(QStringLiteral("ajouter"));
+        ajouter->setGeometry(QRect(850, 160, 93, 28));
+        tableView2 = new QTableView(page_3);
+        tableView2->setObjectName(QStringLiteral("tableView2"));
+        tableView2->setGeometry(QRect(80, 230, 861, 271));
+        tableView2->setStyleSheet(QLatin1String("QWidget {\n"
+"    background-color: #333333;\n"
+"    color: #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #646464;\n"
+"    padding: 4px;\n"
+"    border: 1px solid #fffff8;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QTableWidget {\n"
+"    gridline-color: #fffff8;\n"
+"    font-size: 12pt;\n"
+"}\n"
+"\n"
+"QTableWidget QTableCornerButton::section {\n"
+"    background-color: #646464;\n"
+"    border: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #646464;\n"
+"    padding: 4px;\n"
+"    font-size: 10pt;\n"
+"    border-style: none;\n"
+"    border-bottom: 1px solid #fffff8;\n"
+"    border-right: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section:horizontal\n"
+"{\n"
+"    border-top: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section:vertical\n"
+"{\n"
+"    border-left: 1px solid #fffff8;\n"
+"height:100%;\n"
+" \n"
+"}"));
+        label_37 = new QLabel(page_3);
+        label_37->setObjectName(QStringLiteral("label_37"));
+        label_37->setGeometry(QRect(90, 140, 61, 20));
+        label_37->setStyleSheet(QStringLiteral(""));
+        label_38 = new QLabel(page_3);
+        label_38->setObjectName(QStringLiteral("label_38"));
+        label_38->setGeometry(QRect(750, 190, 55, 16));
+        lineEdit_couleur = new QLineEdit(page_3);
+        lineEdit_couleur->setObjectName(QStringLiteral("lineEdit_couleur"));
+        lineEdit_couleur->setGeometry(QRect(450, 170, 113, 22));
+        lineEdit_couleur->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        lineEdit_nbplaces = new QLineEdit(page_3);
+        lineEdit_nbplaces->setObjectName(QStringLiteral("lineEdit_nbplaces"));
+        lineEdit_nbplaces->setGeometry(QRect(450, 110, 113, 22));
+        lineEdit_nbplaces->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        imprimerr = new QPushButton(page_3);
+        imprimerr->setObjectName(QStringLiteral("imprimerr"));
+        imprimerr->setGeometry(QRect(360, 40, 121, 28));
+        trie = new QPushButton(page_3);
+        trie->setObjectName(QStringLiteral("trie"));
+        trie->setGeometry(QRect(600, 510, 93, 28));
+        lineEdit_idv = new QLineEdit(page_3);
+        lineEdit_idv->setObjectName(QStringLiteral("lineEdit_idv"));
+        lineEdit_idv->setGeometry(QRect(180, 110, 113, 22));
+        lineEdit_idv->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        lineEdit_marque = new QLineEdit(page_3);
+        lineEdit_marque->setObjectName(QStringLiteral("lineEdit_marque"));
+        lineEdit_marque->setGeometry(QRect(180, 140, 113, 22));
+        lineEdit_marque->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        label_39 = new QLabel(page_3);
+        label_39->setObjectName(QStringLiteral("label_39"));
+        label_39->setGeometry(QRect(610, 160, 71, 20));
+        lineEdit_prixparjour = new QLineEdit(page_3);
+        lineEdit_prixparjour->setObjectName(QStringLiteral("lineEdit_prixparjour"));
+        lineEdit_prixparjour->setGeometry(QRect(690, 160, 113, 22));
+        lineEdit_prixparjour->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        stat = new QPushButton(page_3);
+        stat->setObjectName(QStringLiteral("stat"));
+        stat->setGeometry(QRect(850, 510, 93, 28));
+        label_40 = new QLabel(page_3);
+        label_40->setObjectName(QStringLiteral("label_40"));
+        label_40->setGeometry(QRect(90, 200, 71, 16));
+        supprimer = new QPushButton(page_3);
+        supprimer->setObjectName(QStringLiteral("supprimer"));
+        supprimer->setGeometry(QRect(140, 510, 93, 28));
+        lineEdit_anciennete = new QLineEdit(page_3);
+        lineEdit_anciennete->setObjectName(QStringLiteral("lineEdit_anciennete"));
+        lineEdit_anciennete->setGeometry(QRect(450, 140, 113, 22));
+        lineEdit_anciennete->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        combo = new QComboBox(page_3);
         combo->addItem(QString());
         combo->addItem(QString());
         combo->setObjectName(QStringLiteral("combo"));
-        combo->setGeometry(QRect(610, 140, 121, 22));
-        tabWidget_2->addTab(tab, QString());
-        tab_3 = new QWidget();
-        tab_3->setObjectName(QStringLiteral("tab_3"));
-        lineEdit_idc = new QLineEdit(tab_3);
-        lineEdit_idc->setObjectName(QStringLiteral("lineEdit_idc"));
-        lineEdit_idc->setGeometry(QRect(140, 100, 113, 22));
-        lineEdit_type = new QLineEdit(tab_3);
-        lineEdit_type->setObjectName(QStringLiteral("lineEdit_type"));
-        lineEdit_type->setGeometry(QRect(440, 100, 113, 22));
-        lineEdit_nbvoitures = new QLineEdit(tab_3);
+        combo->setGeometry(QRect(690, 190, 121, 22));
+        combo->setStyleSheet(QLatin1String("QComboBox\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        lineEdit = new QLineEdit(page_3);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(190, 40, 113, 22));
+        lineEdit->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}"));
+        label_41 = new QLabel(page_3);
+        label_41->setObjectName(QStringLiteral("label_41"));
+        label_41->setGeometry(QRect(610, 130, 55, 16));
+        label_42 = new QLabel(page_3);
+        label_42->setObjectName(QStringLiteral("label_42"));
+        label_42->setGeometry(QRect(340, 110, 121, 20));
+        label_43 = new QLabel(page_3);
+        label_43->setObjectName(QStringLiteral("label_43"));
+        label_43->setGeometry(QRect(340, 200, 81, 20));
+        label_44 = new QLabel(page_3);
+        label_44->setObjectName(QStringLiteral("label_44"));
+        label_44->setGeometry(QRect(90, 170, 55, 16));
+        recherche = new QPushButton(page_3);
+        recherche->setObjectName(QStringLiteral("recherche"));
+        recherche->setGeometry(QRect(750, 50, 186, 28));
+        recherche->setStyleSheet(QStringLiteral(""));
+        label = new QLabel(page_3);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(610, 190, 55, 16));
+        stackedWidget22->addWidget(page_3);
+        page_6 = new QWidget();
+        page_6->setObjectName(QStringLiteral("page_6"));
+        lineEdit_nbvoitures = new QLineEdit(page_6);
         lineEdit_nbvoitures->setObjectName(QStringLiteral("lineEdit_nbvoitures"));
-        lineEdit_nbvoitures->setGeometry(QRect(760, 100, 113, 22));
-        label_24 = new QLabel(tab_3);
-        label_24->setObjectName(QStringLiteral("label_24"));
-        label_24->setGeometry(QRect(30, 90, 111, 41));
-        label_24->setStyleSheet(QLatin1String("\n"
-"font: 10pt \"MS Shell Dlg 2\";"));
-        label_25 = new QLabel(tab_3);
-        label_25->setObjectName(QStringLiteral("label_25"));
-        label_25->setGeometry(QRect(370, 100, 71, 20));
-        label_25->setStyleSheet(QStringLiteral("font: 10pt \"MS Shell Dlg 2\";"));
-        label_26 = new QLabel(tab_3);
-        label_26->setObjectName(QStringLiteral("label_26"));
-        label_26->setGeometry(QRect(590, 100, 151, 16));
-        label_26->setStyleSheet(QStringLiteral("font: 10pt \"MS Shell Dlg 2\";"));
-        ajouter_categorie = new QPushButton(tab_3);
-        ajouter_categorie->setObjectName(QStringLiteral("ajouter_categorie"));
-        ajouter_categorie->setGeometry(QRect(960, 100, 93, 28));
-        tableView = new QTableView(tab_3);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(320, 160, 371, 221));
-        supprimer_categorie = new QPushButton(tab_3);
-        supprimer_categorie->setObjectName(QStringLiteral("supprimer_categorie"));
-        supprimer_categorie->setGeometry(QRect(60, 440, 91, 31));
-        trie_categorie = new QPushButton(tab_3);
-        trie_categorie->setObjectName(QStringLiteral("trie_categorie"));
-        trie_categorie->setGeometry(QRect(410, 440, 201, 41));
-        pushButton_4 = new QPushButton(tab_3);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(930, 500, 93, 28));
-        modifier_categorie = new QPushButton(tab_3);
+        lineEdit_nbvoitures->setGeometry(QRect(780, 90, 113, 22));
+        lineEdit_nbvoitures->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+""));
+        modifier_categorie = new QPushButton(page_6);
         modifier_categorie->setObjectName(QStringLiteral("modifier_categorie"));
-        modifier_categorie->setGeometry(QRect(200, 440, 91, 31));
-        tabWidget_2->addTab(tab_3, QString());
+        modifier_categorie->setGeometry(QRect(800, 250, 91, 31));
+        lineEdit_type = new QLineEdit(page_6);
+        lineEdit_type->setObjectName(QStringLiteral("lineEdit_type"));
+        lineEdit_type->setGeometry(QRect(780, 130, 113, 22));
+        lineEdit_type->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"\n"
+""));
+        label_45 = new QLabel(page_6);
+        label_45->setObjectName(QStringLiteral("label_45"));
+        label_45->setGeometry(QRect(610, 90, 151, 16));
+        label_45->setStyleSheet(QStringLiteral("font: 10pt \"MS Shell Dlg 2\";"));
+        label_46 = new QLabel(page_6);
+        label_46->setObjectName(QStringLiteral("label_46"));
+        label_46->setGeometry(QRect(610, 170, 111, 41));
+        label_46->setStyleSheet(QLatin1String("\n"
+"font: 10pt \"MS Shell Dlg 2\";"));
+        supprimer_categorie = new QPushButton(page_6);
+        supprimer_categorie->setObjectName(QStringLiteral("supprimer_categorie"));
+        supprimer_categorie->setGeometry(QRect(600, 250, 91, 31));
+        lineEdit_idc = new QLineEdit(page_6);
+        lineEdit_idc->setObjectName(QStringLiteral("lineEdit_idc"));
+        lineEdit_idc->setGeometry(QRect(780, 180, 113, 22));
+        lineEdit_idc->setStyleSheet(QLatin1String("QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 9px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+""));
+        trie_categorie = new QPushButton(page_6);
+        trie_categorie->setObjectName(QStringLiteral("trie_categorie"));
+        trie_categorie->setGeometry(QRect(650, 320, 201, 41));
+        label_47 = new QLabel(page_6);
+        label_47->setObjectName(QStringLiteral("label_47"));
+        label_47->setGeometry(QRect(610, 140, 71, 20));
+        label_47->setStyleSheet(QStringLiteral("font: 10pt \"MS Shell Dlg 2\";"));
+        tableView = new QTableView(page_6);
+        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setGeometry(QRect(180, 80, 411, 351));
+        tableView->setStyleSheet(QLatin1String("QWidget {\n"
+"    background-color: #333333;\n"
+"    color: #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #646464;\n"
+"    padding: 4px;\n"
+"    border: 1px solid #fffff8;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QTableWidget {\n"
+"    gridline-color: #fffff8;\n"
+"    font-size: 12pt;\n"
+"}\n"
+"\n"
+"QTableWidget QTableCornerButton::section {\n"
+"    background-color: #646464;\n"
+"    border: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #646464;\n"
+"    padding: 4px;\n"
+"    font-size: 10pt;\n"
+"    border-style: none;\n"
+"    border-bottom: 1px solid #fffff8;\n"
+"    border-right: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section:horizontal\n"
+"{\n"
+"    border-top: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section:vertical\n"
+"{\n"
+"    border-left: 1px solid #fffff8;\n"
+"height:100%;\n"
+" \n"
+"}"));
+        stackedWidget22->addWidget(page_6);
+        pushButton_6 = new QPushButton(categorie);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(60, 460, 93, 28));
+        voituree = new QPushButton(categorie);
+        voituree->setObjectName(QStringLiteral("voituree"));
+        voituree->setGeometry(QRect(20, 30, 139, 68));
+        voituree->setStyleSheet(QLatin1String(".QPushButton {\n"
+"\n"
+"  border-radius: 25%;\n"
+"  background-color: #f4511e;\n"
+"\n"
+"  color: #FFFFFF;\n"
+"  text-align: center;\n"
+"  font-size: 15px;\n"
+"  padding: 20px;\n"
+"\n"
+"\n"
+"  cursor: pointer;\n"
+"  margin: 5px;\n"
+"}\n"
+"\n"
+".QPushButton:hover  {\n"
+" padding-right: 25px;\n"
+"font-size: 22px;\n"
+"background-color:black;\n"
+"}\n"
+"\n"
+""));
+        voituree->setIconSize(QSize(10, 10));
+        categoriee = new QPushButton(categorie);
+        categoriee->setObjectName(QStringLiteral("categoriee"));
+        categoriee->setGeometry(QRect(20, 110, 139, 68));
+        categoriee->setStyleSheet(QLatin1String(".QPushButton {\n"
+"\n"
+"  border-radius: 25%;\n"
+"  background-color: #f4511e;\n"
+"\n"
+"  color: #FFFFFF;\n"
+"  text-align: center;\n"
+"  font-size: 15px;\n"
+"  padding: 20px;\n"
+"\n"
+"\n"
+"  cursor: pointer;\n"
+"  margin: 5px;\n"
+"}\n"
+"\n"
+".QPushButton:hover  {\n"
+"  padding-right: 25px;\n"
+"font-size: 22px;\n"
+" background-color:black;\n"
+"}\n"
+"\n"
+""));
+        categoriee->setIconSize(QSize(10, 10));
         tabWidget->addTab(categorie, QString());
         clients = new QWidget();
         clients->setObjectName(QStringLiteral("clients"));
@@ -1259,9 +1570,9 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(2);
-        tabWidget_2->setCurrentIndex(0);
-        stackedWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
+        stackedWidget22->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1274,37 +1585,38 @@ public:
         tabWidget->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p><br/></p></body></html>", nullptr));
 #endif // QT_NO_TOOLTIP
         tabWidget->setTabText(tabWidget->indexOf(acceuil), QApplication::translate("MainWindow", "acceuil", nullptr));
-        label->setText(QApplication::translate("MainWindow", "id voiture", nullptr));
-        label_2->setText(QApplication::translate("MainWindow", "Marque", nullptr));
-        label_3->setText(QApplication::translate("MainWindow", "matricule", nullptr));
-        label_4->setText(QApplication::translate("MainWindow", "idcategorie", nullptr));
-        label_5->setText(QApplication::translate("MainWindow", "nombre de places", nullptr));
-        label_8->setText(QApplication::translate("MainWindow", "anciennet\303\251", nullptr));
-        label_9->setText(QApplication::translate("MainWindow", "couleur", nullptr));
-        label_10->setText(QApplication::translate("MainWindow", "kilom\303\251trage", nullptr));
-        label_11->setText(QApplication::translate("MainWindow", "carburant", nullptr));
-        label_12->setText(QApplication::translate("MainWindow", "prix par jour", nullptr));
-        label_13->setText(QApplication::translate("MainWindow", "etat", nullptr));
-        ajouter->setText(QApplication::translate("MainWindow", "ajouter", nullptr));
-        supprimer->setText(QApplication::translate("MainWindow", "supprimer", nullptr));
-        pushButton_2->setText(QApplication::translate("MainWindow", "log out", nullptr));
-        trie->setText(QApplication::translate("MainWindow", "trie selon prix", nullptr));
-        lineEdit_16->setText(QApplication::translate("MainWindow", "recherche", nullptr));
-        recherche->setText(QApplication::translate("MainWindow", "recherche", nullptr));
+        label_34->setText(QApplication::translate("MainWindow", "anciennet\303\251", nullptr));
+        label_35->setText(QApplication::translate("MainWindow", "couleur", nullptr));
         modifier->setText(QApplication::translate("MainWindow", "modifier", nullptr));
+        label_36->setText(QApplication::translate("MainWindow", "id voiture", nullptr));
+        lineEdit_16->setText(QApplication::translate("MainWindow", "recherche", nullptr));
+        ajouter->setText(QApplication::translate("MainWindow", "ajouter", nullptr));
+        label_37->setText(QApplication::translate("MainWindow", "Marque", nullptr));
+        label_38->setText(QApplication::translate("MainWindow", "etat", nullptr));
+        imprimerr->setText(QApplication::translate("MainWindow", "imprimer la fiche", nullptr));
+        trie->setText(QApplication::translate("MainWindow", "trie selon prix", nullptr));
+        label_39->setText(QApplication::translate("MainWindow", "prix par jour", nullptr));
+        stat->setText(QApplication::translate("MainWindow", "statistique", nullptr));
+        label_40->setText(QApplication::translate("MainWindow", "idcategorie", nullptr));
+        supprimer->setText(QApplication::translate("MainWindow", "supprimer", nullptr));
         combo->setItemText(0, QApplication::translate("MainWindow", "disponible", nullptr));
         combo->setItemText(1, QApplication::translate("MainWindow", "indisponible", nullptr));
 
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QApplication::translate("MainWindow", "voiture", nullptr));
-        label_24->setText(QApplication::translate("MainWindow", "id categorie", nullptr));
-        label_25->setText(QApplication::translate("MainWindow", "type", nullptr));
-        label_26->setText(QApplication::translate("MainWindow", "nombre de voitures", nullptr));
-        ajouter_categorie->setText(QApplication::translate("MainWindow", "Ajouter", nullptr));
+        label_41->setText(QApplication::translate("MainWindow", "carburant", nullptr));
+        label_42->setText(QApplication::translate("MainWindow", "nombre de places", nullptr));
+        label_43->setText(QApplication::translate("MainWindow", "kilom\303\251trage", nullptr));
+        label_44->setText(QApplication::translate("MainWindow", "matricule", nullptr));
+        recherche->setText(QApplication::translate("MainWindow", "recherche", nullptr));
+        label->setText(QApplication::translate("MainWindow", "etat", nullptr));
+        modifier_categorie->setText(QApplication::translate("MainWindow", "Modifier", nullptr));
+        label_45->setText(QApplication::translate("MainWindow", "nombre de voitures", nullptr));
+        label_46->setText(QApplication::translate("MainWindow", "id categorie", nullptr));
         supprimer_categorie->setText(QApplication::translate("MainWindow", "Supprimer", nullptr));
         trie_categorie->setText(QApplication::translate("MainWindow", "trie selon nombres de voitures", nullptr));
-        pushButton_4->setText(QApplication::translate("MainWindow", "log out", nullptr));
-        modifier_categorie->setText(QApplication::translate("MainWindow", "Modifier", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_3), QApplication::translate("MainWindow", "categorie", nullptr));
+        label_47->setText(QApplication::translate("MainWindow", "type", nullptr));
+        pushButton_6->setText(QApplication::translate("MainWindow", "log out", nullptr));
+        voituree->setText(QApplication::translate("MainWindow", "voiture", nullptr));
+        categoriee->setText(QApplication::translate("MainWindow", "categorie", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(categorie), QApplication::translate("MainWindow", "categorie", nullptr));
         pushButton_11->setText(QApplication::translate("MainWindow", "client", nullptr));
         pushButton_10->setText(QApplication::translate("MainWindow", "fid\303\251lit\303\251", nullptr));

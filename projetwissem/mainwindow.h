@@ -42,6 +42,12 @@ private slots:
         void on_supprimer_clicked();
         void on_modifier_clicked();
         void on_trie_clicked();
+        void on_stat_clicked();
+        void on_voituree_clicked();
+        void on_categoriee_clicked();
+
+        void on_imprimerr_clicked();
+
 
         void on_ajouter_categorie_clicked();
         void on_supprimer_categorie_clicked();
@@ -72,6 +78,7 @@ private:
     client tmpclient;
     voiture tmpvoiture;
         categorie tmpcategorie;
+        MainWindow *ch;
 };
 
 #endif // MAINWINDOW_H
