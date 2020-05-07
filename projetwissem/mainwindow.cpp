@@ -31,6 +31,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
      ui->tabfidelite->setModel(tmpfid.afficher());//refresh
      ui->cinf->setModel(tmpfid.setcombobox());//refresh
+     QFile File("C:\\Users\\wissem\\Desktop\\project\\projet_qt\\projetwissem\\style.css");
+      File.open(QFile::ReadOnly);
+      QString StyleSheet = QLatin1String(File.readAll());
+     this->setStyleSheet(StyleSheet);
 
 
 
@@ -772,4 +776,43 @@ void MainWindow::on_modifierclient_clicked()
     ui->lineEditcin->setEnabled(1);
 
     ui->tabclient->setModel(tmpclient.afficher());//refresh
+}
+
+void MainWindow::on_ajouterfid_clicked()
+{
+    QString email ;
+        QString cin= ui->cinf->currentText();
+        int valeur= ui->valeurfid->text().toInt();
+        QDate dated= ui->dated->date();
+        QDate datef= ui->datef->date();
+    client cl(cin,"","","",0,"");
+        fidelite f(cin,valeur,dated,datef);
+        f.ajouter();
+       email=f.send(cin);
+       Smtp* mtp = new Smtp("testwissem11@gmail.com", "wissem123", "smtp.gmail.com", 465);
+
+                   connect(mtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+                QString corps="Vous avez reçu "+ui->valeurfid->text()+"Dt comme solde de fidélité valable jusqu'a "+datef.toString("yyyy/MM/dd")+"\n merci pour votre confiance";
+               mtp->sendMail("nachts554@gmail.com", email , "Solde fidélité" ,corps);
+        ui->tabfidelite->setModel(tmpfid.afficher());//refresh
+        ui->cinf->setModel(tmpfid.setcombobox());//refresh
+}
+
+void MainWindow::on_checkBox_clicked()
+{
+    if (ui->checkBox->isChecked())
+    {
+        QFile File("C:\\Users\\wissem\\Desktop\\project\\projet_qt\\projetwissem\\sombre.css");
+         File.open(QFile::ReadOnly);
+         QString StyleSheet = QLatin1String(File.readAll());
+        this->setStyleSheet(StyleSheet);
+    }
+    else
+    {
+        QFile File("C:\\Users\\wissem\\Desktop\\project\\projet_qt\\projetwissem\\style.css");
+         File.open(QFile::ReadOnly);
+         QString StyleSheet = QLatin1String(File.readAll());
+        this->setStyleSheet(StyleSheet);
+
+    }
 }
