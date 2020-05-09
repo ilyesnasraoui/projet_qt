@@ -33,7 +33,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="acceuil">
      <attribute name="title">
@@ -1116,13 +1116,7 @@ font-size: 22px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">
-
-
-
-
-
-</string>
+         <string notr="true"/>
         </property>
         <item>
          <property name="text">
@@ -1503,11 +1497,7 @@ height:100%;
            <item>
             <widget class="QComboBox" name="cinf">
              <property name="styleSheet">
-              <string notr="true">
-
-
-
-</string>
+              <string notr="true"/>
              </property>
             </widget>
            </item>
@@ -1565,10 +1555,7 @@ height:100%;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">
-
-
-</string>
+         <string notr="true"/>
         </property>
         <item>
          <property name="text">
