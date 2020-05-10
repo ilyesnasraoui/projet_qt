@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1242</width>
-    <height>653</height>
+    <width>1243</width>
+    <height>651</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,59 +30,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
-     <string notr="true">QTabBar 
-{
-	background-color: transparent;
-}
-
-
-QTabWidget::tab-bar 
-{
-	border:none;
-	left: 0px;
-width:1250px;
-
-}
-
-
-QTabBar::tab 
-{
-	color: #fff;
-	padding-left: 15px; 
-	padding-right: 15px; 
-	height: 25px;
-}
-
-
-QTabWidget::pane 
-{
-	border: 1px solid #3a546e; 
-
-}
-
-
-QTabBar::tab:!selected 
-{
-	color: #b1b1b1; 
-	border: px solid #000;
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(44, 52, 60, 255),stop:1 rgba(15, 20, 26, 255));
-	margin-top: 3px;
-}
-
-
-QTabBar::tab:selected 
-{
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(67, 79, 91, 255),stop:1 rgba(32, 44, 56, 255));
-	border: 1px solid #414141;
-	color: #fff;
-
-}
-
-
-QTabBar::tab:!selected:hover 
-{
-	color: #fff; 
-}</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
      <number>1</number>
@@ -1135,14 +1083,14 @@ font-size: 22px;
         <x>150</x>
         <y>0</y>
         <width>1081</width>
-        <height>541</height>
+        <height>571</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QLabel" name="label_7">
@@ -1168,37 +1116,7 @@ font-size: 22px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QComboBox
-{
-	background-color: #525251;
-	color: #ffffff;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}
-QComboBox::drop-down {
-	subcontrol-origin: padding;
-	subcontrol-position: top right;
-	width: 20px;
- 
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
-}
-QComboBox QAbstractItemView{
-	background-color: #4f4f4f;
-	color: #999999;
- 
-	selection-background-color: #999999;
-	selection-color: #4f4f4f;
-}
-
-
-
-
-
-</string>
+         <string notr="true"/>
         </property>
         <item>
          <property name="text">
@@ -1241,16 +1159,7 @@ QComboBox QAbstractItemView{
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QLineEdit
-{
-	background-color: #525251;
-	color: #ffffff;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string/>
@@ -1262,7 +1171,7 @@ QComboBox QAbstractItemView{
           <x>760</x>
           <y>110</y>
           <width>301</width>
-          <height>271</height>
+          <height>334</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -1317,28 +1226,17 @@ QComboBox QAbstractItemView{
            <item>
             <widget class="QLineEdit" name="lineEditcin">
              <property name="styleSheet">
-              <string notr="true">QLineEdit
-{
-	background-color: #525251;
-	color: #ffffff;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}
-
-
-QLineEdit::disabled
-{
-	background-color: #404040;
-	color: #656565;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}</string>
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelcin">
+             <property name="styleSheet">
+              <string notr="true">color:#C21807;</string>
              </property>
              <property name="text">
               <string/>
@@ -1351,151 +1249,85 @@ QLineEdit::disabled
               <bool>true</bool>
              </property>
              <property name="styleSheet">
-              <string notr="true">QLineEdit
-{
-	background-color: #525251;
-	color: #ffffff;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}
-
-
-QLineEdit::disabled
-{
-	background-color: #404040;
-	color: #656565;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}
-
-QLineEdit::disabled
-{
-	background-color: #404040;
-	color: #656565;
-	border-width: 1px;
-	border-radius: 3px;
-	border-color: #051a39;
-	padding: 2px;
-
-}</string>
+              <string notr="true"/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelprenom">
+             <property name="styleSheet">
+              <string notr="true">color:#C21807;</string>
+             </property>
+             <property name="text">
+              <string/>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLineEdit" name="lineEditprenom">
              <property name="styleSheet">
-              <string notr="true">QLineEdit
-{
-	background-color: #525251;
-	color: #ffffff;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}
-
-
-QLineEdit::disabled
-{
-	background-color: #404040;
-	color: #656565;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}</string>
+              <string notr="true"/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelnom">
+             <property name="styleSheet">
+              <string notr="true">color:#C21807;</string>
+             </property>
+             <property name="text">
+              <string/>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLineEdit" name="lineEdittel">
              <property name="styleSheet">
-              <string notr="true">QLineEdit
-{
-	background-color: #525251;
-	color: #ffffff;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}
-
-
-QLineEdit::disabled
-{
-	background-color: #404040;
-	color: #656565;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}</string>
+              <string notr="true"/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labeltel">
+             <property name="styleSheet">
+              <string notr="true">color:#C21807;</string>
+             </property>
+             <property name="text">
+              <string/>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLineEdit" name="lineEditage">
              <property name="styleSheet">
-              <string notr="true">QLineEdit
-{
-	background-color: #525251;
-	color: #ffffff;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}
-
-
-QLineEdit::disabled
-{
-	background-color: #404040;
-	color: #656565;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}</string>
+              <string notr="true"/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelage">
+             <property name="styleSheet">
+              <string notr="true">color:#C21807;</string>
+             </property>
+             <property name="text">
+              <string/>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLineEdit" name="lineEditemail">
              <property name="styleSheet">
-              <string notr="true">QLineEdit
-{
-	background-color: #525251;
-	color: #ffffff;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}
-
-
-QLineEdit::disabled
-{
-	background-color: #404040;
-	color: #656565;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}</string>
+              <string notr="true"/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelemail">
+             <property name="styleSheet">
+              <string notr="true">color:#C21807;</string>
+             </property>
+             <property name="text">
+              <string/>
              </property>
             </widget>
            </item>
@@ -1513,56 +1345,7 @@ QLineEdit::disabled
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QWidget {
-    background-color: #333333;
-    color: #fffff8;
-}
-
-QHeaderView::section {
-    background-color: #646464;
-    padding: 4px;
-    border: 1px solid #fffff8;
-    font-size: 14pt;
-
-
-
-}
-
-QTableWidget {
-    gridline-color: #fffff8;
-    font-size: 12pt;
-
-
-}
-
-QTableWidget QTableCornerButton::section {
-    background-color: #646464;
-    border: 1px solid #fffff8;
-}
-
-QHeaderView::section {
-    background-color: #646464;
-    padding: 4px;
-    font-size: 10pt;
-    border-style: none;
-    border-bottom: 1px solid #fffff8;
-    border-right: 1px solid #fffff8;
-}
-
-QHeaderView::section:horizontal
-{
-    border-top: 1px solid #fffff8;
-
-
-}
-
-QHeaderView::section:vertical
-{
-
-    border-left: 1px solid #fffff8;
-height:100%;
- 
-}</string>
+         <string notr="true"/>
         </property>
        </widget>
        <widget class="QLabel" name="label_23">
@@ -1581,67 +1364,14 @@ height:100%;
        <widget class="QPushButton" name="supprimerclient">
         <property name="geometry">
          <rect>
-          <x>860</x>
-          <y>450</y>
+          <x>870</x>
+          <y>500</y>
           <width>93</width>
           <height>28</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(84, 84, 84, 255),stop:1 rgba(59, 59, 59, 255));
-	color: #ffffff;
-	min-width: 80px;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 7px;
-	border-color: #051a39;
-	padding: 5px;
-
-}
-
-
-QPushButton::flat
-{
-	background-color: transparent;
-	border: none;
-	color: #fff;
-
-}
-
-
-QPushButton::disabled
-{
-	background-color: #404040;
-	color: #656565;
-	border-color: #051a39;
-
-}
-
-
-QPushButton::hover
-{
-	background-color: rgba(183, 134, 32, 20%);
-	border: 1px solid #b78620;
-
-}
-
-
-QPushButton::pressed
-{
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
-	border: 1px solid #b78620;
-
-}
-
-
-QPushButton::checked
-{
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
-	border: 1px solid #222;
-
-}</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string>supprimer</string>
@@ -1650,68 +1380,14 @@ QPushButton::checked
        <widget class="QPushButton" name="ajouterclient">
         <property name="geometry">
          <rect>
-          <x>780</x>
-          <y>400</y>
+          <x>790</x>
+          <y>450</y>
           <width>93</width>
           <height>28</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(84, 84, 84, 255),stop:1 rgba(59, 59, 59, 255));
-	color: #ffffff;
-	min-width: 80px;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 7px;
-	border-color: #051a39;
-	padding: 5px;
-
-}
-
-
-QPushButton::flat
-{
-	background-color: transparent;
-	border: none;
-	color: #fff;
-
-}
-
-
-QPushButton::disabled
-{
-	background-color: #404040;
-	color: #656565;
-	border-color: #051a39;
-
-}
-
-
-QPushButton::hover
-{
-	background-color: rgba(183, 134, 32, 20%);
-	border: 1px solid #b78620;
-
-}
-
-
-QPushButton::pressed
-{
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
-	border: 1px solid #b78620;
-
-}
-
-
-QPushButton::checked
-{
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
-	border: 1px solid #222;
-
-}
-</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string>ajouter</string>
@@ -1720,67 +1396,14 @@ QPushButton::checked
        <widget class="QPushButton" name="modifierclient">
         <property name="geometry">
          <rect>
-          <x>940</x>
-          <y>400</y>
+          <x>950</x>
+          <y>450</y>
           <width>93</width>
           <height>28</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(84, 84, 84, 255),stop:1 rgba(59, 59, 59, 255));
-	color: #ffffff;
-	min-width: 80px;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 7px;
-	border-color: #051a39;
-	padding: 5px;
-
-}
-
-
-QPushButton::flat
-{
-	background-color: transparent;
-	border: none;
-	color: #fff;
-
-}
-
-
-QPushButton::disabled
-{
-	background-color: #404040;
-	color: #656565;
-	border-color: #051a39;
-
-}
-
-
-QPushButton::hover
-{
-	background-color: rgba(183, 134, 32, 20%);
-	border: 1px solid #b78620;
-
-}
-
-
-QPushButton::pressed
-{
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
-	border: 1px solid #b78620;
-
-}
-
-
-QPushButton::checked
-{
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
-	border: 1px solid #222;
-
-}</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string>modifier</string>
@@ -1792,7 +1415,7 @@ QPushButton::checked
           <x>750</x>
           <y>90</y>
           <width>331</width>
-          <height>411</height>
+          <height>451</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -1829,10 +1452,7 @@ border-style: solid ;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QWidget {
-    background-color: #333333;
-    color: #fffff8;
-}
+         <string notr="true">
 
 QHeaderView::section {
     background-color: #646464;
@@ -1930,71 +1550,28 @@ height:100%;
               <bool>false</bool>
              </property>
              <property name="styleSheet">
-              <string notr="true">
-
-
-QLineEdit::disabled
-{
-	background-color: #404040;
-	color: #656565;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}</string>
+              <string notr="true"/>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QComboBox" name="cinf">
              <property name="styleSheet">
-              <string notr="true">QComboBox
-{
-	background-color: #525251;
-	color: #ffffff;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}
-
-
-
-</string>
+              <string notr="true"/>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLineEdit" name="valeurfid">
              <property name="styleSheet">
-              <string notr="true">QLineEdit
-{
-	background-color: #404040;
-	color: #656565;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}</string>
+              <string notr="true"/>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QDateEdit" name="dated">
              <property name="styleSheet">
-              <string notr="true">QDateEdit
-{
-	background-color: #404040;
-	color: #656565;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}</string>
+              <string notr="true"/>
              </property>
              <property name="calendarPopup">
               <bool>true</bool>
@@ -2004,16 +1581,7 @@ QLineEdit::disabled
            <item>
             <widget class="QDateEdit" name="datef">
              <property name="styleSheet">
-              <string notr="true">QDateEdit
-{
-	background-color: #404040;
-	color: #656565;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}</string>
+              <string notr="true"/>
              </property>
              <property name="calendarPopup">
               <bool>true</bool>
@@ -2023,23 +1591,6 @@ QLineEdit::disabled
           </layout>
          </item>
         </layout>
-       </widget>
-       <widget class="QCommandLinkButton" name="commandLinkButton_4">
-        <property name="geometry">
-         <rect>
-          <x>750</x>
-          <y>390</y>
-          <width>141</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">selection-color: rgb(255, 255, 255);
-background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>Ajouter fid</string>
-        </property>
        </widget>
        <widget class="QLabel" name="label_32">
         <property name="geometry">
@@ -2064,29 +1615,7 @@ background-color: rgb(255, 255, 255);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QComboBox
-{
-	background-color: #525251;
-	color: #ffffff;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}
-
-QComboBox::drop-down {
-	subcontrol-origin: padding;
-	subcontrol-position: top right;
-	width: 20px;
- 
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
-}
-
-
-
-</string>
+         <string notr="true"/>
         </property>
         <item>
          <property name="text">
@@ -2142,28 +1671,7 @@ QComboBox::drop-down {
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QLineEdit
-{
-	background-color: #525251;
-	color: #ffffff;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}
-
-
-QLineEdit::disabled
-{
-	background-color: #404040;
-	color: #656565;
-	border-width: 1px;
-	border-radius: 9px;
-	border-color: #051a39;
-	padding: 2px;
-
-}</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string/>
@@ -2185,9 +1693,9 @@ QLineEdit::disabled
        <widget class="QLabel" name="label_15">
         <property name="geometry">
          <rect>
-          <x>750</x>
+          <x>740</x>
           <y>80</y>
-          <width>331</width>
+          <width>341</width>
           <height>411</height>
          </rect>
         </property>
@@ -2203,15 +1711,45 @@ border-style: solid ;</string>
          <string/>
         </property>
        </widget>
+       <widget class="QPushButton" name="ajouterfid">
+        <property name="geometry">
+         <rect>
+          <x>770</x>
+          <y>400</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>ajouter</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox">
+        <property name="geometry">
+         <rect>
+          <x>920</x>
+          <y>30</y>
+          <width>111</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>mode sombre</string>
+        </property>
+       </widget>
        <zorder>label_15</zorder>
        <zorder>tabfidelite</zorder>
        <zorder>horizontalLayoutWidget_2</zorder>
-       <zorder>commandLinkButton_4</zorder>
        <zorder>label_32</zorder>
        <zorder>comboBoxf</zorder>
        <zorder>label_14</zorder>
        <zorder>lineEditrecherchef</zorder>
        <zorder>commandLinkButton_5</zorder>
+       <zorder>ajouterfid</zorder>
+       <zorder>checkBox</zorder>
       </widget>
      </widget>
     </widget>
@@ -2242,18 +1780,10 @@ border-style: solid ;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1242</width>
+     <width>1243</width>
      <height>26</height>
     </rect>
    </property>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>

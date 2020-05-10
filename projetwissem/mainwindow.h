@@ -71,6 +71,10 @@ private slots:
 
         void on_modifierclient_clicked();
 
+        void on_ajouterfid_clicked();
+
+        void on_checkBox_clicked();
+
 private:
     Ui::MainWindow *ui;
     fidelite tmpfid ;
