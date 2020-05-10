@@ -33,7 +33,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="acceuil">
      <attribute name="title">
@@ -1083,14 +1083,14 @@ font-size: 22px;
         <x>150</x>
         <y>0</y>
         <width>1081</width>
-        <height>541</height>
+        <height>571</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QLabel" name="label_7">
@@ -1171,7 +1171,7 @@ font-size: 22px;
           <x>760</x>
           <y>110</y>
           <width>301</width>
-          <height>271</height>
+          <height>334</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -1234,12 +1234,32 @@ font-size: 22px;
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="labelcin">
+             <property name="styleSheet">
+              <string notr="true">color:#C21807;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLineEdit" name="lineEditnom">
              <property name="enabled">
               <bool>true</bool>
              </property>
              <property name="styleSheet">
               <string notr="true"/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelprenom">
+             <property name="styleSheet">
+              <string notr="true">color:#C21807;</string>
+             </property>
+             <property name="text">
+              <string/>
              </property>
             </widget>
            </item>
@@ -1251,9 +1271,29 @@ font-size: 22px;
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="labelnom">
+             <property name="styleSheet">
+              <string notr="true">color:#C21807;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLineEdit" name="lineEdittel">
              <property name="styleSheet">
               <string notr="true"/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labeltel">
+             <property name="styleSheet">
+              <string notr="true">color:#C21807;</string>
+             </property>
+             <property name="text">
+              <string/>
              </property>
             </widget>
            </item>
@@ -1265,9 +1305,29 @@ font-size: 22px;
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="labelage">
+             <property name="styleSheet">
+              <string notr="true">color:#C21807;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLineEdit" name="lineEditemail">
              <property name="styleSheet">
               <string notr="true"/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelemail">
+             <property name="styleSheet">
+              <string notr="true">color:#C21807;</string>
+             </property>
+             <property name="text">
+              <string/>
              </property>
             </widget>
            </item>
@@ -1304,8 +1364,8 @@ font-size: 22px;
        <widget class="QPushButton" name="supprimerclient">
         <property name="geometry">
          <rect>
-          <x>860</x>
-          <y>450</y>
+          <x>870</x>
+          <y>500</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -1320,8 +1380,8 @@ font-size: 22px;
        <widget class="QPushButton" name="ajouterclient">
         <property name="geometry">
          <rect>
-          <x>780</x>
-          <y>400</y>
+          <x>790</x>
+          <y>450</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -1336,8 +1396,8 @@ font-size: 22px;
        <widget class="QPushButton" name="modifierclient">
         <property name="geometry">
          <rect>
-          <x>940</x>
-          <y>400</y>
+          <x>950</x>
+          <y>450</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -1355,7 +1415,7 @@ font-size: 22px;
           <x>750</x>
           <y>90</y>
           <width>331</width>
-          <height>411</height>
+          <height>451</height>
          </rect>
         </property>
         <property name="styleSheet">

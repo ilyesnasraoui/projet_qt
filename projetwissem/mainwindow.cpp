@@ -679,43 +679,59 @@ client cl(cin,nom,prenom,tel,age,email) ;
     if ((cin[i]<"0")||(cin[i]>"9"))
      verif=1; int err=0;
     if ((verif==1)||(cin.length()!=8))
-        {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
-                       QObject::tr("Num de Cin invalide il faut qu'il: \n-comporte seulement des chiffres \n -comporte exactement 8 chiffres "
-                                   ), QMessageBox::Cancel);
+        {
+                       ui->labelcin->setText("Num de Cin invalide");
+
         err++ ;
      }
+    else{
+        ui->labelcin->setText("");
+
+    }
     //-----------------------------------------------------------//
     verif=0;
      for (int i=0;i<tel.length();i++)
       if ((tel[i]<"0")||(tel[i]>"9"))
        verif=1;
       if ((verif==1)||(tel.length()!=8))
-          {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
-                         QObject::tr("Num de Tel invalide il faut qu'il: \n-comporte seulement des chiffres \n -comporte exactement 8 chiffres "
-                                     ), QMessageBox::Cancel);
+          {
+                         ui->labeltel->setText("Num de Tel invalide ");
+
           err++ ;
        }
+      else
+      {
+           ui->labeltel->setText("");
+      }
       //-----------------------------------------------------------//
       verif=0;
        for (int i=0;i<agea.length();i++)
         if ((agea[i]<"0")||(agea[i]>"9"))
          verif=1;
         if (verif==1)
-            {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
-                           QObject::tr("age invalide il faut qu'il: \n-comporte seulement des chiffres \n -soit positif "
-                                       ), QMessageBox::Cancel);
+            {
+                           ui->labelage->setText("age invalide ");
+
             err++ ;
          }
+        else {
+            ui->labelage->setText("age invalide ");
+
+        }
+            //-----------------------------------------------------------//
      verif=0;
      for(int i=0;i<nom.length();i++)
          if (((nom[i]<"a")||(nom[i]>"z"))&&((nom[i]<"A")||(nom[i]>"Z"))&&(nom[i]!=" "))
              verif=1;
 
     if ((verif==1)||(nom.length()<3)||(nom.length()>20)||(nom[0]==" ")||(nom[nom.length()]==" "))
-       { {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
-                       QObject::tr("prenom invalide if faut qu'il: \n -comporte seulement des lettres alphabétiques ou des espaces \n-longueur comprise entre 3 et 20"
-                                   ), QMessageBox::Cancel); }
+       {
+                       ui->labelprenom->setText("prenom invalide");
     err++ ;
+    }
+    else {
+        ui->labelprenom->setText("");
+
     }
     //-----------------------------------------------------------//
     verif=0;
@@ -723,12 +739,15 @@ client cl(cin,nom,prenom,tel,age,email) ;
         if (((prenom[i]<"a")||(prenom[i]>"z"))&&((prenom[i]<"A")||(prenom[i]>"Z"))&&(prenom[i]!=" "))
             verif=1;
 
-   if ((verif==1)||(prenom.length()<3)||(prenom.length()>20)||(prenom[0]==" ")||(prenom[prenom.length()]==" "))
-      { {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
-                      QObject::tr("nom invalide if faut qu'il: \n -comporte seulement des lettres alphabétiques ou des espaces \n-longueur comprise entre 3 et 20"
-                                  ), QMessageBox::Cancel); }
-   err++ ;
-   }
+    if ((verif==1)||(prenom.length()<3)||(prenom.length()>20)||(prenom[0]==" ")||(prenom[prenom.length()]==" "))
+       {
+                       ui->labelnom->setText("nom invalide");
+    err++ ;
+    }
+    else {
+        ui->labelnom->setText("");
+
+    }
    //-----------------------------------------------------------//
       if (err==0)
         {bool test=cl.ajouter();
