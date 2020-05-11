@@ -7,6 +7,8 @@
 #include<fidelite.h>
 #include "reclamation.h"
 #include "contrat.h"
+#include "promotion.h"
+#include "evenement.h"
 namespace Ui {
 class MainWindow;
 }
@@ -92,6 +94,34 @@ private slots:
 
         void on_ajouter_2_clicked();
 
+        void on_pushButton_14_clicked();
+
+        void on_pushButton_15_clicked();
+
+        void on_pb_ajouterE_clicked();
+
+        void on_pb_modifierE_clicked();
+
+        void on_pb_supprimerE_clicked();
+
+        void on_comboBoxE_2_currentIndexChanged(int index);
+
+        void on_pb_rechercherE_clicked();
+
+        void on_pb_count_clicked();
+
+        void on_pb_ajouterP_clicked();
+
+        void on_pb_supprimer_clicked();
+
+        void on_pb_modifierP_clicked();
+
+        void on_comboBoxP_currentIndexChanged(int index);
+
+        void on_pb_rechercherP_clicked();
+
+        void on_tabpromotion_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     fidelite tmpfid ;
@@ -100,6 +130,8 @@ private:
     client tmpclient;
     voiture tmpvoiture;
         categorie tmpcategorie;
+        promotion tmppromotion;
+        evenement tmpevenement;
         MainWindow *ch;
 };
 

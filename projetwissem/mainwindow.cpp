@@ -27,11 +27,14 @@ MainWindow::MainWindow(QWidget *parent) :
      ui->tabclient->setModel(tmpclient.afficher());//refresh
      ui->dated->setDate(QDate::currentDate()); //teb3a wissem
      ui->datef->setDate(QDate::currentDate()); //teb3a wissem
+     ui->cincontrat->setModel(tmpfid.setcombobox());//refresh
 
+    ui->tabevenement->setModel(tmpevenement.afficherE());
+    ui->tabpromotion->setModel(tmppromotion.afficherP());
      ui->tabfidelite->setModel(tmpfid.afficher());//refresh
      ui->cinf->setModel(tmpfid.setcombobox());//refresh
      ui->comboBox_2->setModel(tmpreclamation.setcombobox());//refresh
-     ui->cincontrat->setModel(tmpfid.setcombobox());//refresh
+
 
      QFile File("C:\\Users\\wissem\\Desktop\\project\\projet_qt\\projetwissem\\style.css");
       File.open(QFile::ReadOnly);
@@ -938,4 +941,226 @@ void MainWindow::on_ajouter_2_clicked()
 {
 
 
+}
+
+void MainWindow::on_pushButton_14_clicked()
+{
+    ui->stackedWidgetM->setCurrentIndex(0);
+
+}
+
+void MainWindow::on_pushButton_15_clicked()
+{
+    ui->stackedWidgetM->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_pb_ajouterE_clicked()
+{
+    int idE = ui->lineEdit_idE->text().toInt();
+    QString typeEvent= ui->comboBoxE->currentText();
+    QString desc= ui->description->text();
+    QString date_event=ui->dateEdit_event->date().toString("dd/MM/yyyy");
+
+  evenement e(idE,typeEvent, desc, date_event);
+
+
+    int verif=0;
+
+      if ((idE<0)||(idE>100000))
+       verif=1; int err=0;
+      if (verif==1)
+          {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
+                         QObject::tr("id invalide il faut qu'il comporte 5 chiffre et qu'il soit positive "
+                                     ), QMessageBox::Cancel);
+          err++ ;
+       }
+
+
+    // ******************************************************************* //
+   if (err==0)
+           {bool test=e.ajouterE();
+           if (!(test))
+           {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
+                              QObject::tr("id existant \n"), QMessageBox::Cancel);}
+           else
+           {QMessageBox::critical(nullptr, QObject::tr("promotion ajouté"),
+                                  QObject::tr("promotion ajouté\n"), QMessageBox::Cancel);
+           }
+               ui->tabevenement->setModel(tmpevenement.afficherE());
+         }
+}
+
+void MainWindow::on_pb_modifierE_clicked()
+{
+    int idE = ui->lineEdit_idE->text().toInt();
+    QString typeEvent= ui->comboBoxE->currentText();
+    QString desc= ui->description->text();
+    QString date_event=ui->dateEdit_event->date().toString("dd/MM/yyyy");
+
+ evenement e(idE,typeEvent, desc, date_event);
+
+ bool test=e.modifierE(e);
+
+ if (test)
+ { ui->tabevenement->setModel(tmpevenement.afficherE());//refresh
+ QMessageBox::information(nullptr, QObject::tr("modifier un evenement"),
+                   QObject::tr(" evenement modifié .\n"
+                               "Click Cancel to exit."), QMessageBox::Cancel);
+}
+}
+
+void MainWindow::on_pb_supprimerE_clicked()
+{
+    int idE = ui->lineEdit_idES->text().toInt();
+    bool test=tmpevenement.supprimerE(idE);
+    if(test)
+    {ui->tabevenement->setModel(tmpevenement.afficherE());//refresh
+        QMessageBox::information(nullptr, QObject::tr("Supprimer un evenement"),
+                    QObject::tr("evenement supprimé.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+    }
+    else
+        QMessageBox::critical(nullptr, QObject::tr("Supprimer un evenement"),
+                    QObject::tr("Erreur !.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+}
+
+void MainWindow::on_comboBoxE_2_currentIndexChanged(int index)
+{
+    ui->tabevenement ->setModel(tmpevenement.triE(index));
+}
+
+void MainWindow::on_pb_rechercherE_clicked()
+{
+    QString event= ui->dateEdit_Recherche->date().toString("dd/MM/yyyy");
+       ui->tabevenement->setModel(tmpevenement.rechercherE(event));
+}
+
+void MainWindow::on_pb_count_clicked()
+{
+    ui->tableViewcount->setModel(tmpevenement.countE());
+
+}
+
+void MainWindow::on_pb_ajouterP_clicked()
+{
+    int id = ui->lineEdit_id->text().toInt();
+    QString typeVoiture= ui->typeV->text();
+    int nbVoiture= ui->nbvoiture->value();
+    int pourc= ui->pourc->value();
+    QString dateDebut=ui->dateEdit_debut->date().toString("dd/MM/yyyy");
+     QString dateFin=ui->dateEdit_fin->date().toString("dd/MM/yyyy");
+
+  promotion p(id,nbVoiture, typeVoiture,pourc,dateDebut,dateFin);
+
+//controle de saisie
+  int verif=0;
+
+    if ((id<0)||(id>100000))
+     verif=1; int err=0;
+    if (verif==1)
+        {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
+                       QObject::tr("id invalide il faut qu'il comporte 5 chiffre et qu'il soit positive "
+                                   ), QMessageBox::Cancel);
+        err++ ;
+     }
+
+ // ****************************************************************** //
+    if (pourc == 0)
+     verif=1;
+    if (verif==1)
+        {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
+                       QObject::tr("pourcentage est nul "
+                                   ), QMessageBox::Cancel);
+        err++ ;
+     }
+   // ****************************************************************** //
+
+    QDate DateF = QDate::fromString(dateFin,"dd/MM/yyyy");
+    QDate DateD = QDate::fromString(dateDebut,"dd/MM/yyyy");
+
+    if ((DateD.year()>=DateF.year())&(DateD.month()>=DateF.month())&(DateD.day()>=DateF.day()))
+          verif=1;
+    if (verif==1)
+        {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
+                   QObject::tr("la date de début est sup a a date de fin"
+                               ), QMessageBox::Cancel);
+        err++ ; }
+
+
+
+  // ****************************************************************** //
+    if (err==0)
+           {bool test=p.ajouterP();
+           if (!(test))
+           {QMessageBox::critical(nullptr, QObject::tr("probleme d'ajout"),
+                              QObject::tr("id existant \n"), QMessageBox::Cancel);}
+           else
+           {QMessageBox::critical(nullptr, QObject::tr("promotion ajouté"),
+                                  QObject::tr("promotion ajouté\n"), QMessageBox::Cancel);
+           }
+               ui->tabpromotion->setModel(tmppromotion.afficherP());
+         }
+}
+
+void MainWindow::on_pb_supprimer_clicked()
+{
+    int id = ui->lineEdit_idS->text().toInt();
+    bool test=tmppromotion.supprimerP(id);
+    if(test)
+    {ui->tabpromotion->setModel(tmppromotion.afficherP());//refresh
+        QMessageBox::information(nullptr, QObject::tr("Supprimer un promotion"),
+                    QObject::tr("promotion supprimé.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+    }
+    else
+        QMessageBox::critical(nullptr, QObject::tr("Supprimer un promotion"),
+                    QObject::tr("Erreur !.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+}
+
+void MainWindow::on_pb_modifierP_clicked()
+{
+    int id = ui->lineEdit_id->text().toInt();
+    QString typeVoiture= ui->typeV->text();
+    int nbVoiture= ui->nbvoiture->value();
+    int pourc= ui->pourc->value();
+    QString dateDebut=ui->dateEdit_debut->date().toString("dd/MM/yyyy");
+     QString dateFin=ui->dateEdit_fin->date().toString("dd/MM/yyyy");
+
+ promotion p(id,nbVoiture, typeVoiture,pourc,dateDebut,dateFin);
+
+ bool test=p.modifierP(p);
+
+ if (test)
+ { ui->tabpromotion->setModel(tmppromotion.afficherP());//refresh
+ QMessageBox::information(nullptr, QObject::tr("promotion un client"),
+                   QObject::tr(" promotion modifié .\n"
+                               "Click Cancel to exit."), QMessageBox::Cancel);
+}
+}
+
+void MainWindow::on_comboBoxP_currentIndexChanged(int index)
+{
+    ui->tabpromotion ->setModel(tmppromotion.triP(index));
+}
+
+void MainWindow::on_pb_rechercherP_clicked()
+{
+    QString type = ui->lineEdit_RP->text();
+    ui->tabpromotion->setModel(tmppromotion.rechercherP(type));
+}
+
+void MainWindow::on_tabpromotion_clicked(const QModelIndex &index)
+{
+    ui->lineEdit_id->setText(ui->tabpromotion->model()->data(ui->tabpromotion->model()->index(ui->tabpromotion->currentIndex().row(),0)).toString());
+    ui->typeV->setText(ui->tabpromotion->model()->data(ui->tabpromotion->model()->index(ui->tabpromotion->currentIndex().row(),2)).toString());
+    ui->nbvoiture->setValue(ui->tabpromotion->model()->data(ui->tabpromotion->model()->index(ui->tabpromotion->currentIndex().row(),1)).toInt());
+    ui->pourc->setValue(ui->tabpromotion->model()->data(ui->tabpromotion->model()->index(ui->tabpromotion->currentIndex().row(),4)).toInt());
+    ui->dateEdit_debut->setDate(ui->tabpromotion->model()->data(ui->tabpromotion->model()->index(ui->tabpromotion->currentIndex().row(),5)).toDate());
+    ui->dateEdit_fin->setDate(ui->tabpromotion->model()->data(ui->tabpromotion->model()->index(ui->tabpromotion->currentIndex().row(),6)).toDate());
 }

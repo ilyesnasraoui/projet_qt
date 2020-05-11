@@ -37,7 +37,9 @@ SOURCES += \
     smtp.cpp \
     fidelite.cpp \
     contrat.cpp \
-    reclamation.cpp
+    reclamation.cpp \
+    evenement.cpp \
+    promotion.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -48,7 +50,9 @@ HEADERS += \
     smtp.h \
     fidelite.h \
     contrat.h \
-    reclamation.h
+    reclamation.h \
+    evenement.h \
+    promotion.h
 
 FORMS += \
         mainwindow.ui
