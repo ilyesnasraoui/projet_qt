@@ -7,7 +7,6 @@
 #include <QMessageBox>
 #include<smtp.h>
 
-
 #include <QtCharts/QChartView>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
@@ -24,13 +23,16 @@ MainWindow::MainWindow(QWidget *parent) :
 
 {
     ui->setupUi(this);
-
+    ui->data2->setModel(tmpcontrat.afficher());//refresh
      ui->tabclient->setModel(tmpclient.afficher());//refresh
      ui->dated->setDate(QDate::currentDate()); //teb3a wissem
      ui->datef->setDate(QDate::currentDate()); //teb3a wissem
 
      ui->tabfidelite->setModel(tmpfid.afficher());//refresh
      ui->cinf->setModel(tmpfid.setcombobox());//refresh
+     ui->comboBox_2->setModel(tmpreclamation.setcombobox());//refresh
+     ui->cincontrat->setModel(tmpfid.setcombobox());//refresh
+
      QFile File("C:\\Users\\wissem\\Desktop\\project\\projet_qt\\projetwissem\\style.css");
       File.open(QFile::ReadOnly);
       QString StyleSheet = QLatin1String(File.readAll());
@@ -834,4 +836,106 @@ void MainWindow::on_checkBox_clicked()
         this->setStyleSheet(StyleSheet);
 
     }
+}
+
+void MainWindow::on_AJOUTERC_2_clicked()
+{QString cin= ui->cincontrat->currentText();
+    contrat tmp(cin,ui->DATEDEBUT->date(),ui->DATEFIN->date(),ui->IDC->text().toInt(),ui->MONTANT->text().toInt(),ui->QUOTIENT->text().toInt(),ui->IDV_3->text().toInt(),ui->NUM->text().toInt());
+    if(tmp.ajouter())
+    {
+        QSqlQueryModel * model22= new QSqlQueryModel();
+            model22->setQuery("select * from CONTRAT where REC='0' ");
+            ui->comboBox->clear();
+            for(int c=0;c<model22->rowCount();c++)
+                {
+                    ui->comboBox->addItem(model22->data(model22->index(c,3)).toString());
+                }
+
+        ui->data2->setModel(tmp.afficher());
+        QMessageBox::information(nullptr, QObject::tr("Ajouter un contrat"),
+                          QObject::tr("contrat ajouté.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+    else
+    {
+        QMessageBox::information(nullptr, QObject::tr("Ajouter un contrat"),
+                          QObject::tr("error contrat non ajouté.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+    ui->data2->setModel(tmpcontrat.afficher());//refresh
+}
+
+void MainWindow::on_modifierc_2_clicked()
+{   QString cin= ui->cincontrat->currentText();
+    contrat tmp(cin,ui->DATEDEBUT->date(),ui->DATEFIN->date(),ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),3)).toInt(),ui->MONTANT->text().toInt(),ui->QUOTIENT->text().toInt(),ui->IDV_3->text().toInt(),ui->NUM->text().toInt());
+    if(tmp.modifier())
+    {
+        ui->data2->setModel(tmp.afficher());
+        QMessageBox::information(nullptr, QObject::tr("modifier un contrat"),
+                          QObject::tr("contrat modifié.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+    else
+    {
+        QMessageBox::information(nullptr, QObject::tr("modifier un contrat"),
+                          QObject::tr("error contrat non modifié.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+    ui->data2->setModel(tmpcontrat.afficher());//refresh
+}
+
+void MainWindow::on_data2_clicked(const QModelIndex &index)
+{
+    ui->cincontrat->setCurrentText(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),0)).toString());
+    ui->DATEDEBUT->setDate(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),1)).toDate());
+    ui->DATEFIN->setDate(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),2)).toDate());
+    ui->IDC->setText(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),3)).toString());
+    ui->MONTANT->setText(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),4)).toString());
+    ui->QUOTIENT->setText(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),5)).toString());
+    ui->IDV_3->setText(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),6)).toString());
+    ui->NUM->setText(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),7)).toString());
+}
+
+void MainWindow::on_Supprimerc_2_clicked()
+{
+    contrat tmp;
+    if(tmp.supprimer(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),3)).toInt()))
+    {
+        ui->data2->setModel(tmp.afficher());
+        QMessageBox::information(nullptr, QObject::tr("supprimé une contrat"),
+                          QObject::tr("contrat supprimé.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+    else
+    {
+        QMessageBox::information(nullptr, QObject::tr("supprimé une contrat"),
+                          QObject::tr("error contrat non supprimé.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+       ui->data2->setModel(tmpcontrat.afficher());//refresh
+}
+
+void MainWindow::on_pushButton_12_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+
+}
+
+void MainWindow::on_searchc_textChanged(const QString &arg1)
+{
+
+
+    ui->data2->setModel(tmpcontrat.recherche(ui->searchc->text()));
+}
+
+void MainWindow::on_pushButton_13_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+
+}
+
+void MainWindow::on_ajouter_2_clicked()
+{
+
+
 }

@@ -35,7 +35,9 @@ SOURCES += \
     voiture.cpp \
     categorie.cpp \
     smtp.cpp \
-    fidelite.cpp
+    fidelite.cpp \
+    contrat.cpp \
+    reclamation.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -44,7 +46,9 @@ HEADERS += \
     voiture.h \
     categorie.h \
     smtp.h \
-    fidelite.h
+    fidelite.h \
+    contrat.h \
+    reclamation.h
 
 FORMS += \
         mainwindow.ui

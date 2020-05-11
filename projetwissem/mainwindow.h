@@ -5,7 +5,8 @@
 #include <voiture.h>
 #include <QMainWindow>
 #include<fidelite.h>
-
+#include "reclamation.h"
+#include "contrat.h"
 namespace Ui {
 class MainWindow;
 }
@@ -75,10 +76,27 @@ private slots:
 
         void on_checkBox_clicked();
 
+        void on_AJOUTERC_2_clicked();
+
+        void on_modifierc_2_clicked();
+
+        void on_data2_clicked(const QModelIndex &index);
+
+        void on_Supprimerc_2_clicked();
+
+        void on_pushButton_12_clicked();
+
+        void on_searchc_textChanged(const QString &arg1);
+
+        void on_pushButton_13_clicked();
+
+        void on_ajouter_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     fidelite tmpfid ;
-
+   contrat tmpcontrat ;
+   reclamation tmpreclamation;
     client tmpclient;
     voiture tmpvoiture;
         categorie tmpcategorie;
