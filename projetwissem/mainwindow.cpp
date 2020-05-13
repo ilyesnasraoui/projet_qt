@@ -713,14 +713,14 @@ client cl(cin,nom,prenom,tel,age,email) ;
        for (int i=0;i<agea.length();i++)
         if ((agea[i]<"0")||(agea[i]>"9"))
          verif=1;
-        if (verif==1)
+        if ((verif==1)||(age<18))
             {
                            ui->labelage->setText("age invalide ");
 
             err++ ;
          }
         else {
-            ui->labelage->setText("age invalide ");
+            ui->labelage->setText("");
 
         }
             //-----------------------------------------------------------//
@@ -763,7 +763,7 @@ client cl(cin,nom,prenom,tel,age,email) ;
         {Smtp* smtp = new Smtp("testwissem11@gmail.com", "wissem123", "smtp.gmail.com", 465);
 
             connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
-            QString corps="cher(e) "+nom+" "+prenom+" \n Bienvenue chez smart rent car \n merci pour votre inscription vous avez reçu ___dt comme solde de fidélité suite a votre inscription";
+            QString corps="cher(e) "+nom+" "+prenom+" \n Bienvenue chez smart rent car \n merci pour votre inscription";
 
         smtp->sendMail("nachts554@gmail.com", email , "Bienvenue chez SRC" ,corps);
         ui->lineEditcin->setText("");
@@ -803,14 +803,49 @@ void MainWindow::on_modifierclient_clicked()
 }
 
 void MainWindow::on_ajouterfid_clicked()
-{
+{    int err=0 ;
     QString email ;
         QString cin= ui->cinf->currentText();
         int valeur= ui->valeurfid->text().toInt();
         QDate dated= ui->dated->date();
         QDate datef= ui->datef->date();
+        QDate te ;
     client cl(cin,"","","",0,"");
         fidelite f(cin,valeur,dated,datef);
+        if ((valeur<0)||(ui->valeurfid->text()==""))
+            {
+                           ui->labelvaleur->setText("valeur invalide");
+
+            err++ ;
+         }
+        else{
+            ui->labelvaleur->setText("");
+
+        }
+         if ((dated< QDate::currentDate()))
+             {
+                            ui->labeldated->setText("date invalide");
+
+             err++ ;
+          }
+         else{
+             ui->labeldated->setText("");
+
+         }
+        if ((dated>=datef))
+            {
+                           ui->labeldatef->setText("date invalide");
+
+            err++ ;
+         }
+        else{
+            ui->labeldatef->setText("");
+
+        }
+
+
+        if(err==0)
+        {
         f.ajouter();
        email=f.send(cin);
        Smtp* mtp = new Smtp("testwissem11@gmail.com", "wissem123", "smtp.gmail.com", 465);
@@ -821,6 +856,7 @@ void MainWindow::on_ajouterfid_clicked()
         ui->tabfidelite->setModel(tmpfid.afficher());//refresh
         ui->cinf->setModel(tmpfid.setcombobox());//refresh
 }
+        }
 
 void MainWindow::on_checkBox_clicked()
 {
@@ -1163,4 +1199,70 @@ void MainWindow::on_tabpromotion_clicked(const QModelIndex &index)
     ui->pourc->setValue(ui->tabpromotion->model()->data(ui->tabpromotion->model()->index(ui->tabpromotion->currentIndex().row(),4)).toInt());
     ui->dateEdit_debut->setDate(ui->tabpromotion->model()->data(ui->tabpromotion->model()->index(ui->tabpromotion->currentIndex().row(),5)).toDate());
     ui->dateEdit_fin->setDate(ui->tabpromotion->model()->data(ui->tabpromotion->model()->index(ui->tabpromotion->currentIndex().row(),6)).toDate());
+}
+
+void MainWindow::on_supprimerfid_clicked()
+{
+    fidelite f;
+         QString id= ui->idfid->text();
+         f.supprimer(id);
+         ui->tabfidelite->setModel(tmpfid.afficher());//refresh
+         ui->idfid->setText("");
+         ui->valeurfid->setText("");
+         ui->cinf->setCurrentIndex(0);
+         ui->dated->setDate(QDate::currentDate());
+         ui->datef->setDate(QDate::currentDate());
+}
+
+void MainWindow::on_statsclient_clicked()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+
+        model->setQuery("select * from client where age < 40 ");
+        float age=model->rowCount();
+        model->setQuery("select * from client where age between 40 and 60 ");
+        float agee=model->rowCount();
+        model->setQuery("select * from client where age>60 ");
+        float ageee=model->rowCount();
+
+        float total=age+agee+ageee;
+        QString a=QString("moins de 40 "+QString::number((age*100)/total,'f',2)+"%" );
+        QString b=QString("entre 40 et 60 "+QString::number((agee*100)/total,'f',2)+"%" );
+        QString c=QString("+60ans "+QString::number((ageee*100)/total,'f',2)+"%" );
+        QPieSeries *series = new QPieSeries();
+
+        series->append(a,age);
+        series->append(b,agee);
+         series->append(c,ageee);
+
+QPieSlice *slice = series->slices().at(0);
+ slice->setLabelVisible();
+ slice->setPen(QPen());
+         // Add label, explode and define brush for 2nd slice
+         QPieSlice *slice1 = series->slices().at(1);
+         //slice1->setExploded();
+         slice1->setLabelVisible();
+
+
+         // Add labels to rest of slices
+         QPieSlice *slice2 = series->slices().at(2);
+         //slice1->setExploded();
+         slice2->setLabelVisible();
+
+
+
+        // Create the chart widget
+        QChart *chart = new QChart();
+
+        // Add data to chart with title and hide legend
+        chart->addSeries(series);
+        chart->setTitle("Pourcentage Par age:totale de "+ QString::number(total));
+        chart->legend()->hide();
+
+
+        // Used to display the chart
+        QChartView *chartView = new QChartView(chart);
+        chartView->setRenderHint(QPainter::Antialiasing);
+        chartView->resize(1000,500);
+        chartView->show();
 }

@@ -122,6 +122,10 @@ private slots:
 
         void on_tabpromotion_clicked(const QModelIndex &index);
 
+        void on_supprimerfid_clicked();
+
+        void on_statsclient_clicked();
+
 private:
     Ui::MainWindow *ui;
     fidelite tmpfid ;
