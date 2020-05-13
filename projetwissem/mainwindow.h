@@ -126,6 +126,20 @@ private slots:
 
         void on_statsclient_clicked();
 
+        void on_supprimer_2_clicked();
+
+        void on_modifier_2_clicked();
+
+        void on_data_clicked(const QModelIndex &index);
+
+        void on_tribox_currentTextChanged(const QString &arg1);
+
+        void on_search_textChanged(const QString &arg1);
+
+        void on_pushButton_2_clicked();
+
+        void on_modifierfid_clicked();
+
 private:
     Ui::MainWindow *ui;
     fidelite tmpfid ;

@@ -15,7 +15,7 @@
 #include <QtCharts/QBarSet>
 #include <QtCharts/QLegend>
 #include <QtCharts/QBarCategoryAxis>
-
+#include"QSortFilterProxyModel"
 QT_CHARTS_USE_NAMESPACE
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -28,6 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
      ui->dated->setDate(QDate::currentDate()); //teb3a wissem
      ui->datef->setDate(QDate::currentDate()); //teb3a wissem
      ui->cincontrat->setModel(tmpfid.setcombobox());//refresh
+     ui->cinC->setModel(tmpfid.setcombobox());//refresh
+     ui->data->setModel(tmpreclamation.afficher());
 
     ui->tabevenement->setModel(tmpevenement.afficherE());
     ui->tabpromotion->setModel(tmppromotion.afficherP());
@@ -901,6 +903,7 @@ void MainWindow::on_AJOUTERC_2_clicked()
                           QObject::tr("error contrat non ajouté.\n"
                                       "Click Cancel to exit."), QMessageBox::Cancel);
     }
+    ui->comboBox_2->setModel(tmpreclamation.setcombobox());//refresh
     ui->data2->setModel(tmpcontrat.afficher());//refresh
 }
 
@@ -975,7 +978,39 @@ void MainWindow::on_pushButton_13_clicked()
 
 void MainWindow::on_ajouter_2_clicked()
 {
+      QString cin= ui->cincontrat->currentText();
+    reclamation tmp(ui->ID->text().toInt(),ui->DESC->text(),cin,ui->IDV->text().toInt(),ui->CINE->text().toInt());
+    if(tmp.ajouter())
+    {
+        QSqlQuery query;
+        QString bg=ui->comboBox_2->currentText();
+        query.prepare("update CONTRAT set REC='1' where IDC= '"+bg+"' ");
+        query.exec();
+        QSqlQueryModel * model22= new QSqlQueryModel();
+            model22->setQuery("select * from CONTRAT where REC='0' ");
+             ui->comboBox_2->clear();
+            for(int c=0;c<model22->rowCount();c++)
+                {
+                    ui->comboBox_2->addItem(model22->data(model22->index(c,3)).toString());
+                }
+            QSqlQueryModel *model=tmp.afficher();
+             QSortFilterProxyModel *proxy=new QSortFilterProxyModel(this);
+                    proxy->setDynamicSortFilter(true);
+                    proxy->setSourceModel(model);
+                    ui->data->setModel(proxy);
+                    ui->data->setSortingEnabled(true);
 
+       // ui->data->setModel(tmp.afficher());
+        QMessageBox::information(nullptr, QObject::tr("Ajouter une reclamation"),
+                          QObject::tr("reclamation ajouté.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+    else
+    {
+        QMessageBox::information(nullptr, QObject::tr("Ajouter une reclamation"),
+                          QObject::tr("error reclamation non ajouté.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
 
 }
 
@@ -1234,22 +1269,26 @@ void MainWindow::on_statsclient_clicked()
         series->append(a,age);
         series->append(b,agee);
          series->append(c,ageee);
-
-QPieSlice *slice = series->slices().at(0);
+if (age!=0)
+{QPieSlice *slice = series->slices().at(0);
  slice->setLabelVisible();
- slice->setPen(QPen());
+ slice->setPen(QPen());}
+if ( agee!=0)
+{
          // Add label, explode and define brush for 2nd slice
          QPieSlice *slice1 = series->slices().at(1);
          //slice1->setExploded();
          slice1->setLabelVisible();
-
+}
+if(ageee!=0)
+{
 
          // Add labels to rest of slices
          QPieSlice *slice2 = series->slices().at(2);
          //slice1->setExploded();
          slice2->setLabelVisible();
 
-
+}
 
         // Create the chart widget
         QChart *chart = new QChart();
@@ -1265,4 +1304,140 @@ QPieSlice *slice = series->slices().at(0);
         chartView->setRenderHint(QPainter::Antialiasing);
         chartView->resize(1000,500);
         chartView->show();
+}
+
+void MainWindow::on_supprimer_2_clicked()
+{
+    if(tmpreclamation.supprimer(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),0)).toInt()))
+    {
+        QSqlQueryModel *model=tmpreclamation.afficher();
+         QSortFilterProxyModel *proxy=new QSortFilterProxyModel(this);
+                proxy->setDynamicSortFilter(true);
+                proxy->setSourceModel(model);
+                ui->data->setModel(proxy);
+                ui->data->setSortingEnabled(true);
+        QMessageBox::information(nullptr, QObject::tr("supprimé une reclamation"),
+                          QObject::tr("reclamation supprimé.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+    else
+    {
+        QMessageBox::information(nullptr, QObject::tr("Ajouter une reclamation"),
+                          QObject::tr("error reclamation non ajouté.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+}
+
+void MainWindow::on_modifier_2_clicked()
+{  QString cin= ui->cincontrat->currentText();
+    reclamation tmp(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),0)).toInt(),ui->DESC->text(),cin,ui->IDV->text().toInt(),ui->CINE->text().toInt());
+    if(tmp.modifier())
+    {
+        QSqlQueryModel *model=tmp.afficher();
+         QSortFilterProxyModel *proxy=new QSortFilterProxyModel(this);
+                proxy->setDynamicSortFilter(true);
+                proxy->setSourceModel(model);
+                ui->data->setModel(proxy);
+                ui->data->setSortingEnabled(true);
+        QMessageBox::information(nullptr, QObject::tr("Ajouter une reclamation"),
+                          QObject::tr("reclamation ajouté.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+    else
+    {
+        QMessageBox::information(nullptr, QObject::tr("Ajouter une reclamation"),
+                          QObject::tr("error reclamation non ajouté.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+}
+
+void MainWindow::on_data_clicked(const QModelIndex &index)
+{
+    ui->ID->setText(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),0)).toString());
+    ui->DESC->setText(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),1)).toString());
+    ui->cinC->setCurrentText(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),2)).toString());
+    ui->IDV->setText(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),3)).toString());
+    ui->CINE->setText(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),4)).toString());
+
+}
+
+void MainWindow::on_tribox_currentTextChanged(const QString &arg1)
+{
+    QString cls=ui->tribox->currentText();
+    reclamation tmp;
+    ui->data->setModel(tmp.triez(cls));
+}
+
+void MainWindow::on_search_textChanged(const QString &arg1)
+{
+    reclamation tmp;
+
+    QSqlQueryModel *model=tmp.recherche(ui->search->text());
+     QSortFilterProxyModel *proxy=new QSortFilterProxyModel(this);
+            proxy->setDynamicSortFilter(true);
+            proxy->setSourceModel(model);
+            ui->data->setModel(proxy);
+            ui->data->setSortingEnabled(true);
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+
+        model->setQuery("select * from CONTRAT where REC ='1' ");
+        float nonsatisfe=model->rowCount();
+        model->setQuery("select * from CONTRAT where REC ='0' ");
+        float satisfe=model->rowCount();
+
+
+        float total=satisfe+nonsatisfe;
+        QString s=QString("Satisfe"+QString::number((satisfe*100)/total, 'f',2)+"%" );
+        QString ns=QString("Non Satisfe "+QString::number((nonsatisfe*100)/total, 'f',2)+"%" );
+        QPieSeries *series = new QPieSeries();
+
+        series->append(s,satisfe);
+        series->append(ns,nonsatisfe);
+
+        // Add label to 1st slice
+        QPieSlice *slice0 = series->slices().at(0);
+        slice0->setLabelVisible();
+
+        // Add label, explode and define brush for 2nd slice
+        QPieSlice *slice1 = series->slices().at(1);
+        //slice1->setExploded();
+        slice1->setLabelVisible();
+        slice1->setPen(QPen(Qt::darkGreen, 2));
+        slice1->setBrush(Qt::green);
+
+        // Add labels to rest of slices
+
+        // Create the chart widget
+        QChart *chart = new QChart();
+
+        // Add data to chart with title and hide legend
+        chart->addSeries(series);
+        chart->setTitle("Pourcentage Par Service ");
+        chart->legend()->hide();
+
+
+        // Used to display the chart
+        QChartView *chartView = new QChartView(chart);
+        chartView->setRenderHint(QPainter::Antialiasing);
+        chartView->resize(800,500);
+        chartView->show();
+}
+
+void MainWindow::on_modifierfid_clicked()
+{
+    QString cin= ui->cinf->currentText();
+    int valeur= ui->valeurfid->text().toInt();
+    QDate dated= ui->dated->date();
+    QDate datef= ui->datef->date();
+
+
+  fidelite f(cin,valeur,dated,datef);
+
+    bool test=f.modifier(ui->idfid->text());
+    ui->tabfidelite->setModel(tmpfid.afficher());//refresh
+
 }

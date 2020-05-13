@@ -6,7 +6,7 @@ reclamation::reclamation()
 
 }
 
-reclamation::reclamation(int id, QString description, int cinC, int idV, int cinE)
+reclamation::reclamation(int id, QString description, QString cinC, int idV, int cinE)
 {
  this->id=id;
  this->description=description;
@@ -31,8 +31,8 @@ bool reclamation::ajouter()
 QSqlQueryModel * reclamation::setcombobox()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
-    model->setQuery("select idc from contrat");
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("cin"));
+    model->setQuery("select idc from contrat where REC='0'");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("idc"));
     return model ;
 
 }

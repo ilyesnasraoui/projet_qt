@@ -11,7 +11,7 @@ class reclamation
 {
 public:
     reclamation();
-    reclamation(int id,QString description,int cinC,int idV,int cinE);
+    reclamation(int id,QString description,QString cinC,int idV,int cinE);
     bool ajouter();
     bool supprimer(int id);
     bool modifier();
@@ -21,8 +21,8 @@ public:
     QSqlQueryModel * setcombobox();
 
 private:
-    int id,cinC,idV,cinE;
-    QString description;
+    int id,idV,cinE;
+    QString cinC,description;
 };
 
 #endif // RECLAMATION_H
