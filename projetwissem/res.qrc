@@ -1,0 +1,42 @@
+<RCC>
+    <qresource prefix="/">
+        <file>theme_normal/calendrier.png</file>
+        <file>theme_normal/clear.png</file>
+        <file>theme_normal/connected.png</file>
+        <file>theme_normal/deconnexion_icon.png</file>
+        <file>theme_normal/fleche_bas.png</file>
+        <file>theme_normal/fleche_droite.png</file>
+        <file>theme_normal/fleche_gauche.png</file>
+        <file>theme_normal/fleche_haut.png</file>
+        <file>theme_normal/img_cpte.png</file>
+        <file>theme_normal/off.png</file>
+        <file>theme_normal/on.png</file>
+        <file>theme_normal/search.png</file>
+        <file>theme_normal/th_sombre.png</file>
+        <file>theme_normal/user_icon.png</file>
+        <file>theme_sombre/calendrier.png</file>
+        <file>theme_sombre/clear.png</file>
+        <file>theme_sombre/deconnexion_icon.png</file>
+        <file>theme_sombre/fleche_bas.png</file>
+        <file>theme_sombre/fleche_droite.png</file>
+        <file>theme_sombre/fleche_gauche.png</file>
+        <file>theme_sombre/fleche_haut.png</file>
+        <file>theme_sombre/img_cpte.png</file>
+        <file>theme_sombre/line1.png</file>
+        <file>theme_sombre/logo.png</file>
+        <file>theme_sombre/mail_gris.png</file>
+        <file>theme_sombre/opts.png</file>
+        <file>theme_sombre/search.png</file>
+        <file>theme_sombre/stats_gris.png</file>
+        <file>theme_sombre/table_gris.png</file>
+        <file>theme_sombre/ajouter.png</file>
+        <file>theme_sombre/modifier.png</file>
+        <file>theme_sombre/supprimer.png</file>
+        <file>theme_normal/ajouter.png</file>
+        <file>theme_normal/modifier.png</file>
+        <file>theme_normal/supprimer.png</file>
+        <file>smart_logo.png</file>
+        <file>map.qml</file>
+        <file>map_marquer.png</file>
+    </qresource>
+</RCC>
