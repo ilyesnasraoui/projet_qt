@@ -862,21 +862,7 @@ void MainWindow::on_ajouterfid_clicked()
 
 void MainWindow::on_checkBox_clicked()
 {
-    if (ui->checkBox->isChecked())
-    {
-        QFile File("C:\\Users\\wissem\\Desktop\\project\\projet_qt\\projetwissem\\sombre.css");
-         File.open(QFile::ReadOnly);
-         QString StyleSheet = QLatin1String(File.readAll());
-        this->setStyleSheet(StyleSheet);
-    }
-    else
-    {
-        QFile File("C:\\Users\\wissem\\Desktop\\project\\projet_qt\\projetwissem\\style.css");
-         File.open(QFile::ReadOnly);
-         QString StyleSheet = QLatin1String(File.readAll());
-        this->setStyleSheet(StyleSheet);
 
-    }
 }
 
 void MainWindow::on_AJOUTERC_2_clicked()
@@ -1440,4 +1426,49 @@ void MainWindow::on_modifierfid_clicked()
     bool test=f.modifier(ui->idfid->text());
     ui->tabfidelite->setModel(tmpfid.afficher());//refresh
 
+}
+
+void MainWindow::on_checkBox_stateChanged(int arg1)
+{
+    if (ui->checkBox->isChecked())
+    {
+        QFile File("C:\\Users\\wissem\\Desktop\\clone\\project\\projet_qt\\projetwissem\\sombre.css");
+         File.open(QFile::ReadOnly);
+         QString StyleSheet = QLatin1String(File.readAll());
+        this->setStyleSheet(StyleSheet);
+    }
+    else
+    {
+        QFile File("C:\\Users\\wissem\\Desktop\\clone\\project\\projet_qt\\projetwissem\\style.css");
+         File.open(QFile::ReadOnly);
+         QString StyleSheet = QLatin1String(File.readAll());
+        this->setStyleSheet(StyleSheet);
+
+    }
+}
+
+void MainWindow::on_checkBox_2_clicked()
+{
+    if (ui->checkBox_2->isChecked())
+        { ui->checkBox_3->setChecked(true);
+        ui->checkBox->setChecked(true);
+    }
+        else
+        {  ui->checkBox_3->setChecked(false);
+            ui->checkBox->setChecked(false);
+
+        }
+}
+
+void MainWindow::on_checkBox_3_clicked()
+{
+    if (ui->checkBox_3->isChecked())
+        { ui->checkBox_2->setChecked(true);
+        ui->checkBox->setChecked(true);
+    }
+        else
+        {  ui->checkBox_2->setChecked(false);
+            ui->checkBox->setChecked(false);
+
+        }
 }
