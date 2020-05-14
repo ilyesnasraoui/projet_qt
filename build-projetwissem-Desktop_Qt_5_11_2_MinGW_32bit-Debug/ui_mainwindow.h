@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QCommandLinkButton>
 #include <QtWidgets/QDateEdit>
@@ -26,7 +27,6 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -109,11 +109,17 @@ public:
     QLabel *label_27;
     QVBoxLayout *verticalLayout_9;
     QLineEdit *lineEditcin;
+    QLabel *labelcin;
     QLineEdit *lineEditnom;
+    QLabel *labelprenom;
     QLineEdit *lineEditprenom;
+    QLabel *labelnom;
     QLineEdit *lineEdittel;
+    QLabel *labeltel;
     QLineEdit *lineEditage;
+    QLabel *labelage;
     QLineEdit *lineEditemail;
+    QLabel *labelemail;
     QTableView *tabclient;
     QLabel *label_23;
     QPushButton *supprimerclient;
@@ -136,85 +142,33 @@ public:
     QLineEdit *valeurfid;
     QDateEdit *dated;
     QDateEdit *datef;
-    QCommandLinkButton *commandLinkButton_4;
     QLabel *label_32;
     QComboBox *comboBoxf;
     QLabel *label_14;
     QLineEdit *lineEditrecherchef;
     QCommandLinkButton *commandLinkButton_5;
     QLabel *label_15;
+    QPushButton *ajouterfid;
+    QCheckBox *checkBox;
     QWidget *employes;
     QWidget *assurance;
     QWidget *location;
     QWidget *marketing;
     QMenuBar *menuBar;
-    QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1242, 653);
+        MainWindow->resize(1243, 651);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setGeometry(QRect(0, 0, 1441, 781));
         tabWidget->setCursor(QCursor(Qt::PointingHandCursor));
-        tabWidget->setStyleSheet(QLatin1String("QTabBar \n"
-"{\n"
-"	background-color: transparent;\n"
-"}\n"
-"\n"
-"\n"
-"QTabWidget::tab-bar \n"
-"{\n"
-"	border:none;\n"
-"	left: 0px;\n"
-"width:1250px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QTabBar::tab \n"
-"{\n"
-"	color: #fff;\n"
-"	padding-left: 15px; \n"
-"	padding-right: 15px; \n"
-"	height: 25px;\n"
-"}\n"
-"\n"
-"\n"
-"QTabWidget::pane \n"
-"{\n"
-"	border: 1px solid #3a546e; \n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QTabBar::tab:!selected \n"
-"{\n"
-"	color: #b1b1b1; \n"
-"	border: px solid #000;\n"
-"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(44, 52, 60, 255),stop:1 rgba(15, 20, 26, 255));\n"
-"	margin-top: 3px;\n"
-"}\n"
-"\n"
-"\n"
-"QTabBar::tab:selected \n"
-"{\n"
-"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(67, 79, 91, 255),stop:1 rgba(32, 44, 56, 255));\n"
-"	border: 1px solid #414141;\n"
-"	color: #fff;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QTabBar::tab:!selected:hover \n"
-"{\n"
-"	color: #fff; \n"
-"}"));
+        tabWidget->setStyleSheet(QStringLiteral(""));
         acceuil = new QWidget();
         acceuil->setObjectName(QStringLiteral("acceuil"));
         tabWidget->addTab(acceuil, QString());
@@ -741,7 +695,7 @@ public:
 
         stackedWidget = new QStackedWidget(clients);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        stackedWidget->setGeometry(QRect(150, 0, 1081, 541));
+        stackedWidget->setGeometry(QRect(150, 0, 1081, 571));
         stackedWidget->setStyleSheet(QStringLiteral(""));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
@@ -757,53 +711,14 @@ public:
         comboBox->addItem(QString());
         comboBox->setObjectName(QStringLiteral("comboBox"));
         comboBox->setGeometry(QRect(170, 40, 73, 27));
-        comboBox->setStyleSheet(QLatin1String("QComboBox\n"
-"{\n"
-"	background-color: #525251;\n"
-"	color: #ffffff;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}\n"
-"QComboBox::drop-down {\n"
-"	subcontrol-origin: padding;\n"
-"	subcontrol-position: top right;\n"
-"	width: 20px;\n"
-" \n"
-"	border-top-right-radius: 3px;\n"
-"	border-bottom-right-radius: 3px;\n"
-"}\n"
-"QComboBox QAbstractItemView{\n"
-"	background-color: #4f4f4f;\n"
-"	color: #999999;\n"
-" \n"
-"	selection-background-color: #999999;\n"
-"	selection-color: #4f4f4f;\n"
-"}\n"
-"\n"
-"\n"
-"\n"
-"\n"
-"\n"
-""));
+        comboBox->setStyleSheet(QStringLiteral(""));
         lineEditrecherche = new QLineEdit(page);
         lineEditrecherche->setObjectName(QStringLiteral("lineEditrecherche"));
         lineEditrecherche->setGeometry(QRect(470, 40, 252, 27));
-        lineEditrecherche->setStyleSheet(QLatin1String("QLineEdit\n"
-"{\n"
-"	background-color: #525251;\n"
-"	color: #ffffff;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}"));
+        lineEditrecherche->setStyleSheet(QStringLiteral(""));
         horizontalLayoutWidget = new QWidget(page);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(760, 110, 301, 271));
+        horizontalLayoutWidget->setGeometry(QRect(760, 110, 301, 334));
         horizontalLayout_4 = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -850,177 +765,76 @@ public:
         verticalLayout_9->setObjectName(QStringLiteral("verticalLayout_9"));
         lineEditcin = new QLineEdit(horizontalLayoutWidget);
         lineEditcin->setObjectName(QStringLiteral("lineEditcin"));
-        lineEditcin->setStyleSheet(QLatin1String("QLineEdit\n"
-"{\n"
-"	background-color: #525251;\n"
-"	color: #ffffff;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QLineEdit::disabled\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}"));
+        lineEditcin->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_9->addWidget(lineEditcin);
+
+        labelcin = new QLabel(horizontalLayoutWidget);
+        labelcin->setObjectName(QStringLiteral("labelcin"));
+        labelcin->setStyleSheet(QStringLiteral("color:#C21807;"));
+
+        verticalLayout_9->addWidget(labelcin);
 
         lineEditnom = new QLineEdit(horizontalLayoutWidget);
         lineEditnom->setObjectName(QStringLiteral("lineEditnom"));
         lineEditnom->setEnabled(true);
-        lineEditnom->setStyleSheet(QLatin1String("QLineEdit\n"
-"{\n"
-"	background-color: #525251;\n"
-"	color: #ffffff;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QLineEdit::disabled\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}\n"
-"\n"
-"QLineEdit::disabled\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-width: 1px;\n"
-"	border-radius: 3px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}"));
+        lineEditnom->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_9->addWidget(lineEditnom);
 
+        labelprenom = new QLabel(horizontalLayoutWidget);
+        labelprenom->setObjectName(QStringLiteral("labelprenom"));
+        labelprenom->setStyleSheet(QStringLiteral("color:#C21807;"));
+
+        verticalLayout_9->addWidget(labelprenom);
+
         lineEditprenom = new QLineEdit(horizontalLayoutWidget);
         lineEditprenom->setObjectName(QStringLiteral("lineEditprenom"));
-        lineEditprenom->setStyleSheet(QLatin1String("QLineEdit\n"
-"{\n"
-"	background-color: #525251;\n"
-"	color: #ffffff;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QLineEdit::disabled\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}"));
+        lineEditprenom->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_9->addWidget(lineEditprenom);
 
+        labelnom = new QLabel(horizontalLayoutWidget);
+        labelnom->setObjectName(QStringLiteral("labelnom"));
+        labelnom->setStyleSheet(QStringLiteral("color:#C21807;"));
+
+        verticalLayout_9->addWidget(labelnom);
+
         lineEdittel = new QLineEdit(horizontalLayoutWidget);
         lineEdittel->setObjectName(QStringLiteral("lineEdittel"));
-        lineEdittel->setStyleSheet(QLatin1String("QLineEdit\n"
-"{\n"
-"	background-color: #525251;\n"
-"	color: #ffffff;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QLineEdit::disabled\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}"));
+        lineEdittel->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_9->addWidget(lineEdittel);
 
+        labeltel = new QLabel(horizontalLayoutWidget);
+        labeltel->setObjectName(QStringLiteral("labeltel"));
+        labeltel->setStyleSheet(QStringLiteral("color:#C21807;"));
+
+        verticalLayout_9->addWidget(labeltel);
+
         lineEditage = new QLineEdit(horizontalLayoutWidget);
         lineEditage->setObjectName(QStringLiteral("lineEditage"));
-        lineEditage->setStyleSheet(QLatin1String("QLineEdit\n"
-"{\n"
-"	background-color: #525251;\n"
-"	color: #ffffff;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QLineEdit::disabled\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}"));
+        lineEditage->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_9->addWidget(lineEditage);
 
+        labelage = new QLabel(horizontalLayoutWidget);
+        labelage->setObjectName(QStringLiteral("labelage"));
+        labelage->setStyleSheet(QStringLiteral("color:#C21807;"));
+
+        verticalLayout_9->addWidget(labelage);
+
         lineEditemail = new QLineEdit(horizontalLayoutWidget);
         lineEditemail->setObjectName(QStringLiteral("lineEditemail"));
-        lineEditemail->setStyleSheet(QLatin1String("QLineEdit\n"
-"{\n"
-"	background-color: #525251;\n"
-"	color: #ffffff;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QLineEdit::disabled\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}"));
+        lineEditemail->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_9->addWidget(lineEditemail);
+
+        labelemail = new QLabel(horizontalLayoutWidget);
+        labelemail->setObjectName(QStringLiteral("labelemail"));
+        labelemail->setStyleSheet(QStringLiteral("color:#C21807;"));
+
+        verticalLayout_9->addWidget(labelemail);
 
 
         horizontalLayout_4->addLayout(verticalLayout_9);
@@ -1028,237 +842,25 @@ public:
         tabclient = new QTableView(page);
         tabclient->setObjectName(QStringLiteral("tabclient"));
         tabclient->setGeometry(QRect(70, 90, 671, 391));
-        tabclient->setStyleSheet(QLatin1String("QWidget {\n"
-"    background-color: #333333;\n"
-"    color: #fffff8;\n"
-"}\n"
-"\n"
-"QHeaderView::section {\n"
-"    background-color: #646464;\n"
-"    padding: 4px;\n"
-"    border: 1px solid #fffff8;\n"
-"    font-size: 14pt;\n"
-"\n"
-"\n"
-"\n"
-"}\n"
-"\n"
-"QTableWidget {\n"
-"    gridline-color: #fffff8;\n"
-"    font-size: 12pt;\n"
-"\n"
-"\n"
-"}\n"
-"\n"
-"QTableWidget QTableCornerButton::section {\n"
-"    background-color: #646464;\n"
-"    border: 1px solid #fffff8;\n"
-"}\n"
-"\n"
-"QHeaderView::section {\n"
-"    background-color: #646464;\n"
-"    padding: 4px;\n"
-"    font-size: 10pt;\n"
-"    border-style: none;\n"
-"    border-bottom: 1px solid #fffff8;\n"
-"    border-right: 1px solid #fffff8;\n"
-"}\n"
-"\n"
-"QHeaderView::section:horizontal\n"
-"{\n"
-"    border-top: 1px solid #fffff8;\n"
-"\n"
-"\n"
-"}\n"
-"\n"
-"QHeaderView::section:vertical\n"
-"{\n"
-"\n"
-"    border-left: 1px solid #fffff8;\n"
-"height:100%;\n"
-" \n"
-"}"));
+        tabclient->setStyleSheet(QStringLiteral(""));
         label_23 = new QLabel(page);
         label_23->setObjectName(QStringLiteral("label_23"));
         label_23->setGeometry(QRect(90, 30, 71, 48));
         supprimerclient = new QPushButton(page);
         supprimerclient->setObjectName(QStringLiteral("supprimerclient"));
-        supprimerclient->setGeometry(QRect(860, 450, 93, 28));
-        supprimerclient->setStyleSheet(QLatin1String("QPushButton\n"
-"{\n"
-"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(84, 84, 84, 255),stop:1 rgba(59, 59, 59, 255));\n"
-"	color: #ffffff;\n"
-"	min-width: 80px;\n"
-"	border-style: solid;\n"
-"	border-width: 1px;\n"
-"	border-radius: 7px;\n"
-"	border-color: #051a39;\n"
-"	padding: 5px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::flat\n"
-"{\n"
-"	background-color: transparent;\n"
-"	border: none;\n"
-"	color: #fff;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::disabled\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-color: #051a39;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::hover\n"
-"{\n"
-"	background-color: rgba(183, 134, 32, 20%);\n"
-"	border: 1px solid #b78620;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::pressed\n"
-"{\n"
-"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));\n"
-"	border: 1px solid #b78620;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::checked\n"
-"{\n"
-"	background-color: qlineargradient(sprea"
-                        "d:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));\n"
-"	border: 1px solid #222;\n"
-"\n"
-"}"));
+        supprimerclient->setGeometry(QRect(870, 500, 93, 28));
+        supprimerclient->setStyleSheet(QStringLiteral(""));
         ajouterclient = new QPushButton(page);
         ajouterclient->setObjectName(QStringLiteral("ajouterclient"));
-        ajouterclient->setGeometry(QRect(780, 400, 93, 28));
-        ajouterclient->setStyleSheet(QLatin1String("QPushButton\n"
-"{\n"
-"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(84, 84, 84, 255),stop:1 rgba(59, 59, 59, 255));\n"
-"	color: #ffffff;\n"
-"	min-width: 80px;\n"
-"	border-style: solid;\n"
-"	border-width: 1px;\n"
-"	border-radius: 7px;\n"
-"	border-color: #051a39;\n"
-"	padding: 5px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::flat\n"
-"{\n"
-"	background-color: transparent;\n"
-"	border: none;\n"
-"	color: #fff;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::disabled\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-color: #051a39;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::hover\n"
-"{\n"
-"	background-color: rgba(183, 134, 32, 20%);\n"
-"	border: 1px solid #b78620;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::pressed\n"
-"{\n"
-"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));\n"
-"	border: 1px solid #b78620;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::checked\n"
-"{\n"
-"	background-color: qlineargradient(sprea"
-                        "d:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));\n"
-"	border: 1px solid #222;\n"
-"\n"
-"}\n"
-""));
+        ajouterclient->setGeometry(QRect(790, 450, 93, 28));
+        ajouterclient->setStyleSheet(QStringLiteral(""));
         modifierclient = new QPushButton(page);
         modifierclient->setObjectName(QStringLiteral("modifierclient"));
-        modifierclient->setGeometry(QRect(940, 400, 93, 28));
-        modifierclient->setStyleSheet(QLatin1String("QPushButton\n"
-"{\n"
-"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(84, 84, 84, 255),stop:1 rgba(59, 59, 59, 255));\n"
-"	color: #ffffff;\n"
-"	min-width: 80px;\n"
-"	border-style: solid;\n"
-"	border-width: 1px;\n"
-"	border-radius: 7px;\n"
-"	border-color: #051a39;\n"
-"	padding: 5px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::flat\n"
-"{\n"
-"	background-color: transparent;\n"
-"	border: none;\n"
-"	color: #fff;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::disabled\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-color: #051a39;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::hover\n"
-"{\n"
-"	background-color: rgba(183, 134, 32, 20%);\n"
-"	border: 1px solid #b78620;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::pressed\n"
-"{\n"
-"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));\n"
-"	border: 1px solid #b78620;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::checked\n"
-"{\n"
-"	background-color: qlineargradient(sprea"
-                        "d:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));\n"
-"	border: 1px solid #222;\n"
-"\n"
-"}"));
+        modifierclient->setGeometry(QRect(950, 450, 93, 28));
+        modifierclient->setStyleSheet(QStringLiteral(""));
         label_6 = new QLabel(page);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(750, 90, 331, 411));
+        label_6->setGeometry(QRect(750, 90, 331, 451));
         label_6->setStyleSheet(QLatin1String("background-color: transparent;\n"
 "border-radius: 12px;\n"
 "border-color: rgb(255, 175, 14);\n"
@@ -1281,10 +883,7 @@ public:
         tabfidelite = new QTableView(page_2);
         tabfidelite->setObjectName(QStringLiteral("tabfidelite"));
         tabfidelite->setGeometry(QRect(70, 90, 661, 391));
-        tabfidelite->setStyleSheet(QLatin1String("QWidget {\n"
-"    background-color: #333333;\n"
-"    color: #fffff8;\n"
-"}\n"
+        tabfidelite->setStyleSheet(QLatin1String("\n"
 "\n"
 "QHeaderView::section {\n"
 "    background-color: #646464;\n"
@@ -1368,84 +967,32 @@ public:
         idfid = new QLineEdit(horizontalLayoutWidget_2);
         idfid->setObjectName(QStringLiteral("idfid"));
         idfid->setEnabled(false);
-        idfid->setStyleSheet(QLatin1String("\n"
-"\n"
-"\n"
-"QLineEdit::disabled\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}"));
+        idfid->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_11->addWidget(idfid);
 
         cinf = new QComboBox(horizontalLayoutWidget_2);
         cinf->setObjectName(QStringLiteral("cinf"));
-        cinf->setStyleSheet(QLatin1String("QComboBox\n"
-"{\n"
-"	background-color: #525251;\n"
-"	color: #ffffff;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"\n"
-""));
+        cinf->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_11->addWidget(cinf);
 
         valeurfid = new QLineEdit(horizontalLayoutWidget_2);
         valeurfid->setObjectName(QStringLiteral("valeurfid"));
-        valeurfid->setStyleSheet(QLatin1String("QLineEdit\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}"));
+        valeurfid->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_11->addWidget(valeurfid);
 
         dated = new QDateEdit(horizontalLayoutWidget_2);
         dated->setObjectName(QStringLiteral("dated"));
-        dated->setStyleSheet(QLatin1String("QDateEdit\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}"));
+        dated->setStyleSheet(QStringLiteral(""));
         dated->setCalendarPopup(true);
 
         verticalLayout_11->addWidget(dated);
 
         datef = new QDateEdit(horizontalLayoutWidget_2);
         datef->setObjectName(QStringLiteral("datef"));
-        datef->setStyleSheet(QLatin1String("QDateEdit\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}"));
+        datef->setStyleSheet(QStringLiteral(""));
         datef->setCalendarPopup(true);
 
         verticalLayout_11->addWidget(datef);
@@ -1453,11 +1000,6 @@ public:
 
         horizontalLayout_5->addLayout(verticalLayout_11);
 
-        commandLinkButton_4 = new QCommandLinkButton(page_2);
-        commandLinkButton_4->setObjectName(QStringLiteral("commandLinkButton_4"));
-        commandLinkButton_4->setGeometry(QRect(750, 390, 141, 41));
-        commandLinkButton_4->setStyleSheet(QLatin1String("selection-color: rgb(255, 255, 255);\n"
-"background-color: rgb(255, 255, 255);"));
         label_32 = new QLabel(page_2);
         label_32->setObjectName(QStringLiteral("label_32"));
         label_32->setGeometry(QRect(90, 30, 71, 48));
@@ -1470,79 +1012,44 @@ public:
         comboBoxf->addItem(QString());
         comboBoxf->setObjectName(QStringLiteral("comboBoxf"));
         comboBoxf->setGeometry(QRect(170, 40, 73, 27));
-        comboBoxf->setStyleSheet(QLatin1String("QComboBox\n"
-"{\n"
-"	background-color: #525251;\n"
-"	color: #ffffff;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"	subcontrol-origin: padding;\n"
-"	subcontrol-position: top right;\n"
-"	width: 20px;\n"
-" \n"
-"	border-top-right-radius: 3px;\n"
-"	border-bottom-right-radius: 3px;\n"
-"}\n"
-"\n"
-"\n"
-"\n"
-""));
+        comboBoxf->setStyleSheet(QStringLiteral(""));
         label_14 = new QLabel(page_2);
         label_14->setObjectName(QStringLiteral("label_14"));
         label_14->setGeometry(QRect(390, 30, 71, 48));
         lineEditrecherchef = new QLineEdit(page_2);
         lineEditrecherchef->setObjectName(QStringLiteral("lineEditrecherchef"));
         lineEditrecherchef->setGeometry(QRect(470, 40, 252, 27));
-        lineEditrecherchef->setStyleSheet(QLatin1String("QLineEdit\n"
-"{\n"
-"	background-color: #525251;\n"
-"	color: #ffffff;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QLineEdit::disabled\n"
-"{\n"
-"	background-color: #404040;\n"
-"	color: #656565;\n"
-"	border-width: 1px;\n"
-"	border-radius: 9px;\n"
-"	border-color: #051a39;\n"
-"	padding: 2px;\n"
-"\n"
-"}"));
+        lineEditrecherchef->setStyleSheet(QStringLiteral(""));
         commandLinkButton_5 = new QCommandLinkButton(page_2);
         commandLinkButton_5->setObjectName(QStringLiteral("commandLinkButton_5"));
         commandLinkButton_5->setGeometry(QRect(560, 490, 187, 41));
         label_15 = new QLabel(page_2);
         label_15->setObjectName(QStringLiteral("label_15"));
-        label_15->setGeometry(QRect(750, 80, 331, 411));
+        label_15->setGeometry(QRect(740, 80, 341, 411));
         label_15->setStyleSheet(QLatin1String("background-color: transparent;\n"
 "border-radius: 12px;\n"
 "border-color: rgb(255, 175, 14);\n"
 "	padding: 5px;\n"
 "border-width: 3px;\n"
 "border-style: solid ;"));
+        ajouterfid = new QPushButton(page_2);
+        ajouterfid->setObjectName(QStringLiteral("ajouterfid"));
+        ajouterfid->setGeometry(QRect(770, 400, 93, 28));
+        ajouterfid->setStyleSheet(QStringLiteral(""));
+        checkBox = new QCheckBox(page_2);
+        checkBox->setObjectName(QStringLiteral("checkBox"));
+        checkBox->setGeometry(QRect(920, 30, 111, 20));
         stackedWidget->addWidget(page_2);
         label_15->raise();
         tabfidelite->raise();
         horizontalLayoutWidget_2->raise();
-        commandLinkButton_4->raise();
         label_32->raise();
         comboBoxf->raise();
         label_14->raise();
         lineEditrecherchef->raise();
         commandLinkButton_5->raise();
+        ajouterfid->raise();
+        checkBox->raise();
         tabWidget->addTab(clients, QString());
         employes = new QWidget();
         employes->setObjectName(QStringLiteral("employes"));
@@ -1559,18 +1066,15 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1242, 26));
+        menuBar->setGeometry(QRect(0, 0, 1243, 26));
         MainWindow->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(MainWindow);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(2);
         stackedWidget22->setCurrentIndex(0);
         stackedWidget->setCurrentIndex(1);
 
@@ -1636,6 +1140,12 @@ public:
         label_22->setText(QApplication::translate("MainWindow", "age", nullptr));
         label_27->setText(QApplication::translate("MainWindow", "email", nullptr));
         lineEditcin->setText(QString());
+        labelcin->setText(QString());
+        labelprenom->setText(QString());
+        labelnom->setText(QString());
+        labeltel->setText(QString());
+        labelage->setText(QString());
+        labelemail->setText(QString());
         label_23->setText(QApplication::translate("MainWindow", "trier par", nullptr));
         supprimerclient->setText(QApplication::translate("MainWindow", "supprimer", nullptr));
         ajouterclient->setText(QApplication::translate("MainWindow", "ajouter", nullptr));
@@ -1646,7 +1156,6 @@ public:
         label_29->setText(QApplication::translate("MainWindow", "valeur", nullptr));
         label_30->setText(QApplication::translate("MainWindow", "dated", nullptr));
         label_31->setText(QApplication::translate("MainWindow", "datef", nullptr));
-        commandLinkButton_4->setText(QApplication::translate("MainWindow", "Ajouter fid", nullptr));
         label_32->setText(QApplication::translate("MainWindow", "trier par", nullptr));
         comboBoxf->setItemText(0, QApplication::translate("MainWindow", "--", nullptr));
         comboBoxf->setItemText(1, QApplication::translate("MainWindow", "cin", nullptr));
@@ -1659,6 +1168,8 @@ public:
         lineEditrecherchef->setText(QString());
         commandLinkButton_5->setText(QApplication::translate("MainWindow", "supprimer fidelite", nullptr));
         label_15->setText(QString());
+        ajouterfid->setText(QApplication::translate("MainWindow", "ajouter", nullptr));
+        checkBox->setText(QApplication::translate("MainWindow", "mode sombre", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(clients), QApplication::translate("MainWindow", "client", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(employes), QApplication::translate("MainWindow", "employe", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(assurance), QApplication::translate("MainWindow", "assurance", nullptr));
