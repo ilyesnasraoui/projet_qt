@@ -1,0 +1,12 @@
+INPUT(
+./release/main.o
+./release/mainwindow.o
+./release/client.o
+./release/connexion.o
+./release/voiture.o
+./release/categorie.o
+./release/smtp.o
+./release/fidelite.o
+./release/moc_mainwindow.o
+./release/moc_smtp.o
+);

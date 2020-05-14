@@ -26,6 +26,7 @@ public:
        bool modifier();
        QSqlQueryModel * trie ();
        QSqlQueryModel* recherche (QString);
+
 private:
        int idv,idcategorie,nbplaces,anciennete,kilometrage,prixparjour;
            QString marque,matricule,couleur,carburant,etat;

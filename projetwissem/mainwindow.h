@@ -5,6 +5,7 @@
 #include <voiture.h>
 #include <QMainWindow>
 #include<fidelite.h>
+<<<<<<< HEAD
 #include<qsystemtrayicon.h>
 //-------------------------------------------------------
 #include <QDateTime>
@@ -56,6 +57,12 @@ QT_CHARTS_USE_NAMESPACE
 
 
 //-------------------------------------------------------
+=======
+#include "reclamation.h"
+#include "contrat.h"
+#include "promotion.h"
+#include "evenement.h"
+>>>>>>> 0183a64d76fc33bc998f02d43f414fe36e4d02fa
 namespace Ui {
 class MainWindow;
 }
@@ -92,6 +99,12 @@ private slots:
         void on_supprimer_clicked();
         void on_modifier_clicked();
         void on_trie_clicked();
+        void on_stat_clicked();
+        void on_voituree_clicked();
+        void on_categoriee_clicked();
+
+        void on_imprimerr_clicked();
+
 
         void on_ajouter_categorie_clicked();
         void on_supprimer_categorie_clicked();
@@ -115,6 +128,7 @@ private slots:
 
         void on_modifierclient_clicked();
 
+<<<<<<< HEAD
 //---------------------------------------------------------------------------
         void theme_normal();
 
@@ -196,10 +210,84 @@ private slots:
         void on_pb_calendrier_clicked();
 
         void on_calendarWidget_activated(const QDate &date);
+=======
+        void on_ajouterfid_clicked();
+
+        void on_checkBox_clicked();
+
+        void on_AJOUTERC_2_clicked();
+
+        void on_modifierc_2_clicked();
+
+        void on_data2_clicked(const QModelIndex &index);
+
+        void on_Supprimerc_2_clicked();
+
+        void on_pushButton_12_clicked();
+
+        void on_searchc_textChanged(const QString &arg1);
+
+        void on_pushButton_13_clicked();
+
+        void on_ajouter_2_clicked();
+
+        void on_pushButton_14_clicked();
+
+        void on_pushButton_15_clicked();
+
+        void on_pb_ajouterE_clicked();
+
+        void on_pb_modifierE_clicked();
+
+        void on_pb_supprimerE_clicked();
+
+        void on_comboBoxE_2_currentIndexChanged(int index);
+
+        void on_pb_rechercherE_clicked();
+
+        void on_pb_count_clicked();
+
+        void on_pb_ajouterP_clicked();
+
+        void on_pb_supprimer_clicked();
+
+        void on_pb_modifierP_clicked();
+
+        void on_comboBoxP_currentIndexChanged(int index);
+
+        void on_pb_rechercherP_clicked();
+
+        void on_tabpromotion_clicked(const QModelIndex &index);
+
+        void on_supprimerfid_clicked();
+
+        void on_statsclient_clicked();
+
+        void on_supprimer_2_clicked();
+
+        void on_modifier_2_clicked();
+
+        void on_data_clicked(const QModelIndex &index);
+
+        void on_tribox_currentTextChanged(const QString &arg1);
+
+        void on_search_textChanged(const QString &arg1);
+
+        void on_pushButton_2_clicked();
+
+        void on_modifierfid_clicked();
+
+        void on_checkBox_stateChanged(int arg1);
+
+        void on_checkBox_2_clicked();
+
+        void on_checkBox_3_clicked();
+>>>>>>> 0183a64d76fc33bc998f02d43f414fe36e4d02fa
 
 private:
     Ui::MainWindow *ui;
     fidelite tmpfid ;
+<<<<<<< HEAD
     bool theme;
 
     client tmpclient;
@@ -209,6 +297,16 @@ private:
         assurances tmpassurances;
         assureurs tmpassureurs;
         QSystemTrayIcon *mSystemTrayIcon;
+=======
+   contrat tmpcontrat ;
+   reclamation tmpreclamation;
+    client tmpclient;
+    voiture tmpvoiture;
+        categorie tmpcategorie;
+        promotion tmppromotion;
+        evenement tmpevenement;
+        MainWindow *ch;
+>>>>>>> 0183a64d76fc33bc998f02d43f414fe36e4d02fa
 };
 
 #endif // MAINWINDOW_H

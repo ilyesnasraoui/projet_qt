@@ -241,9 +241,12 @@ Makefile: ../projetwissem/projetwissem.pro ../../../../Qt/Qt5.11.2/5.11.2/mingw5
 		../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/mkspecs/features/lex.prf \
 		../projetwissem/projetwissem.pro \
 		../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/qtmaind.prl \
+		../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5PrintSupport.prl \
+		../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5Charts.prl \
 		../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5Widgets.prl \
 		../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5Gui.prl \
 		../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5Sql.prl \
+		../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5Network.prl \
 		../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile ../projetwissem/projetwissem.pro -spec win32-g++ CONFIG+=debug CONFIG+=qml_debug
 ../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/mkspecs/features/spec_pre.prf:
@@ -426,9 +429,12 @@ Makefile: ../projetwissem/projetwissem.pro ../../../../Qt/Qt5.11.2/5.11.2/mingw5
 ../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/mkspecs/features/lex.prf:
 ../projetwissem/projetwissem.pro:
 ../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/qtmaind.prl:
+../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5PrintSupport.prl:
+../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5Charts.prl:
 ../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5Widgets.prl:
 ../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5Gui.prl:
 ../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5Sql.prl:
+../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5Network.prl:
 ../../../../Qt/Qt5.11.2/5.11.2/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../projetwissem/projetwissem.pro -spec win32-g++ CONFIG+=debug CONFIG+=qml_debug

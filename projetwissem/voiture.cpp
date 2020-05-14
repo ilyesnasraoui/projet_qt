@@ -14,7 +14,7 @@ voiture::voiture()
     prixparjour=0;
     etat="";
 }
-voiture::voiture(int idv,QString marque,QString matricule,int idcategorie,int nbplaces,int anciennete,QString carburant,int kilometrage,QString couleur,int prixparjour,QString etat)
+voiture::voiture(int idv,QString marque,QString matricule,int idcategorie,int nbplaces,int anciennete,QString couleur,int kilometrage,QString carburant,int prixparjour,QString etat)
 {
     this->idv=idv;
     this->marque=marque;

@@ -16,7 +16,7 @@ public:
     bool ajouter();
     QString send(QString);
     void supprimer(QString);
-    bool modifier();
+    bool modifier(QString);
 QSqlQueryModel * chercher(QString);
     QSqlQueryModel * afficher();
     QSqlQueryModel * setcombobox();

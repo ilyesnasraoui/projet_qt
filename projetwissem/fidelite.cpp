@@ -14,6 +14,24 @@ fidelite::fidelite(QString cin,int valeur,QDate dated,QDate datef)
     this->dateD=dated;
 }
 
+bool fidelite::modifier(QString id)
+{
+QSqlQuery queryp,queryn,querya,queryt,querye;
+
+
+QString resa= QString::number(value);
+if ( resa !=""){
+queryp.prepare("UPDATE fidelite SET value = :value , dated = :dated , datef= :datef  WHERE id=:id ");
+queryp.bindValue(":cin", cin);
+
+queryp.bindValue(":value", value);
+queryp.bindValue(":dated", dateD);
+queryp.bindValue(":datef", dateF);
+queryp.bindValue(":id", id);
+
+queryp.exec();
+}
+}
 
 
 bool fidelite::ajouter()

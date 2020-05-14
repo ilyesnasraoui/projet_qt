@@ -9,10 +9,15 @@ QT       += core
 QT += qml quick network
 
 QT       += core gui network
+<<<<<<< HEAD
 QT       += core gui sql
 QT       += core gui charts
 QT       +=sql
 QT += charts
+=======
+QT       += core gui printsupport
+QT       += core gui charts
+>>>>>>> 0183a64d76fc33bc998f02d43f414fe36e4d02fa
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -42,7 +47,11 @@ SOURCES += \
     voiture.cpp \
     categorie.cpp \
     smtp.cpp \
-    fidelite.cpp
+    fidelite.cpp \
+    contrat.cpp \
+    reclamation.cpp \
+    evenement.cpp \
+    promotion.cpp
 
 HEADERS += \
     assurances.h \
@@ -53,7 +62,11 @@ HEADERS += \
     voiture.h \
     categorie.h \
     smtp.h \
-    fidelite.h
+    fidelite.h \
+    contrat.h \
+    reclamation.h \
+    evenement.h \
+    promotion.h
 
 FORMS += \
         mainwindow.ui
