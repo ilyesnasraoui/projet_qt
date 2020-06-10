@@ -13,15 +13,17 @@ class contrat
 {
 public:
     contrat();
-    contrat(QString cinc,QDate datedebut,QDate datefin,int idc,int montant,int quotient,int idv,int num);
+    contrat(QString cinc,QDate datedebut,QDate datefin,int montant,int quotient,int idv);
     bool ajouter();
     bool supprimer(int id);
-    bool modifier();
+    bool modifier(int id);
     QSqlQueryModel * afficher();
     QSqlQueryModel * recherche (QString cls);
+    QSqlQueryModel * setcomboboxv();
+
 private:
     QString cinc ;
-    int idc,montant,quotient,idv,num;
+    int montant,quotient,idv;
     QDate datedebut,datefin;
 };
 

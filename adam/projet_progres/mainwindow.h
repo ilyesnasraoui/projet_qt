@@ -179,7 +179,7 @@ private slots:
 
         void on_imprimerr_clicked();
 
-
+        void on_imprimerrilyes_clicked();
         void on_ajouter_categorie_clicked();
         void on_supprimer_categorie_clicked();
         void on_modifier_categorie_clicked();
@@ -308,6 +308,8 @@ private slots:
 
         void on_calendarWidget_clicked(const QDate &date);
         void on_pb_devis_clicked();
+
+        void on_data2_doubleClicked(const QModelIndex &index);
 
 private:
 //--------------------------------------

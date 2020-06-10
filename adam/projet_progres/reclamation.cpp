@@ -18,9 +18,8 @@ reclamation::reclamation(int id, QString description, QString cinC, int idV, int
 bool reclamation::ajouter()
 {
     QSqlQuery query;
-    query.prepare("INSERT INTO reclamation (ID, DESCRIPTION, CINC,IDV,CINE) "
-                        "VALUES (:id, :description, :cinC,:idV,:cinE)");
-    query.bindValue(":id", id);
+    query.prepare("INSERT INTO reclamation ( DESCRIPTION, CINC,IDV,CINE) "
+                        "VALUES ( :description, :cinC,:idV,:cinE)");
     query.bindValue(":description", description);
     query.bindValue(":cinC", cinC);
     query.bindValue(":idV", idV);
@@ -98,3 +97,11 @@ QSqlQueryModel *reclamation::triez(QString cls)
         return model;
 }
 
+QSqlQueryModel * reclamation::setcomboemp_2()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("select cin from EMPLOYEE ");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("idc"));
+    return model ;
+
+}

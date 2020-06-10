@@ -33,7 +33,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="acceuil">
      <attribute name="title">
@@ -1747,29 +1747,6 @@ border-style: solid ;</string>
          <string>Date debut</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="NUM">
-        <property name="geometry">
-         <rect>
-          <x>872</x>
-          <y>330</y>
-          <width>161</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_25">
-        <property name="geometry">
-         <rect>
-          <x>770</x>
-          <y>330</y>
-          <width>91</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Num</string>
-        </property>
-       </widget>
        <widget class="QLineEdit" name="QUOTIENT">
         <property name="geometry">
          <rect>
@@ -1788,19 +1765,6 @@ border-style: solid ;</string>
           <width>161</width>
           <height>22</height>
          </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_26">
-        <property name="geometry">
-         <rect>
-          <x>770</x>
-          <y>210</y>
-          <width>91</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>ID contrat</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_48">
@@ -1884,16 +1848,6 @@ QPushButton::checked
         </property>
         <property name="text">
          <string>modifier</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="IDC">
-        <property name="geometry">
-         <rect>
-          <x>872</x>
-          <y>210</y>
-          <width>161</width>
-          <height>22</height>
-         </rect>
         </property>
        </widget>
        <widget class="QPushButton" name="Supprimerc">
@@ -2075,16 +2029,6 @@ QPushButton::checked
          <string>ajouter</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="IDV_3">
-        <property name="geometry">
-         <rect>
-          <x>872</x>
-          <y>300</y>
-          <width>161</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_50">
         <property name="geometry">
          <rect>
@@ -2242,22 +2186,61 @@ border-style: solid ;</string>
          <string notr="true"/>
         </property>
        </widget>
+       <widget class="QComboBox" name="combov">
+        <property name="geometry">
+         <rect>
+          <x>872</x>
+          <y>300</y>
+          <width>161</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>300</y>
+          <width>113</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="imprimerrilyes">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>510</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>imprimer</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="cinn2">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>510</y>
+          <width>113</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <zorder>lineEdit</zorder>
        <zorder>label_16</zorder>
        <zorder>label_24</zorder>
-       <zorder>NUM</zorder>
-       <zorder>label_25</zorder>
        <zorder>QUOTIENT</zorder>
        <zorder>MONTANT</zorder>
-       <zorder>label_26</zorder>
        <zorder>label_48</zorder>
        <zorder>modifierc</zorder>
-       <zorder>IDC</zorder>
        <zorder>Supprimerc</zorder>
        <zorder>label_49</zorder>
        <zorder>label_17</zorder>
        <zorder>DATEDEBUT</zorder>
        <zorder>AJOUTERC</zorder>
-       <zorder>IDV_3</zorder>
        <zorder>label_50</zorder>
        <zorder>label_51</zorder>
        <zorder>DATEFIN</zorder>
@@ -2268,6 +2251,9 @@ border-style: solid ;</string>
        <zorder>searchc</zorder>
        <zorder>label_52</zorder>
        <zorder>cincontrat</zorder>
+       <zorder>combov</zorder>
+       <zorder>imprimerrilyes</zorder>
+       <zorder>cinn2</zorder>
       </widget>
       <widget class="QWidget" name="page_5">
        <widget class="QLabel" name="label_53">
@@ -2284,19 +2270,6 @@ border-style: solid ;</string>
         </property>
         <property name="text">
          <string>ID Contrat</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="CINE">
-        <property name="geometry">
-         <rect>
-          <x>800</x>
-          <y>250</y>
-          <width>181</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
         </property>
        </widget>
        <widget class="QLabel" name="label_8">
@@ -2318,21 +2291,8 @@ border-style: solid ;</string>
        <widget class="QLineEdit" name="ID">
         <property name="geometry">
          <rect>
-          <x>800</x>
-          <y>140</y>
-          <width>181</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="IDV">
-        <property name="geometry">
-         <rect>
-          <x>800</x>
-          <y>210</y>
+          <x>180</x>
+          <y>220</y>
           <width>181</width>
           <height>20</height>
          </rect>
@@ -2365,22 +2325,6 @@ border-style: solid ;</string>
           <width>73</width>
           <height>22</height>
          </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>700</x>
-          <y>140</y>
-          <width>91</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-        <property name="text">
-         <string>ID Reclamation</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_3">
@@ -2613,19 +2557,36 @@ border-style: solid ;</string>
          <string>chercher</string>
         </property>
        </widget>
+       <widget class="QComboBox" name="combov_2">
+        <property name="geometry">
+         <rect>
+          <x>800</x>
+          <y>210</y>
+          <width>181</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboemp_2">
+        <property name="geometry">
+         <rect>
+          <x>800</x>
+          <y>250</y>
+          <width>181</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <zorder>ID</zorder>
+       <zorder>data</zorder>
        <zorder>label_58</zorder>
        <zorder>label_53</zorder>
-       <zorder>CINE</zorder>
        <zorder>label_8</zorder>
-       <zorder>ID</zorder>
-       <zorder>IDV</zorder>
        <zorder>DESC</zorder>
        <zorder>comboBox_2</zorder>
-       <zorder>label_2</zorder>
        <zorder>label_3</zorder>
        <zorder>label_4</zorder>
        <zorder>label_5</zorder>
-       <zorder>data</zorder>
        <zorder>ajouter_2</zorder>
        <zorder>modifier_2</zorder>
        <zorder>supprimer_2</zorder>
@@ -2635,6 +2596,8 @@ border-style: solid ;</string>
        <zorder>pushButton_2</zorder>
        <zorder>label_59</zorder>
        <zorder>label_61</zorder>
+       <zorder>combov_2</zorder>
+       <zorder>comboemp_2</zorder>
       </widget>
      </widget>
      <widget class="QCheckBox" name="checkBox">

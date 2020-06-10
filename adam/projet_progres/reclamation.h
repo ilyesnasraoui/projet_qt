@@ -19,6 +19,7 @@ public:
     QSqlQueryModel * triez(QString cls);
     QSqlQueryModel * recherche (QString cls);
     QSqlQueryModel * setcombobox();
+    QSqlQueryModel * setcomboemp_2();
 
 private:
     int id,idV,cinE;

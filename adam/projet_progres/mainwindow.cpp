@@ -47,6 +47,11 @@ ui->tabemployee->setModel(tmpemployee.afficher());//refresh
      ui->tabfidelite->setModel(tmpfid.afficher());//refresh
      ui->cinf->setModel(tmpfid.setcombobox());//refresh
      ui->comboBox_2->setModel(tmpreclamation.setcombobox());//refresh
+     ui->combov->setModel(tmpcontrat.setcomboboxv());
+     ui->combov_2->setModel(tmpcontrat.setcomboboxv());
+     ui->comboemp_2->setModel(tmpreclamation.setcomboemp_2());//refresh
+
+
 
 
      QFile File("C:\\Users\\wissem\\Desktop\\project\\projet_qt\\projetwissem\\style.css");
@@ -298,6 +303,8 @@ void MainWindow::on_ajouter_clicked()
         QMessageBox::information(nullptr, QObject::tr("Ajouter un voiture"),
                           QObject::tr("voiture ajouté.\n"
                                       "Click Cancel to exit."), QMessageBox::Cancel);
+        ui->combov->setModel(tmpcontrat.setcomboboxv());//refresh elyes BO
+
 
         }
           else
@@ -320,6 +327,8 @@ if(test)
     QMessageBox::information(nullptr, QObject::tr("Supprimer une voiture"),
                 QObject::tr("voiture supprimé.\n"
                             "Click Cancel to exit."), QMessageBox::Cancel);
+    ui->combov->setModel(tmpcontrat.setcomboboxv());//refresh elyes BO
+
 
 }
 else
@@ -941,7 +950,9 @@ void MainWindow::on_checkBox_clicked()
 
 void MainWindow::on_AJOUTERC_2_clicked()
 {QString cin= ui->cincontrat->currentText();
-    contrat tmp(cin,ui->DATEDEBUT->date(),ui->DATEFIN->date(),ui->IDC->text().toInt(),ui->MONTANT->text().toInt(),ui->QUOTIENT->text().toInt(),ui->IDV_3->text().toInt(),ui->NUM->text().toInt());
+    int idv= ui->combov->currentText().toInt();
+
+    contrat tmp(cin,ui->DATEDEBUT->date(),ui->DATEFIN->date(),ui->MONTANT->text().toInt(),ui->QUOTIENT->text().toInt(),idv);
     if(tmp.ajouter())
     {
         QSqlQueryModel * model22= new QSqlQueryModel();
@@ -968,9 +979,11 @@ void MainWindow::on_AJOUTERC_2_clicked()
 }
 
 void MainWindow::on_modifierc_2_clicked()
-{   QString cin= ui->cincontrat->currentText();
-    contrat tmp(cin,ui->DATEDEBUT->date(),ui->DATEFIN->date(),ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),3)).toInt(),ui->MONTANT->text().toInt(),ui->QUOTIENT->text().toInt(),ui->IDV_3->text().toInt(),ui->NUM->text().toInt());
-    if(tmp.modifier())
+{  QString cin= ui->cincontrat->currentText();
+    int idv= ui->combov->currentText().toInt();
+
+    contrat tmp(cin,ui->DATEDEBUT->date(),ui->DATEFIN->date(),ui->MONTANT->text().toInt(),ui->QUOTIENT->text().toInt(),idv);
+    if(tmp.modifier( ui->lineEdit->text().toInt()))
     {
         ui->data2->setModel(tmp.afficher());
         QMessageBox::information(nullptr, QObject::tr("modifier un contrat"),
@@ -991,17 +1004,16 @@ void MainWindow::on_data2_clicked(const QModelIndex &index)
     ui->cincontrat->setCurrentText(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),0)).toString());
     ui->DATEDEBUT->setDate(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),1)).toDate());
     ui->DATEFIN->setDate(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),2)).toDate());
-    ui->IDC->setText(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),3)).toString());
     ui->MONTANT->setText(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),4)).toString());
     ui->QUOTIENT->setText(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),5)).toString());
-    ui->IDV_3->setText(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),6)).toString());
-    ui->NUM->setText(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),7)).toString());
+    ui->lineEdit->setText(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),3)).toString());
+
 }
 
 void MainWindow::on_Supprimerc_2_clicked()
 {
     contrat tmp;
-    if(tmp.supprimer(ui->data2->model()->data(ui->data2->model()->index(ui->data2->currentIndex().row(),3)).toInt()))
+    if(tmp.supprimer( ui->lineEdit->text().toInt()))
     {
         ui->data2->setModel(tmp.afficher());
         QMessageBox::information(nullptr, QObject::tr("supprimé une contrat"),
@@ -1037,9 +1049,10 @@ void MainWindow::on_pushButton_13_clicked()
 }
 
 void MainWindow::on_ajouter_2_clicked()
-{
+{        int idv= ui->combov_2->currentText().toInt();
+
       QString cin= ui->cincontrat->currentText();
-    reclamation tmp(ui->ID->text().toInt(),ui->DESC->text(),cin,ui->IDV->text().toInt(),ui->CINE->text().toInt());
+    reclamation tmp(ui->ID->text().toInt(),ui->DESC->text(),cin,idv,ui->comboemp_2->currentText().toInt());
     if(tmp.ajouter())
     {
         QSqlQuery query;
@@ -1400,8 +1413,10 @@ void MainWindow::on_supprimer_2_clicked()
 }
 
 void MainWindow::on_modifier_2_clicked()
-{  QString cin= ui->cincontrat->currentText();
-    reclamation tmp(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),0)).toInt(),ui->DESC->text(),cin,ui->IDV->text().toInt(),ui->CINE->text().toInt());
+{  QString cin= ui->cinC->currentText();
+    int idv= ui->combov_2->currentText().toInt();
+
+    reclamation tmp(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),0)).toInt(),ui->DESC->text(),cin,idv,ui->comboemp_2->currentText().toInt());
     if(tmp.modifier())
     {
         QSqlQueryModel *model=tmp.afficher();
@@ -1411,7 +1426,7 @@ void MainWindow::on_modifier_2_clicked()
                 ui->data->setModel(proxy);
                 ui->data->setSortingEnabled(true);
         QMessageBox::information(nullptr, QObject::tr("Ajouter une reclamation"),
-                          QObject::tr("reclamation ajouté.\n"
+                          QObject::tr("reclamation modifiée.\n"
                                       "Click Cancel to exit."), QMessageBox::Cancel);
     }
     else
@@ -1427,8 +1442,6 @@ void MainWindow::on_data_clicked(const QModelIndex &index)
     ui->ID->setText(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),0)).toString());
     ui->DESC->setText(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),1)).toString());
     ui->cinC->setCurrentText(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),2)).toString());
-    ui->IDV->setText(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),3)).toString());
-    ui->CINE->setText(ui->data->model()->data(ui->data->model()->index(ui->data->currentIndex().row(),4)).toString());
 
 }
 
@@ -3407,4 +3420,87 @@ void MainWindow::on_pb_calendrier_clicked()
 void MainWindow::on_calendarWidget_clicked(const QDate &date)
 {
     ui->date_assurances->setDate(date);
+}
+
+void MainWindow::on_data2_doubleClicked(const QModelIndex &index)
+{
+
+}
+//************************************************
+// khedmet ilyes
+//***********************************************
+
+
+void MainWindow::on_imprimerrilyes_clicked()
+{
+   QString num1 = ui->cinn2->text();
+    int num = ui->cinn2->text().toInt();
+
+    QSqlQuery query1;
+   QString numcin="";
+   QString datedeb="";
+    QString datefin="";
+   QString   montant="";
+   QString   quotient="";
+  QString   idv="";
+  QString i="0";
+    if(num1!=""){
+    query1.prepare("select * from contrat where IDV=:idv");
+   query1.bindValue(":idv", num);
+
+    if (query1.exec())
+    {
+
+        while (query1.next()) {
+
+             numcin = query1.value(0).toString();
+             datedeb = query1.value(1).toString();
+             datefin = query1.value(2).toString();
+             montant = query1.value(3).toString();
+             quotient= query1.value(4).toString();
+             idv = query1.value(5).toString();
+
+
+
+        }
+    }
+          QPrinter printer(QPrinter::HighResolution);
+              printer.setPageSize(QPrinter::A4);
+
+             QPrintDialog *dialog = new QPrintDialog(&printer);
+              if (dialog->exec() == QDialog::Accepted)
+              {               QPainter painter (&printer);
+                              painter.begin(&printer);
+                              QFont f;
+                               f.setPointSize(20);
+                               f.setBold(true);
+                               painter.setFont(f);
+                               painter.drawText(100, 500, " la fiche du voiture,num°:");
+                               painter.drawText(2000, 520, i);
+
+                               f.setPointSize(15);
+                               f.setBold(true);
+                               painter.setFont(f);
+                               painter.drawText(100, 1000, "numero du cin :");
+                               painter.drawText(1000, 1000, numcin);
+                               painter.drawText(100, 1200, "date de debut contrat :");
+                               painter.drawText(1200, 1200, datedeb);
+                               painter.drawText(100, 1400, "date de fin contrat :");
+                               painter.drawText(1500, 1400, datefin);
+                               painter.drawText(100, 1600, "montant du contrat :");
+                               painter.drawText(1500, 1600, montant);
+                               painter.drawText(100, 1800, "prix du quotient :");
+                               painter.drawText(1500, 1800, quotient);
+                               painter.drawText(100, 2000, "id du voiture a louer :");
+                               painter.drawText(1500, 2000, idv);
+
+                              painter.end();
+
+              }}
+    else
+        QMessageBox::critical(nullptr, QObject::tr("Imprimer une reservation"),
+                    QObject::tr("Erreur !.\n"
+                                "Veuillez selectionner une reservation à imprimer .\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
 }
