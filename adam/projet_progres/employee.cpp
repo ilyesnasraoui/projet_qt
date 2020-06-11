@@ -86,15 +86,14 @@ bool Employee::modifier(int id)
 {
     QSqlQuery query;
    QString res= QString::number(id);
-   query.prepare("INSERT INTO employee (ID, ID_DEP, CIN, AGE, NUM_TEL, NOM, PRENOM, EMAIL, SALAIRE, ADRESSE) "
-                       "VALUES (:id,:id_dep,:cin,:age,:numtel,:nom,:prenom,:email,:salaire,:adresse)");
+   query.prepare("UPDATE employee SET nom = :nom ,prenom = :prenom, id_dep = :id_dep , cin =:cin ,age =:age ,num_tel =:num_tel , email =:email ,salaire =:salaire , adresse =:adresse WHERE ID = :id;");
    query.bindValue(":nom", nom);
    query.bindValue(":prenom", prenom);
    query.bindValue(":id", id);
    query.bindValue(":id_dep", id_dep);
    query.bindValue(":cin", cin);
    query.bindValue(":age", age);
-   query.bindValue(":numtel", numtel);
+   query.bindValue(":num_tel", numtel);
    query.bindValue(":email", email);
    query.bindValue(":salaire", salaire);
    query.bindValue(":adresse", adresse);

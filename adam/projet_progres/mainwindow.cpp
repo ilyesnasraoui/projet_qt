@@ -6,6 +6,8 @@
 #include <QPrintDialog>
 #include <QMessageBox>
 #include<smtp.h>
+#include <QPixmap>
+#include <QMovie>
 
 #include <QtCharts/QChartView>
 #include <QtWidgets/QApplication>
@@ -55,13 +57,32 @@ MainWindow::MainWindow(QWidget *parent) :
 
      ui->combobbb3->setModel(tmpemployee.setcombobbb3());
 
+      QPixmap pix3("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/speed.png");
+      int w2 = ui->label_93->width();
+      int h2 = ui->label_93->height();
+       ui->label_93->setPixmap(pix3.scaled(w2,h2));
+    if(ui->checkBox_2->isChecked())
+    {
+       QMovie *movie =new QMovie("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/audiz.gif");
+       movie->setScaledSize(QSize().scaled(1411,1411,Qt::KeepAspectRatio));
+        ui->label_25->setMovie(movie);
+        ui->label_25->setMovie(movie);
+       movie->start();
+   }
+    else
+    {
+        QMovie *movie =new QMovie("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/thenya.gif");
+        movie->setScaledSize(QSize().scaled(1411,1411,Qt::KeepAspectRatio));
+         ui->label_25->setMovie(movie);
+         ui->label_25->setMovie(movie);
+        movie->start();
+    }
 
 
-
-     QFile File("C:\\Users\\wissem\\Desktop\\project\\projet_qt\\projetwissem\\style.css");
+    /* QFile File("C:\\Users\\wissem\\Desktop\\project\\projet_qt\\projetwissem\\Fibers.qss");
       File.open(QFile::ReadOnly);
       QString StyleSheet = QLatin1String(File.readAll());
-     this->setStyleSheet(StyleSheet);
+     this->setStyleSheet(StyleSheet);*/
 
 
       //----------------------------------------------------------------------------------
@@ -1545,6 +1566,9 @@ void MainWindow::on_modifierfid_clicked()
 
 void MainWindow::on_checkBox_stateChanged(int arg1)
 {
+
+
+
     if (ui->checkBox->isChecked())
     {               ui->checkBox_2->setChecked(true);
         ui->checkBox_3->setChecked(true);
@@ -1554,6 +1578,18 @@ void MainWindow::on_checkBox_stateChanged(int arg1)
          File.open(QFile::ReadOnly);
          QString StyleSheet = QLatin1String(File.readAll());
         this->setStyleSheet(StyleSheet);
+         QMovie *movie =new QMovie("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/audiz.gif");
+          QMovie *moviee =new QMovie("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/welcome.gif");
+         movie->setScaledSize(QSize().scaled(1411,1411,Qt::KeepAspectRatio));
+         moviee->setScaledSize(QSize().scaled(400,400,Qt::KeepAspectRatio));
+          ui->label_25->setMovie(movie);
+          ui->gifcategorie->setMovie(movie);
+          ui->gifemploye->setMovie(movie);
+          ui->gifmarketing->setMovie(movie);
+          ui->label_25->setMovie(movie);
+          ui->label_2->setMovie(moviee);
+         movie->start();
+         moviee->start();
     }
     else
     {  ui->checkBox_2->setChecked(false);
@@ -1564,6 +1600,18 @@ void MainWindow::on_checkBox_stateChanged(int arg1)
          File.open(QFile::ReadOnly);
          QString StyleSheet = QLatin1String(File.readAll());
         this->setStyleSheet(StyleSheet);
+         QMovie *movie =new QMovie("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/thenya.gif");
+         QMovie *moviee =new QMovie("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/welcome.gif");
+         movie->setScaledSize(QSize().scaled(1411,1411,Qt::KeepAspectRatio));
+         moviee->setScaledSize(QSize().scaled(400,400,Qt::KeepAspectRatio));
+          ui->label_25->setMovie(movie);
+          ui->label_25->setMovie(movie);
+          ui->gifcategorie->setMovie(movie);
+          ui->gifemploye->setMovie(movie);
+          ui->label_2->setMovie(moviee);
+          ui->gifmarketing->setMovie(movie);
+         movie->start();
+         moviee->start();
 
     }
 }
@@ -3561,4 +3609,9 @@ void MainWindow::on_tabemployee_clicked(const QModelIndex &index)
     ui->lineEdit_email->setText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),6)).toString());
    ui->lineEdit_salaire->setText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),7)).toString());
     ui->lineEdit_adresse->setText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),8)).toString());
+}
+
+void MainWindow::on_checkBox_2_stateChanged(int arg1)
+{
+
 }

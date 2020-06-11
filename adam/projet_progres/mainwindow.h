@@ -316,6 +316,8 @@ private slots:
 
         void on_tabemployee_clicked(const QModelIndex &index);
 
+        void on_checkBox_2_stateChanged(int arg1);
+
 private:
 //--------------------------------------
         QTimer *timer;
