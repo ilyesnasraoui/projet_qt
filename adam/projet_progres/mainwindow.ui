@@ -1008,7 +1008,7 @@ font-size: 22px;
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QLabel" name="label_7">
@@ -3579,12 +3579,12 @@ background-color:black;
        <rect>
         <x>160</x>
         <y>50</y>
-        <width>1081</width>
-        <height>541</height>
+        <width>1121</width>
+        <height>641</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_11">
        <widget class="QLabel" name="label_62">
@@ -3635,7 +3635,7 @@ background-color:black;
           <x>800</x>
           <y>80</y>
           <width>231</width>
-          <height>371</height>
+          <height>361</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_9">
@@ -3690,6 +3690,27 @@ background-color:black;
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QLabel" name="label_88">
+             <property name="text">
+              <string>Email</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_89">
+             <property name="text">
+              <string>Salaire</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_90">
+             <property name="text">
+              <string>Adresse</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </item>
          <item>
@@ -3722,6 +3743,15 @@ background-color:black;
            </item>
            <item>
             <widget class="QLineEdit" name="lineEdit_cinn"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_email"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_salaire"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_adresse"/>
            </item>
           </layout>
          </item>

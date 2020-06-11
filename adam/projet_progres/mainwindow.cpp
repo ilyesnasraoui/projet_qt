@@ -850,7 +850,7 @@ client cl(cin,nom,prenom,tel,age,email) ;
             connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
             QString corps="cher(e) "+nom+" "+prenom+" \n Bienvenue chez smart rent car \n merci pour votre inscription";
 
-        smtp->sendMail("nachts554@gmail.com", email , "Bienvenue chez SRC" ,corps);
+        smtp->sendMail("testwissem11@gmail.com", email , "Bienvenue chez SRC" ,corps);
         ui->lineEditcin->setText("");
         ui->lineEditnom->setText("");
         ui->lineEditprenom->setText("");
@@ -1593,6 +1593,8 @@ void MainWindow::on_pushButton_17_clicked()
 
 }
 
+//-----------------------------------------------------------------------------------------------//
+
 void MainWindow::on_pb_ajouterr_clicked()
 {
     int id = ui->lineEdit_idi->text().toInt();
@@ -1602,7 +1604,10 @@ void MainWindow::on_pb_ajouterr_clicked()
     int age = ui->lineEdit_agee->text().toInt();
     QString cin = ui->lineEdit_cinn->text();
     QString numtel = ui->lineEdit_numtell->text();
-  Employee e(id,nom,prenom,id_dep,age,cin,numtel);
+    QString email = ui->lineEdit_email->text();
+    int salaire = ui->lineEdit_salaire->text().toInt();
+    QString adresse = ui->lineEdit_adresse->text();
+  Employee e(id,nom,prenom,id_dep,age,cin,numtel,email,salaire,adresse);
 
   //debut controle saisie
   //cin
@@ -1655,19 +1660,27 @@ void MainWindow::on_pb_ajouterr_clicked()
       }
       //-----------------------------------------------------------//
         verif=0;
+        if(err==0)
+        {
   bool test=e.ajouter();
   if(test)
 { ui->tabemployee->setModel(tmpemployee.afficher());//refresh
 QMessageBox::information(nullptr, QObject::tr("Ajouter un employee"),
                   QObject::tr("employee ajouté.\n"
                               "Click Cancel to exit."), QMessageBox::Cancel);
+Smtp* smtp = new Smtp("testwissem11@gmail.com", "wissem123", "smtp.gmail.com", 465);
+
+            connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+            QString corps="cher(e) "+nom+" "+prenom+" \n Bienvenue dans l'equipe de Smart Rent Car! ";
+
+        smtp->sendMail("testwissem11@gmail.com", email , "" ,corps);
 
 }
   else
       QMessageBox::critical(nullptr, QObject::tr("Ajouter un emp"),
                   QObject::tr("Erreur !.\n"
                               "Click Cancel to exit."), QMessageBox::Cancel);
-
+}
 
 }
 
@@ -1698,7 +1711,11 @@ void MainWindow::on_pb_modifierr_clicked()
     int age = ui->lineEdit_agee->text().toInt();
     QString cin = ui->lineEdit_cinn->text();
     QString numtel = ui->lineEdit_numtell->text();
-    Employee e(id,nom,prenom,id_dep,age,cin,numtel);
+    QString email = ui->lineEdit_email->text();
+    int salaire = ui->lineEdit_salaire->text().toInt();
+    QString adresse = ui->lineEdit_adresse->text();
+  Employee e(id,nom,prenom,id_dep,age,cin,numtel,email,salaire,adresse);
+
   bool test=e.modifier(id);
   if(test)
 {

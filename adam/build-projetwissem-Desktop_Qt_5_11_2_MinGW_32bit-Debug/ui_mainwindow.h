@@ -290,6 +290,9 @@ public:
     QLabel *label_67;
     QLabel *label_68;
     QLabel *label_69;
+    QLabel *label_88;
+    QLabel *label_89;
+    QLabel *label_90;
     QVBoxLayout *verticalLayout_20;
     QLineEdit *lineEdit_idi;
     QLineEdit *lineEdit_nomm;
@@ -298,6 +301,9 @@ public:
     QLineEdit *lineEdit_agee;
     QLineEdit *lineEdit_numtell;
     QLineEdit *lineEdit_cinn;
+    QLineEdit *lineEdit_email;
+    QLineEdit *lineEdit_salaire;
+    QLineEdit *lineEdit_adresse;
     QTableView *tabemployee;
     QPushButton *pb_ajouterr;
     QPushButton *pb_modifierr;
@@ -1877,7 +1883,7 @@ public:
         employes->setObjectName(QStringLiteral("employes"));
         stackedWidget_6 = new QStackedWidget(employes);
         stackedWidget_6->setObjectName(QStringLiteral("stackedWidget_6"));
-        stackedWidget_6->setGeometry(QRect(160, 50, 1081, 541));
+        stackedWidget_6->setGeometry(QRect(160, 50, 1121, 641));
         page_11 = new QWidget();
         page_11->setObjectName(QStringLiteral("page_11"));
         label_62 = new QLabel(page_11);
@@ -1892,7 +1898,7 @@ public:
         lineEdit_ids->setGeometry(QRect(240, 480, 181, 27));
         horizontalLayoutWidget_6 = new QWidget(page_11);
         horizontalLayoutWidget_6->setObjectName(QStringLiteral("horizontalLayoutWidget_6"));
-        horizontalLayoutWidget_6->setGeometry(QRect(800, 80, 231, 371));
+        horizontalLayoutWidget_6->setGeometry(QRect(800, 80, 231, 361));
         horizontalLayout_9 = new QHBoxLayout(horizontalLayoutWidget_6);
         horizontalLayout_9->setSpacing(6);
         horizontalLayout_9->setContentsMargins(11, 11, 11, 11);
@@ -1936,6 +1942,21 @@ public:
 
         verticalLayout_19->addWidget(label_69);
 
+        label_88 = new QLabel(horizontalLayoutWidget_6);
+        label_88->setObjectName(QStringLiteral("label_88"));
+
+        verticalLayout_19->addWidget(label_88);
+
+        label_89 = new QLabel(horizontalLayoutWidget_6);
+        label_89->setObjectName(QStringLiteral("label_89"));
+
+        verticalLayout_19->addWidget(label_89);
+
+        label_90 = new QLabel(horizontalLayoutWidget_6);
+        label_90->setObjectName(QStringLiteral("label_90"));
+
+        verticalLayout_19->addWidget(label_90);
+
 
         horizontalLayout_9->addLayout(verticalLayout_19);
 
@@ -1977,6 +1998,21 @@ public:
         lineEdit_cinn->setObjectName(QStringLiteral("lineEdit_cinn"));
 
         verticalLayout_20->addWidget(lineEdit_cinn);
+
+        lineEdit_email = new QLineEdit(horizontalLayoutWidget_6);
+        lineEdit_email->setObjectName(QStringLiteral("lineEdit_email"));
+
+        verticalLayout_20->addWidget(lineEdit_email);
+
+        lineEdit_salaire = new QLineEdit(horizontalLayoutWidget_6);
+        lineEdit_salaire->setObjectName(QStringLiteral("lineEdit_salaire"));
+
+        verticalLayout_20->addWidget(lineEdit_salaire);
+
+        lineEdit_adresse = new QLineEdit(horizontalLayoutWidget_6);
+        lineEdit_adresse->setObjectName(QStringLiteral("lineEdit_adresse"));
+
+        verticalLayout_20->addWidget(lineEdit_adresse);
 
 
         horizontalLayout_9->addLayout(verticalLayout_20);
@@ -3482,9 +3518,9 @@ public:
 
         tabWidget->setCurrentIndex(2);
         stackedWidget22->setCurrentIndex(0);
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(0);
         stackedWidgetM->setCurrentIndex(0);
-        stackedWidget_6->setCurrentIndex(1);
+        stackedWidget_6->setCurrentIndex(0);
         stackedWidget_2->setCurrentIndex(1);
 
 
@@ -3707,6 +3743,9 @@ public:
         label_67->setText(QApplication::translate("MainWindow", "age", nullptr));
         label_68->setText(QApplication::translate("MainWindow", "num tel", nullptr));
         label_69->setText(QApplication::translate("MainWindow", "Cin", nullptr));
+        label_88->setText(QApplication::translate("MainWindow", "Email", nullptr));
+        label_89->setText(QApplication::translate("MainWindow", "Salaire", nullptr));
+        label_90->setText(QApplication::translate("MainWindow", "Adresse", nullptr));
         lineEdit_idi->setText(QString());
         pb_ajouterr->setText(QApplication::translate("MainWindow", "Ajouter", nullptr));
         pb_modifierr->setText(QApplication::translate("MainWindow", "modifier", nullptr));
