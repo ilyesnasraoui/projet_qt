@@ -185,6 +185,7 @@ private slots:
         void on_modifier_categorie_clicked();
         void on_trie_categorie_clicked();
         void on_recherche_clicked();
+        void on_rechercheee_clicked();
         void on_tableView_doubleClicked(const QModelIndex &index);
         void on_tableView2_doubleClicked(const QModelIndex &index);
 
@@ -310,6 +311,10 @@ private slots:
         void on_pb_devis_clicked();
 
         void on_data2_doubleClicked(const QModelIndex &index);
+
+        void on_tabemployee_2_clicked(const QModelIndex &index);
+
+        void on_tabemployee_clicked(const QModelIndex &index);
 
 private:
 //--------------------------------------

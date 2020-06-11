@@ -79,3 +79,13 @@ QSqlQueryModel * categorie::trie()
 }
 
 
+QSqlQueryModel* categorie:: recherchee(QString x) {
+    QString res= QString::number(id);
+QSqlQueryModel *model = new QSqlQueryModel() ;
+model->setQuery( "SELECT * FROM categorie WHERE ID LIKE '"+x+"%'");
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("type"));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("nombres de voitures"));
+
+    return model ;
+}

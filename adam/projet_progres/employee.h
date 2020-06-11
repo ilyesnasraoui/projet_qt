@@ -22,6 +22,7 @@ class Employee
     QSqlQueryModel * afficher();
     QSqlQueryModel * afficher_personnel_trier();
     QSqlQueryModel * rechercher_personnel(const QString &id);
+    QSqlQueryModel * setcombobbb3();
     bool supprimer(int);
     bool modifier(int id);
 

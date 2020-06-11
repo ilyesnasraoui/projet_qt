@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent) :
      ui->cincontrat->setModel(tmpfid.setcombobox());//refresh
      ui->cinC->setModel(tmpfid.setcombobox());//refresh
      ui->data->setModel(tmpreclamation.afficher());
-ui->tabemployee->setModel(tmpemployee.afficher());//refresh
+    ui->tabemployee->setModel(tmpemployee.afficher());//refresh
     ui->tabevenement->setModel(tmpevenement.afficherE());
     ui->tabpromotion->setModel(tmppromotion.afficherP());
      ui->tabfidelite->setModel(tmpfid.afficher());//refresh
@@ -50,6 +50,8 @@ ui->tabemployee->setModel(tmpemployee.afficher());//refresh
      ui->combov->setModel(tmpcontrat.setcomboboxv());
      ui->combov_2->setModel(tmpcontrat.setcomboboxv());
      ui->comboemp_2->setModel(tmpreclamation.setcomboemp_2());//refresh
+
+     ui->combobbb3->setModel(tmpemployee.setcombobbb3());
 
 
 
@@ -561,7 +563,7 @@ void MainWindow::on_stat_clicked()
 void MainWindow::on_ajouter_categorie_clicked()
 {
     int id = ui->lineEdit_idc->text().toInt();
-    QString type= ui->lineEdit_type->text();
+    QString type= ui->combocate->currentText();
     int nbvoitures =ui->lineEdit_nbvoitures->text().toInt();
 
   categorie e(id,type,nbvoitures);
@@ -605,7 +607,7 @@ else
 void MainWindow::on_modifier_categorie_clicked()
 {
     int id = ui->lineEdit_idc->text().toInt();
-    QString type= ui->lineEdit_type->text();
+    QString type= ui->combocate->currentText();
     int nbvoitures=ui->lineEdit_nbvoitures->text().toInt();
     categorie e(id,type,nbvoitures);
     bool test=e.modifier();
@@ -646,6 +648,17 @@ void MainWindow::on_recherche_clicked()
 }
 
 
+void MainWindow::on_rechercheee_clicked()
+{
+
+   QString x = ui->lineEdittt_16->text();
+   ui->tableView->setModel(tmpcategorie.recherchee(x));//refresh
+
+
+}
+
+
+
 
 
 
@@ -660,7 +673,7 @@ void MainWindow::on_recherche_clicked()
 void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
 {
     ui->lineEdit_idc->setText(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),0)).toString());
-    ui->lineEdit_type->setText(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),1)).toString());
+    ui->combocate->setCurrentText(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),1)).toString());
     ui->lineEdit_nbvoitures->setText(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),2)).toString());
 }
 
@@ -669,13 +682,15 @@ void MainWindow::on_tableView2_doubleClicked(const QModelIndex &index)
     ui->lineEdit_idv->setText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),0)).toString());
     ui->lineEdit_marque->setText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),1)).toString());
     ui->lineEdit_matricule->setText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),2)).toString());
-
+    ui->combobox_33->setCurrentText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),3)).toString());
+    ui->combobox_11->setCurrentText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),4)).toString());
     ui->lineEdit_imp->setText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),0)).toString());
     ui->lineEdit_anciennete->setText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),5)).toString());
     ui->lineEdit_couleur->setText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),6)).toString());
     ui->lineEdit_kilometrage->setText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),7)).toString());
-
+    ui->combobox_22->setCurrentText(ui->tabemployee_2->model()->data(ui->tabemployee_2->model()->index(ui->tabemployee_2->currentIndex().row(),8)).toString());
     ui->lineEdit_prixparjour->setText(ui->tableView2->model()->data(ui->tableView2->model()->index(ui->tableView2->currentIndex().row(),9)).toString());
+    ui->combo->setCurrentText(ui->tabemployee_2->model()->data(ui->tabemployee_2->model()->index(ui->tabemployee_2->currentIndex().row(),10)).toString());
 
 }
 
@@ -1600,7 +1615,7 @@ void MainWindow::on_pb_ajouterr_clicked()
     int id = ui->lineEdit_idi->text().toInt();
     QString nom= ui->lineEdit_nomm->text();
     QString prenom= ui->lineEdit_prenomm->text();
-    int id_dep = ui->lineEdit_id_dep->text().toInt();
+    int id_dep = ui->combobbb3->currentText().toInt();
     int age = ui->lineEdit_agee->text().toInt();
     QString cin = ui->lineEdit_cinn->text();
     QString numtel = ui->lineEdit_numtell->text();
@@ -1707,7 +1722,7 @@ void MainWindow::on_pb_modifierr_clicked()
     int id = ui->lineEdit_idi->text().toInt();
     QString nom= ui->lineEdit_nomm->text();
     QString prenom= ui->lineEdit_prenomm->text();
-    int id_dep = ui->lineEdit_id_dep->text().toInt();
+    int id_dep = ui->combobbb3->currentText().toInt();
     int age = ui->lineEdit_agee->text().toInt();
     QString cin = ui->lineEdit_cinn->text();
     QString numtel = ui->lineEdit_numtell->text();
@@ -1804,7 +1819,7 @@ void MainWindow::on_pb_recherchee_clicked()
 void MainWindow::on_pb_ajouterr_2_clicked()
 {
     int departement_id = ui->lineEdit_idd_2->text().toInt();
-    QString departement_name= ui->lineEdit_nomm_2->text();
+    QString departement_name= ui->mariemm->currentText();
     int manager_id = ui->lineEdit_managerr->text().toInt();
     int num_membre = ui->lineEdit_num_membre->text().toInt();
 
@@ -1827,7 +1842,7 @@ QMessageBox::information(nullptr, QObject::tr("Ajouter un departement"),
 void MainWindow::on_pb_modifierr_2_clicked()
 {
     int departement_id = ui->lineEdit_idd_2->text().toInt();
-    QString departement_name= ui->lineEdit_nomm_2->text();
+    QString departement_name= ui->mariemm->currentText();
     int manager_id = ui->lineEdit_managerr->text().toInt();
     int num_membre = ui->lineEdit_num_membre->text().toInt();
 
@@ -3520,4 +3535,28 @@ void MainWindow::on_imprimerrilyes_clicked()
                                 "Veuillez selectionner une reservation à imprimer .\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
+}
+
+void MainWindow::on_tabemployee_2_clicked(const QModelIndex &index)
+{
+    ui->lineEdit_idd_2->setText(ui->tabemployee_2->model()->data(ui->tabemployee_2->model()->index(ui->tabemployee_2->currentIndex().row(),0)).toString());
+    ui->lineEdit_managerr->setText(ui->tabemployee_2->model()->data(ui->tabemployee_2->model()->index(ui->tabemployee_2->currentIndex().row(),2)).toString());
+    ui->lineEdits_2->setText(ui->tabemployee_2->model()->data(ui->tabemployee_2->model()->index(ui->tabemployee_2->currentIndex().row(),0)).toString());
+    ui->mariemm->setCurrentText(ui->tabemployee_2->model()->data(ui->tabemployee_2->model()->index(ui->tabemployee_2->currentIndex().row(),1)).toString());
+    ui->lineEdit_num_membre->setText(ui->tabemployee_2->model()->data(ui->tabemployee_2->model()->index(ui->tabemployee_2->currentIndex().row(),3)).toString());
+}
+
+void MainWindow::on_tabemployee_clicked(const QModelIndex &index)
+{
+    ui->lineEdit_ids->setText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),0)).toString());
+    ui->lineEdit_idi->setText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),0)).toString());
+    ui->lineEdit_nomm->setText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),1)).toString());
+    ui->lineEdit_prenomm->setText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),2)).toString());
+    ui->combobbb3->setCurrentText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),5)).toString());
+    ui->lineEdit_agee->setText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),3)).toString());
+    ui->lineEdit_numtell->setText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),9)).toString());
+    ui->lineEdit_cinn->setText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),4)).toString());
+    ui->lineEdit_email->setText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),6)).toString());
+   ui->lineEdit_salaire->setText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),7)).toString());
+    ui->lineEdit_adresse->setText(ui->tabemployee->model()->data(ui->tabemployee->model()->index(ui->tabemployee->currentIndex().row(),8)).toString());
 }

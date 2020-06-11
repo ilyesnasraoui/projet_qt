@@ -135,3 +135,17 @@ QSqlQueryModel *Employee::rechercher_personnel(const QString &id)
 
     return model;
 }
+
+
+QSqlQueryModel * Employee::setcombobbb3()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("select id from DEP ");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    return model ;
+
+}
+
+
+
+

@@ -33,7 +33,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="acceuil">
      <attribute name="title">
@@ -54,7 +54,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_3">
        <widget class="QLabel" name="label_34">
@@ -587,7 +587,7 @@
        <widget class="QPushButton" name="modifier_categorie">
         <property name="geometry">
          <rect>
-          <x>800</x>
+          <x>840</x>
           <y>250</y>
           <width>91</width>
           <height>31</height>
@@ -595,19 +595,6 @@
         </property>
         <property name="text">
          <string>Modifier</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_type">
-        <property name="geometry">
-         <rect>
-          <x>780</x>
-          <y>130</y>
-          <width>113</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
         </property>
        </widget>
        <widget class="QLabel" name="label_45">
@@ -702,13 +689,89 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
         <property name="geometry">
          <rect>
           <x>180</x>
-          <y>80</y>
-          <width>411</width>
+          <y>140</y>
+          <width>371</width>
           <height>351</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="combocate">
+        <property name="geometry">
+         <rect>
+          <x>780</x>
+          <y>140</y>
+          <width>111</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>citadine</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SUV</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mini bus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>bus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>4x4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>cabriolet et coupé</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="ajouter_categorie">
+        <property name="geometry">
+         <rect>
+          <x>710</x>
+          <y>250</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="rechercheee">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>30</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>recherche</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdittt_16">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>30</y>
+          <width>131</width>
+          <height>21</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -1008,7 +1071,7 @@ font-size: 22px;
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QLabel" name="label_7">
@@ -3733,7 +3796,7 @@ background-color:black;
             <widget class="QLineEdit" name="lineEdit_prenomm"/>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_id_dep"/>
+            <widget class="QComboBox" name="combobbb3"/>
            </item>
            <item>
             <widget class="QLineEdit" name="lineEdit_agee"/>
@@ -4019,7 +4082,28 @@ border-style: solid ;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_nomm_2"/>
+            <widget class="QComboBox" name="mariemm">
+             <item>
+              <property name="text">
+               <string>location</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ressource humaine</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>finance</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>marketing</string>
+              </property>
+             </item>
+            </widget>
            </item>
            <item>
             <widget class="QLineEdit" name="lineEdit_num_membre"/>

@@ -20,6 +20,7 @@ public:
        bool supprimer(int);
        bool modifier();
        QSqlQueryModel * trie ();
+       QSqlQueryModel* recherchee (QString);
 private:
        int id ,nbvoitures;
            QString type;
