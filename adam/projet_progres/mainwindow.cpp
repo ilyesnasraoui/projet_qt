@@ -32,6 +32,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 {
     ui->setupUi(this);
+    ui->tableView->setModel(tmpcategorie.afficher());
+    ui->tableView2->setModel(tmpvoiture.afficher());
     ui->calendarWidget->setHidden(true);
     ui->data2->setModel(tmpcontrat.afficher());//refresh
      ui->tabclient->setModel(tmpclient.afficher());//refresh
