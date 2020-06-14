@@ -82,10 +82,41 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
+     QPixmap pix4("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/logo.png");
+     int w3 = ui->logo->width();
+     int h3 = ui->logo->height();
+      ui->logo->setPixmap(pix4.scaled(w3,h3));
+
+
+      QPixmap pix5("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/logo.png");
+      int w4 = ui->logo1->width();
+      int h4 = ui->logo1->height();
+       ui->logo1->setPixmap(pix5.scaled(w4,h4));
+
+
+       QPixmap pix6("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/logo.png");
+       int w8 = ui->logo2->width();
+       int h8 = ui->logo2->height();
+        ui->logo2->setPixmap(pix6.scaled(w8,h8));
+
+        QPixmap pix7("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/logo.png");
+        int w6 = ui->logo3->width();
+        int h6 = ui->logo3->height();
+         ui->logo3->setPixmap(pix7.scaled(w6,h6));
+
+
+         QPixmap pix8("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/logo.png");
+         int w7 = ui->logo4->width();
+         int h7 = ui->logo4->height();
+          ui->logo4->setPixmap(pix8.scaled(w7,h7));
+
+
+
+
 
      QPixmap devise1("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/tunisia.png");
-     int w5 = ui->label_93->width();
-     int h5 = ui->label_93->height();
+     int w5 = ui->logo->width();
+     int h5 = ui->logo->height();
 
       QPixmap pix3("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/speed.png");
       int w2 = ui->label_93->width();
@@ -94,7 +125,7 @@ MainWindow::MainWindow(QWidget *parent) :
     if(ui->checkBox_2->isChecked())
     {
        QMovie *movie =new QMovie("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/audiz.gif");
-       movie->setScaledSize(QSize().scaled(1411,1411,Qt::KeepAspectRatio));
+       movie->setScaledSize(QSize().scaled(1611,1600,Qt::KeepAspectRatio));
         ui->label_25->setMovie(movie);
         ui->label_25->setMovie(movie);
        movie->start();
@@ -102,7 +133,7 @@ MainWindow::MainWindow(QWidget *parent) :
     else
     {
         QMovie *movie =new QMovie("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/thenya.gif");
-        movie->setScaledSize(QSize().scaled(1411,1411,Qt::KeepAspectRatio));
+        movie->setScaledSize(QSize().scaled(1611,1611,Qt::KeepAspectRatio));
          ui->label_25->setMovie(movie);
          ui->label_25->setMovie(movie);
         movie->start();
@@ -1622,7 +1653,7 @@ void MainWindow::on_checkBox_stateChanged(int arg1)
          moviee->start();
     }
     else
-    {  ui->checkBox_2->setChecked(false);
+    {   ui->checkBox_2->setChecked(false);
         ui->checkBox_3->setChecked(false);
         ui->checkBox_4->setChecked(false);
 
