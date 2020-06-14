@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1452</width>
-    <height>850</height>
+    <width>1439</width>
+    <height>853</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,7 +33,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="acceuil">
      <attribute name="title">
@@ -52,6 +52,32 @@
        <string>TextLabel</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>180</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>calculatrice</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>190</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>convertisseur</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="categorie">
      <attribute name="title">
@@ -60,10 +86,10 @@
      <widget class="QStackedWidget" name="stackedWidget22">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>180</x>
         <y>100</y>
-        <width>1091</width>
-        <height>531</height>
+        <width>1071</width>
+        <height>631</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -126,13 +152,17 @@
         <property name="geometry">
          <rect>
           <x>350</x>
-          <y>510</y>
+          <y>590</y>
           <width>93</width>
           <height>28</height>
          </rect>
         </property>
         <property name="text">
          <string>modifier</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/modifier.png</normaloff>:/theme_normal/modifier.png</iconset>
         </property>
        </widget>
        <widget class="QLabel" name="label_36">
@@ -179,12 +209,16 @@
         <property name="text">
          <string>ajouter</string>
         </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/ajouter.png</normaloff>:/theme_normal/ajouter.png</iconset>
+        </property>
        </widget>
        <widget class="QTableView" name="tableView2">
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>230</y>
+          <y>290</y>
           <width>861</width>
           <height>271</height>
          </rect>
@@ -252,7 +286,7 @@
         <property name="geometry">
          <rect>
           <x>600</x>
-          <y>510</y>
+          <y>590</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -317,7 +351,7 @@
         <property name="geometry">
          <rect>
           <x>850</x>
-          <y>510</y>
+          <y>590</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -343,13 +377,17 @@
         <property name="geometry">
          <rect>
           <x>140</x>
-          <y>510</y>
+          <y>590</y>
           <width>93</width>
           <height>28</height>
          </rect>
         </property>
         <property name="text">
          <string>supprimer</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/supprimer.png</normaloff>:/theme_normal/supprimer.png</iconset>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEdit_anciennete">
@@ -582,6 +620,93 @@
          </property>
         </item>
        </widget>
+       <widget class="QLabel" name="label_105">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>20</y>
+          <width>911</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: transparent;
+border-radius: 12px;
+border-color: rgb(255, 175, 14);
+	padding: 5px;
+border-width: 3px;
+border-style: solid ;
+font-size: 30px;
+text-decoration: underline;
+font-family: arial black;
+color: rgb(0, 170, 127);
+font-style: italic;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_110">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>280</y>
+          <width>881</width>
+          <height>291</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: transparent;
+border-radius: 12px;
+border-color: rgb(255, 175, 14);
+	padding: 5px;
+border-width: 3px;
+border-style: solid ;
+font-size: 30px;
+text-decoration: underline;
+font-family: arial black;
+color: rgb(0, 170, 127);
+font-style: italic;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <zorder>label_110</zorder>
+       <zorder>label_105</zorder>
+       <zorder>label_34</zorder>
+       <zorder>lineEdit_matricule</zorder>
+       <zorder>lineEdit_kilometrage</zorder>
+       <zorder>label_35</zorder>
+       <zorder>modifier</zorder>
+       <zorder>label_36</zorder>
+       <zorder>lineEdit_16</zorder>
+       <zorder>ajouter</zorder>
+       <zorder>tableView2</zorder>
+       <zorder>label_37</zorder>
+       <zorder>label_38</zorder>
+       <zorder>lineEdit_couleur</zorder>
+       <zorder>imprimerr</zorder>
+       <zorder>trie</zorder>
+       <zorder>lineEdit_idv</zorder>
+       <zorder>lineEdit_marque</zorder>
+       <zorder>label_39</zorder>
+       <zorder>lineEdit_prixparjour</zorder>
+       <zorder>stat</zorder>
+       <zorder>label_40</zorder>
+       <zorder>supprimer</zorder>
+       <zorder>lineEdit_anciennete</zorder>
+       <zorder>combo</zorder>
+       <zorder>lineEdit_imp</zorder>
+       <zorder>label_41</zorder>
+       <zorder>label_42</zorder>
+       <zorder>label_43</zorder>
+       <zorder>label_44</zorder>
+       <zorder>recherche</zorder>
+       <zorder>label</zorder>
+       <zorder>combobox_33</zorder>
+       <zorder>combobox_11</zorder>
+       <zorder>combobox_22</zorder>
       </widget>
       <widget class="QWidget" name="page_6">
        <widget class="QLineEdit" name="lineEdit_nbvoitures">
@@ -608,6 +733,10 @@
         </property>
         <property name="text">
          <string>Modifier</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/modifier.png</normaloff>:/theme_normal/modifier.png</iconset>
         </property>
        </widget>
        <widget class="QLabel" name="label_45">
@@ -654,6 +783,10 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
         </property>
         <property name="text">
          <string>Supprimer</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/supprimer.png</normaloff>:/theme_normal/supprimer.png</iconset>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEdit_idc">
@@ -763,6 +896,10 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
         <property name="text">
          <string>Ajouter</string>
         </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/ajouter.png</normaloff>:/theme_normal/ajouter.png</iconset>
+        </property>
        </widget>
        <widget class="QPushButton" name="rechercheee">
         <property name="geometry">
@@ -811,7 +948,7 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_99">
         <property name="geometry">
          <rect>
-          <x>610</x>
+          <x>600</x>
           <y>130</y>
           <width>471</width>
           <height>371</height>
@@ -846,24 +983,11 @@ border-style: solid ;</string>
        <zorder>lineEdittt_16</zorder>
       </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton_6">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>460</y>
-        <width>93</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>log out</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="voituree">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>120</y>
+        <x>30</x>
+        <y>300</y>
         <width>139</width>
         <height>68</height>
        </rect>
@@ -905,8 +1029,8 @@ background-color:black;
      <widget class="QPushButton" name="categoriee">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>200</y>
+        <x>30</x>
+        <y>380</y>
         <width>139</width>
         <height>68</height>
        </rect>
@@ -954,6 +1078,9 @@ font-size: 22px;
         <height>20</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>mode sombre</string>
       </property>
@@ -997,13 +1124,53 @@ font-style: italic;</string>
        <string>Gestions des voitures</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_106">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>280</y>
+        <width>161</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border-radius: 12px;
+border-color: rgb(255, 175, 14);
+	padding: 5px;
+border-width: 3px;
+border-style: solid ;
+font-size: 30px;
+text-decoration: underline;
+font-family: arial black;
+color: rgb(0, 170, 127);
+font-style: italic;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_6">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>20</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Anglais version</string>
+      </property>
+     </widget>
      <zorder>gifcategorie</zorder>
+     <zorder>label_106</zorder>
      <zorder>stackedWidget22</zorder>
-     <zorder>pushButton_6</zorder>
      <zorder>voituree</zorder>
      <zorder>categoriee</zorder>
      <zorder>checkBox_2</zorder>
      <zorder>label_102</zorder>
+     <zorder>checkBox_6</zorder>
     </widget>
     <widget class="QWidget" name="clients">
      <attribute name="title">
@@ -1013,7 +1180,7 @@ font-style: italic;</string>
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>250</y>
+        <y>240</y>
         <width>161</width>
         <height>341</height>
        </rect>
@@ -1179,7 +1346,7 @@ font-size: 22px;
        <rect>
         <x>170</x>
         <y>100</y>
-        <width>1081</width>
+        <width>1091</width>
         <height>671</height>
        </rect>
       </property>
@@ -1194,7 +1361,7 @@ font-size: 22px;
         <property name="geometry">
          <rect>
           <x>390</x>
-          <y>30</y>
+          <y>70</y>
           <width>71</width>
           <height>48</height>
          </rect>
@@ -1207,7 +1374,7 @@ font-size: 22px;
         <property name="geometry">
          <rect>
           <x>170</x>
-          <y>40</y>
+          <y>80</y>
           <width>73</width>
           <height>27</height>
          </rect>
@@ -1250,7 +1417,7 @@ font-size: 22px;
         <property name="geometry">
          <rect>
           <x>470</x>
-          <y>40</y>
+          <y>80</y>
           <width>252</width>
           <height>27</height>
          </rect>
@@ -1265,7 +1432,7 @@ font-size: 22px;
        <widget class="QWidget" name="horizontalLayoutWidget">
         <property name="geometry">
          <rect>
-          <x>850</x>
+          <x>860</x>
           <y>110</y>
           <width>211</width>
           <height>331</height>
@@ -1390,7 +1557,7 @@ font-size: 22px;
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>90</y>
+          <y>140</y>
           <width>731</width>
           <height>391</height>
          </rect>
@@ -1403,7 +1570,7 @@ font-size: 22px;
         <property name="geometry">
          <rect>
           <x>90</x>
-          <y>30</y>
+          <y>70</y>
           <width>71</width>
           <height>48</height>
          </rect>
@@ -1415,7 +1582,7 @@ font-size: 22px;
        <widget class="QPushButton" name="supprimerclient">
         <property name="geometry">
          <rect>
-          <x>870</x>
+          <x>880</x>
           <y>500</y>
           <width>93</width>
           <height>28</height>
@@ -1435,7 +1602,7 @@ font-size: 22px;
        <widget class="QPushButton" name="ajouterclient">
         <property name="geometry">
          <rect>
-          <x>790</x>
+          <x>800</x>
           <y>450</y>
           <width>93</width>
           <height>28</height>
@@ -1455,7 +1622,7 @@ font-size: 22px;
        <widget class="QPushButton" name="modifierclient">
         <property name="geometry">
          <rect>
-          <x>950</x>
+          <x>960</x>
           <y>450</y>
           <width>93</width>
           <height>28</height>
@@ -1475,7 +1642,7 @@ font-size: 22px;
        <widget class="QLabel" name="label_6">
         <property name="geometry">
          <rect>
-          <x>750</x>
+          <x>760</x>
           <y>90</y>
           <width>331</width>
           <height>451</height>
@@ -1497,7 +1664,7 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>650</x>
-          <y>490</y>
+          <y>560</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -1512,7 +1679,7 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_18">
         <property name="geometry">
          <rect>
-          <x>770</x>
+          <x>780</x>
           <y>100</y>
           <width>44</width>
           <height>47</height>
@@ -1525,7 +1692,7 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_19">
         <property name="geometry">
          <rect>
-          <x>770</x>
+          <x>780</x>
           <y>150</y>
           <width>44</width>
           <height>58</height>
@@ -1538,7 +1705,7 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_20">
         <property name="geometry">
          <rect>
-          <x>770</x>
+          <x>780</x>
           <y>225</y>
           <width>44</width>
           <height>21</height>
@@ -1551,7 +1718,7 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_21">
         <property name="geometry">
          <rect>
-          <x>770</x>
+          <x>780</x>
           <y>275</y>
           <width>44</width>
           <height>31</height>
@@ -1564,7 +1731,7 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_22">
         <property name="geometry">
          <rect>
-          <x>770</x>
+          <x>780</x>
           <y>330</y>
           <width>44</width>
           <height>31</height>
@@ -1577,7 +1744,7 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_27">
         <property name="geometry">
          <rect>
-          <x>770</x>
+          <x>780</x>
           <y>385</y>
           <width>44</width>
           <height>31</height>
@@ -1587,6 +1754,28 @@ border-style: solid ;</string>
          <string>email</string>
         </property>
        </widget>
+       <widget class="QLabel" name="label_96">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>130</y>
+          <width>751</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: transparent;
+border-radius: 12px;
+border-color: rgb(255, 175, 14);
+	padding: 5px;
+border-width: 3px;
+border-style: solid ;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <zorder>label_96</zorder>
        <zorder>label_6</zorder>
        <zorder>label_7</zorder>
        <zorder>comboBox</zorder>
@@ -1609,8 +1798,8 @@ border-style: solid ;</string>
        <widget class="QTableView" name="tabfidelite">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>90</y>
+          <x>40</x>
+          <y>140</y>
           <width>628</width>
           <height>391</height>
          </rect>
@@ -1622,8 +1811,8 @@ border-style: solid ;</string>
        <widget class="QWidget" name="horizontalLayoutWidget_2">
         <property name="geometry">
          <rect>
-          <x>720</x>
-          <y>100</y>
+          <x>730</x>
+          <y>180</y>
           <width>321</width>
           <height>228</height>
          </rect>
@@ -1749,7 +1938,7 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>90</x>
-          <y>30</y>
+          <y>70</y>
           <width>71</width>
           <height>48</height>
          </rect>
@@ -1762,7 +1951,7 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>170</x>
-          <y>40</y>
+          <y>80</y>
           <width>73</width>
           <height>27</height>
          </rect>
@@ -1805,7 +1994,7 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>390</x>
-          <y>30</y>
+          <y>70</y>
           <width>71</width>
           <height>48</height>
          </rect>
@@ -1818,8 +2007,8 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>470</x>
-          <y>40</y>
-          <width>221</width>
+          <y>80</y>
+          <width>201</width>
           <height>27</height>
          </rect>
         </property>
@@ -1833,8 +2022,8 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_15">
         <property name="geometry">
          <rect>
-          <x>710</x>
-          <y>90</y>
+          <x>720</x>
+          <y>170</y>
           <width>341</width>
           <height>351</height>
          </rect>
@@ -1854,8 +2043,8 @@ border-style: solid ;</string>
        <widget class="QPushButton" name="ajouterfid">
         <property name="geometry">
          <rect>
-          <x>770</x>
-          <y>350</y>
+          <x>780</x>
+          <y>430</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -1874,8 +2063,8 @@ border-style: solid ;</string>
        <widget class="QPushButton" name="supprimerfid">
         <property name="geometry">
          <rect>
-          <x>910</x>
-          <y>350</y>
+          <x>920</x>
+          <y>430</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -1910,8 +2099,8 @@ border-style: solid ;</string>
        <widget class="QPushButton" name="modifierfid">
         <property name="geometry">
          <rect>
-          <x>840</x>
-          <y>390</y>
+          <x>850</x>
+          <y>470</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -1924,6 +2113,28 @@ border-style: solid ;</string>
           <normaloff>:/theme_normal/supprimer.png</normaloff>:/theme_normal/supprimer.png</iconset>
         </property>
        </widget>
+       <widget class="QLabel" name="label_100">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>130</y>
+          <width>651</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: transparent;
+border-radius: 12px;
+border-color: rgb(255, 175, 14);
+	padding: 5px;
+border-width: 3px;
+border-style: solid ;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <zorder>label_100</zorder>
        <zorder>idfid</zorder>
        <zorder>label_15</zorder>
        <zorder>tabfidelite</zorder>
@@ -1940,8 +2151,8 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_24">
         <property name="geometry">
          <rect>
-          <x>770</x>
-          <y>150</y>
+          <x>780</x>
+          <y>210</y>
           <width>91</width>
           <height>21</height>
          </rect>
@@ -1953,8 +2164,8 @@ border-style: solid ;</string>
        <widget class="QLineEdit" name="QUOTIENT">
         <property name="geometry">
          <rect>
-          <x>872</x>
-          <y>270</y>
+          <x>882</x>
+          <y>330</y>
           <width>161</width>
           <height>22</height>
          </rect>
@@ -1963,8 +2174,8 @@ border-style: solid ;</string>
        <widget class="QLineEdit" name="MONTANT">
         <property name="geometry">
          <rect>
-          <x>872</x>
-          <y>240</y>
+          <x>882</x>
+          <y>300</y>
           <width>161</width>
           <height>22</height>
          </rect>
@@ -1973,8 +2184,8 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_48">
         <property name="geometry">
          <rect>
-          <x>770</x>
-          <y>270</y>
+          <x>780</x>
+          <y>330</y>
           <width>91</width>
           <height>21</height>
          </rect>
@@ -1986,8 +2197,8 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_49">
         <property name="geometry">
          <rect>
-          <x>770</x>
-          <y>300</y>
+          <x>780</x>
+          <y>360</y>
           <width>91</width>
           <height>21</height>
          </rect>
@@ -1999,8 +2210,8 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_17">
         <property name="geometry">
          <rect>
-          <x>770</x>
-          <y>120</y>
+          <x>780</x>
+          <y>180</y>
           <width>91</width>
           <height>21</height>
          </rect>
@@ -2012,8 +2223,8 @@ border-style: solid ;</string>
        <widget class="QDateEdit" name="DATEDEBUT">
         <property name="geometry">
          <rect>
-          <x>869</x>
-          <y>150</y>
+          <x>879</x>
+          <y>210</y>
           <width>161</width>
           <height>22</height>
          </rect>
@@ -2025,8 +2236,8 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_50">
         <property name="geometry">
          <rect>
-          <x>770</x>
-          <y>240</y>
+          <x>780</x>
+          <y>300</y>
           <width>91</width>
           <height>21</height>
          </rect>
@@ -2038,8 +2249,8 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_51">
         <property name="geometry">
          <rect>
-          <x>770</x>
-          <y>180</y>
+          <x>780</x>
+          <y>240</y>
           <width>91</width>
           <height>21</height>
          </rect>
@@ -2051,8 +2262,8 @@ border-style: solid ;</string>
        <widget class="QDateEdit" name="DATEFIN">
         <property name="geometry">
          <rect>
-          <x>870</x>
-          <y>180</y>
+          <x>880</x>
+          <y>240</y>
           <width>161</width>
           <height>22</height>
          </rect>
@@ -2065,7 +2276,7 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>70</y>
+          <y>140</y>
           <width>721</width>
           <height>401</height>
          </rect>
@@ -2077,8 +2288,8 @@ border-style: solid ;</string>
        <widget class="QPushButton" name="modifierc_2">
         <property name="geometry">
          <rect>
-          <x>930</x>
-          <y>380</y>
+          <x>940</x>
+          <y>440</y>
           <width>92</width>
           <height>31</height>
          </rect>
@@ -2097,8 +2308,8 @@ border-style: solid ;</string>
        <widget class="QPushButton" name="AJOUTERC_2">
         <property name="geometry">
          <rect>
-          <x>790</x>
-          <y>380</y>
+          <x>800</x>
+          <y>440</y>
           <width>92</width>
           <height>31</height>
          </rect>
@@ -2117,8 +2328,8 @@ border-style: solid ;</string>
        <widget class="QPushButton" name="Supprimerc_2">
         <property name="geometry">
          <rect>
-          <x>860</x>
-          <y>420</y>
+          <x>870</x>
+          <y>480</y>
           <width>92</width>
           <height>31</height>
          </rect>
@@ -2137,8 +2348,8 @@ border-style: solid ;</string>
        <widget class="QLabel" name="label_16">
         <property name="geometry">
          <rect>
-          <x>740</x>
-          <y>70</y>
+          <x>750</x>
+          <y>130</y>
           <width>331</width>
           <height>401</height>
          </rect>
@@ -2159,7 +2370,7 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>520</x>
-          <y>40</y>
+          <y>90</y>
           <width>201</width>
           <height>21</height>
          </rect>
@@ -2169,7 +2380,7 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>460</x>
-          <y>27</y>
+          <y>80</y>
           <width>71</width>
           <height>41</height>
          </rect>
@@ -2181,8 +2392,8 @@ border-style: solid ;</string>
        <widget class="QComboBox" name="cincontrat">
         <property name="geometry">
          <rect>
-          <x>870</x>
-          <y>120</y>
+          <x>880</x>
+          <y>180</y>
           <width>161</width>
           <height>22</height>
          </rect>
@@ -2194,8 +2405,8 @@ border-style: solid ;</string>
        <widget class="QComboBox" name="combov">
         <property name="geometry">
          <rect>
-          <x>872</x>
-          <y>300</y>
+          <x>882</x>
+          <y>360</y>
           <width>161</width>
           <height>22</height>
          </rect>
@@ -2215,7 +2426,7 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>630</x>
-          <y>510</y>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -2228,12 +2439,34 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>500</x>
-          <y>510</y>
+          <y>570</y>
           <width>113</width>
           <height>22</height>
          </rect>
         </property>
        </widget>
+       <widget class="QLabel" name="label_107">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>130</y>
+          <width>741</width>
+          <height>421</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: transparent;
+border-radius: 12px;
+border-color: rgb(255, 175, 14);
+	padding: 5px;
+border-width: 3px;
+border-style: solid ;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <zorder>label_107</zorder>
        <zorder>lineEdit</zorder>
        <zorder>label_16</zorder>
        <zorder>label_24</zorder>
@@ -2715,9 +2948,9 @@ border-style: solid ;</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>210</y>
+        <y>240</y>
         <width>151</width>
-        <height>431</height>
+        <height>381</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -2784,6 +3017,19 @@ font-style: italic;</string>
        <string>Gestions des Clients &amp; Contrats </string>
       </property>
      </widget>
+     <widget class="QCheckBox" name="checkBox_7">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>10</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Anglais version </string>
+      </property>
+     </widget>
      <zorder>label_25</zorder>
      <zorder>label_91</zorder>
      <zorder>verticalGroupBox</zorder>
@@ -2791,6 +3037,7 @@ font-style: italic;</string>
      <zorder>checkBox</zorder>
      <zorder>line</zorder>
      <zorder>label_101</zorder>
+     <zorder>checkBox_7</zorder>
     </widget>
     <widget class="QWidget" name="marketing">
      <attribute name="title">
@@ -2801,12 +3048,12 @@ font-style: italic;</string>
        <rect>
         <x>170</x>
         <y>100</y>
-        <width>1071</width>
+        <width>1091</width>
         <height>611</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_7">
        <widget class="QDateEdit" name="dateEdit_event">
@@ -2918,6 +3165,10 @@ font-style: italic;</string>
         <property name="text">
          <string>ajouter</string>
         </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/ajouter.png</normaloff>:/theme_normal/ajouter.png</iconset>
+        </property>
        </widget>
        <widget class="QLabel" name="label_10">
         <property name="geometry">
@@ -3026,6 +3277,10 @@ font-style: italic;</string>
         <property name="text">
          <string>modifier</string>
         </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/modifier.png</normaloff>:/theme_normal/modifier.png</iconset>
+        </property>
        </widget>
        <widget class="QComboBox" name="comboBoxE">
         <property name="geometry">
@@ -3076,6 +3331,10 @@ font-style: italic;</string>
         </property>
         <property name="text">
          <string>Supprimer</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/supprimer.png</normaloff>:/theme_normal/supprimer.png</iconset>
         </property>
        </widget>
        <widget class="QPushButton" name="pb_count">
@@ -3287,6 +3546,7 @@ border-style: solid ;</string>
          <string/>
         </property>
        </widget>
+       <zorder>label_95</zorder>
        <zorder>label_57</zorder>
        <zorder>dateEdit_event</zorder>
        <zorder>pb_rechercherE</zorder>
@@ -3321,7 +3581,6 @@ border-style: solid ;</string>
        <zorder>nbpersonne</zorder>
        <zorder>salle</zorder>
        <zorder>devis</zorder>
-       <zorder>label_95</zorder>
       </widget>
       <widget class="QWidget" name="page_8">
        <widget class="QDateEdit" name="dateEdit_fin">
@@ -3358,7 +3617,7 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>210</x>
-          <y>40</y>
+          <y>10</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3432,6 +3691,10 @@ border-style: solid ;</string>
         <property name="text">
          <string>Ajouter</string>
         </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/ajouter.png</normaloff>:/theme_normal/ajouter.png</iconset>
+        </property>
        </widget>
        <widget class="QLabel" name="nbvoiture_2">
         <property name="geometry">
@@ -3463,7 +3726,7 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>440</x>
-          <y>40</y>
+          <y>10</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3507,12 +3770,16 @@ border-style: solid ;</string>
         <property name="text">
          <string>modifier</string>
         </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/modifier.png</normaloff>:/theme_normal/modifier.png</iconset>
+        </property>
        </widget>
        <widget class="QComboBox" name="comboBoxP">
         <property name="geometry">
          <rect>
           <x>540</x>
-          <y>40</y>
+          <y>10</y>
           <width>73</width>
           <height>27</height>
          </rect>
@@ -3565,7 +3832,7 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>90</x>
-          <y>40</y>
+          <y>10</y>
           <width>113</width>
           <height>22</height>
          </rect>
@@ -3575,7 +3842,7 @@ border-style: solid ;</string>
         <property name="geometry">
          <rect>
           <x>50</x>
-          <y>40</y>
+          <y>10</y>
           <width>56</width>
           <height>16</height>
          </rect>
@@ -3622,6 +3889,10 @@ border-style: solid ;</string>
         <property name="text">
          <string>Supprimer</string>
         </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/supprimer.png</normaloff>:/theme_normal/supprimer.png</iconset>
+        </property>
        </widget>
        <widget class="QLabel" name="label_56">
         <property name="geometry">
@@ -3644,6 +3915,28 @@ border-style: solid ;</string>
          <string/>
         </property>
        </widget>
+       <widget class="QLabel" name="label_108">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>60</y>
+          <width>771</width>
+          <height>401</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: transparent;
+border-radius: 12px;
+border-color: rgb(255, 175, 14);
+	padding: 5px;
+border-width: 3px;
+border-style: solid ;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <zorder>label_108</zorder>
        <zorder>label_56</zorder>
        <zorder>dateEdit_fin</zorder>
        <zorder>typeV</zorder>
@@ -3674,7 +3967,7 @@ border-style: solid ;</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>80</y>
+        <y>230</y>
         <width>139</width>
         <height>68</height>
        </rect>
@@ -3717,7 +4010,7 @@ background-color:black;
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>160</y>
+        <y>310</y>
         <width>139</width>
         <height>68</height>
        </rect>
@@ -3808,12 +4101,48 @@ font-style: italic;</string>
        <string>Gestions des promotions</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_111">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>220</y>
+        <width>161</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border-radius: 12px;
+border-color: rgb(255, 175, 14);
+	padding: 5px;
+border-width: 3px;
+border-style: solid ;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_8">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>20</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Anglais version </string>
+      </property>
+     </widget>
+     <zorder>label_111</zorder>
      <zorder>gifmarketing</zorder>
      <zorder>stackedWidgetM</zorder>
      <zorder>pushButton_14</zorder>
      <zorder>pushButton_15</zorder>
      <zorder>checkBox_3</zorder>
      <zorder>label_103</zorder>
+     <zorder>checkBox_8</zorder>
     </widget>
     <widget class="QWidget" name="employes">
      <attribute name="title">
@@ -3822,14 +4151,14 @@ font-style: italic;</string>
      <widget class="QStackedWidget" name="stackedWidget_6">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>170</x>
         <y>50</y>
-        <width>1121</width>
+        <width>1111</width>
         <height>641</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_11">
        <widget class="QLabel" name="label_62">
@@ -4027,6 +4356,10 @@ font-style: italic;</string>
         <property name="text">
          <string>Ajouter</string>
         </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/ajouter.png</normaloff>:/theme_normal/ajouter.png</iconset>
+        </property>
        </widget>
        <widget class="QPushButton" name="pb_modifierr">
         <property name="geometry">
@@ -4043,6 +4376,10 @@ font-style: italic;</string>
         <property name="text">
          <string>modifier</string>
         </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/modifier.png</normaloff>:/theme_normal/modifier.png</iconset>
+        </property>
        </widget>
        <widget class="QPushButton" name="pb_supprimerr">
         <property name="geometry">
@@ -4058,6 +4395,10 @@ font-style: italic;</string>
         </property>
         <property name="text">
          <string>suprimer</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/supprimer.png</normaloff>:/theme_normal/supprimer.png</iconset>
         </property>
        </widget>
        <widget class="QPushButton" name="pb_recherchee">
@@ -4210,6 +4551,10 @@ border-style: solid ;</string>
         <property name="text">
          <string>Ajouter</string>
         </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/ajouter.png</normaloff>:/theme_normal/ajouter.png</iconset>
+        </property>
        </widget>
        <widget class="QPushButton" name="pb_supprimerr_2">
         <property name="geometry">
@@ -4225,6 +4570,10 @@ border-style: solid ;</string>
         </property>
         <property name="text">
          <string>suprimer</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/supprimer.png</normaloff>:/theme_normal/supprimer.png</iconset>
         </property>
        </widget>
        <widget class="QWidget" name="horizontalLayoutWidget_7">
@@ -4344,6 +4693,10 @@ border-style: solid ;</string>
         <property name="text">
          <string>modifier</string>
         </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/theme_normal/modifier.png</normaloff>:/theme_normal/modifier.png</iconset>
+        </property>
        </widget>
        <widget class="QPushButton" name="pb_recherchee_2">
         <property name="geometry">
@@ -4392,6 +4745,28 @@ border-style: solid ;</string>
          <string/>
         </property>
        </widget>
+       <widget class="QLabel" name="label_109">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>60</y>
+          <width>571</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: transparent;
+border-radius: 12px;
+border-color: rgb(255, 175, 14);
+	padding: 5px;
+border-width: 3px;
+border-style: solid ;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <zorder>label_109</zorder>
        <zorder>label_75</zorder>
        <zorder>lineEditrecherchee_2</zorder>
        <zorder>tabemployee_2</zorder>
@@ -4543,12 +4918,48 @@ font-style: italic;</string>
        <string>Gestions des employees</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_112">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>180</y>
+        <width>161</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border-radius: 12px;
+border-color: rgb(255, 175, 14);
+	padding: 5px;
+border-width: 3px;
+border-style: solid ;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_5">
+      <property name="geometry">
+       <rect>
+        <x>970</x>
+        <y>30</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Anglais version</string>
+      </property>
+     </widget>
+     <zorder>label_112</zorder>
      <zorder>gifemploye</zorder>
      <zorder>stackedWidget_6</zorder>
      <zorder>pushButton_16</zorder>
      <zorder>pushButton_17</zorder>
      <zorder>checkBox_4</zorder>
      <zorder>label_104</zorder>
+     <zorder>checkBox_5</zorder>
     </widget>
     <widget class="QWidget" name="assurance">
      <attribute name="title">
@@ -6992,7 +7403,7 @@ border-style: solid ;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1452</width>
+     <width>1439</width>
      <height>26</height>
     </rect>
    </property>

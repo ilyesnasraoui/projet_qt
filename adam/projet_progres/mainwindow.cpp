@@ -8,6 +8,7 @@
 #include<smtp.h>
 #include <QPixmap>
 #include <QMovie>
+#include<QProcess>
 
 #include <QtCharts/QChartView>
 #include <QtWidgets/QApplication>
@@ -34,6 +35,28 @@ MainWindow::MainWindow(QWidget *parent) :
 
 {
     ui->setupUi(this);
+
+
+
+            QFile File("C:\\Users\\wissem\\Desktop\\clone\\project\\projet_qt\\projetwissem\\style.css");
+             File.open(QFile::ReadOnly);
+             QString StyleSheet = QLatin1String(File.readAll());
+            this->setStyleSheet(StyleSheet);
+             QMovie *movie =new QMovie("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/thenya.gif");
+             QMovie *moviee =new QMovie("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/welcome.gif");
+             movie->setScaledSize(QSize().scaled(1411,1411,Qt::KeepAspectRatio));
+             moviee->setScaledSize(QSize().scaled(400,400,Qt::KeepAspectRatio));
+              ui->label_25->setMovie(movie);
+              ui->label_25->setMovie(movie);
+              ui->gifcategorie->setMovie(movie);
+              ui->gifemploye->setMovie(movie);
+              ui->label_2->setMovie(moviee);
+              ui->gifmarketing->setMovie(movie);
+             movie->start();
+             moviee->start();
+
+
+
     ui->tableView->setModel(tmpcategorie.afficher());
     ui->tableView2->setModel(tmpvoiture.afficher());
     ui->calendarWidget->setHidden(true);
@@ -56,6 +79,13 @@ MainWindow::MainWindow(QWidget *parent) :
      ui->comboemp_2->setModel(tmpreclamation.setcomboemp_2());//refresh
 
      ui->combobbb3->setModel(tmpemployee.setcombobbb3());
+
+
+
+
+     QPixmap devise1("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/tunisia.png");
+     int w5 = ui->label_93->width();
+     int h5 = ui->label_93->height();
 
       QPixmap pix3("C:/Users/wissem/Desktop/project/projet_qt/adam/projet_progres/speed.png");
       int w2 = ui->label_93->width();
@@ -1660,6 +1690,522 @@ void MainWindow::on_pushButton_17_clicked()
 
 //-----------------------------------------------------------------------------------------------//
 
+
+// traduction -------------------------------------------------------------------------------
+
+void MainWindow::on_checkBox_5_clicked()
+{
+    if (ui->checkBox_5->isChecked())
+        {
+      // mariemmmm -----------------------------------
+
+        ui->tabWidget->setTabText(0,"Home");
+        ui->tabWidget->setTabText(1,"Category");
+        ui->tabWidget->setTabText(2,"Customer");
+        ui->tabWidget->setTabText(3,"Marketing");
+        ui->tabWidget->setTabText(4,"Employee");
+        ui->tabWidget->setTabText(5,"Insurance");
+
+
+
+        ui->label_63->setText( tr("username"));
+        ui->label_64->setText( tr("name"));
+        ui->label_65->setText( tr("firstname"));
+        ui->label_66->setText( tr("username dep"));
+        ui->label_67->setText( tr("age"));
+        ui->label_68->setText( tr("phone number"));
+        ui->label_69->setText( tr("id card"));
+        ui->label_88->setText( tr("E-mail"));
+        ui->label_89->setText( tr("salary"));
+        ui->label_90->setText( tr("addresse"));
+        ui->label_104->setText( tr("employee management"));
+        ui->label_62->setText( tr("username"));
+        ui->label_70->setText( tr("username department"));
+        ui->label_71->setText( tr("username manager"));
+        ui->label_72->setText( tr("name"));
+        ui->label_73->setText( tr("member number"));
+        ui->label_74->setText( tr("username"));
+        ui->pb_ajouterr->setText( tr("add"));
+        ui->pb_modifierr->setText( tr("update"));
+        ui->pb_supprimerr->setText( tr("delete"));
+        ui->pb_recherchee->setText( tr("research"));
+        ui->pb_ajouterr_2->setText( tr("add"));
+        ui->pb_modifierr_2->setText( tr("update"));
+        ui->pb_supprimerr_2->setText( tr("delete"));
+        ui->pb_recherchee_2->setText( tr("research"));
+        ui->checkBox_5->setText( tr("version français"));
+        ui->pushButton_16->setText( tr("employee"));
+        ui->pushButton_17->setText( tr("department"));
+        ui->pb_trierr->setText( tr("sort"));
+        ui->pb_trierr_2->setText( tr("sort"));
+        ui->checkBox->setText( tr("dark mode"));
+        ui->checkBox_2->setText( tr("dark mode"));
+        ui->checkBox_3->setText( tr("dark mode"));
+        ui->checkBox_4->setText( tr("dark mode"));
+        ui->pb_stat_emp->setText( tr("statistics"));
+
+
+
+
+    }
+
+    else
+    {
+         // mariemmmm -----------------------------------
+
+        ui->tabWidget->setTabText(0,"Accueil");
+        ui->tabWidget->setTabText(1,"Categorie");
+        ui->tabWidget->setTabText(2,"Client");
+        ui->tabWidget->setTabText(3,"Marketing");
+        ui->tabWidget->setTabText(4,"Employé");
+        ui->tabWidget->setTabText(5,"Assurance");
+
+
+        ui->label_63->setText( tr("identifiant"));
+        ui->label_64->setText( tr("nom"));
+        ui->label_65->setText( tr("prenom"));
+        ui->label_66->setText( tr("id dep"));
+        ui->label_67->setText( tr("age"));
+        ui->label_68->setText( tr("num tel"));
+        ui->label_69->setText( tr("cin"));
+        ui->label_88->setText( tr("Email"));
+        ui->label_89->setText( tr("salaire"));
+        ui->label_90->setText( tr("adresse"));
+        ui->label_104->setText( tr("gestion des employés"));
+        ui->label_62->setText( tr("identifiant"));
+        ui->label_70->setText( tr("id département"));
+        ui->label_71->setText( tr("id directeur"));
+        ui->label_72->setText( tr("nom"));
+        ui->label_73->setText( tr("num membre"));
+        ui->label_74->setText( tr("identifiant"));
+        ui->pb_ajouterr->setText( tr("ajouter"));
+        ui->pb_modifierr->setText( tr("modifier"));
+        ui->pb_supprimerr->setText( tr("supprimer"));
+        ui->pb_recherchee->setText( tr("recherche"));
+        ui->pb_ajouterr_2->setText( tr("ajouter"));
+        ui->pb_modifierr_2->setText( tr("modifier"));
+        ui->pb_supprimerr_2->setText( tr("supprimer"));
+        ui->pb_recherchee_2->setText( tr("recherche"));
+        ui->checkBox_5->setText( tr("version Anglais"));
+        ui->pushButton_16->setText( tr("employé"));
+        ui->pushButton_17->setText( tr("département"));
+        ui->pb_trierr->setText( tr("trier"));
+        ui->pb_trierr_2->setText( tr("trier"));
+        ui->checkBox->setText( tr("mode sombre"));
+        ui->checkBox_2->setText( tr("mode sombre"));
+        ui->checkBox_3->setText( tr("mode sombre"));
+        ui->checkBox_4->setText( tr("mode sombre"));
+        ui->pb_stat_emp->setText( tr("statistiques"));
+
+    }
+
+}
+
+void MainWindow::on_checkBox_6_clicked()
+{
+    if (ui->checkBox_6->isChecked())
+        {
+      // ilyes nasraoui -----------------------------------
+
+        ui->tabWidget->setTabText(0,"Home");
+        ui->tabWidget->setTabText(1,"Category");
+        ui->tabWidget->setTabText(2,"Customer");
+        ui->tabWidget->setTabText(3,"Marketing");
+        ui->tabWidget->setTabText(4,"Employee");
+        ui->tabWidget->setTabText(5,"Insurance");
+
+
+
+
+        ui->label_41->setText( tr("fuel"));
+        ui->label_39->setText( tr("price per day"));
+        ui->label->setText( tr("state"));
+        ui->label_42->setText( tr("number of places"));
+        ui->label_43->setText( tr("mileage"));
+        ui->label_34->setText( tr("seniority"));
+        ui->label_35->setText( tr("color"));
+        ui->label_40->setText( tr("category username"));
+        ui->label_44->setText( tr("registration number"));
+        ui->label_36->setText( tr("car username"));
+        ui->label_37->setText( tr("mark"));
+        ui->label_45->setText( tr("cars numbers"));
+        ui->label_46->setText( tr("username category"));
+        ui->label_47->setText( tr("type"));
+        ui->ajouter->setText( tr("add"));
+        ui->modifier->setText( tr("update"));
+        ui->supprimer->setText( tr("delete"));
+        ui->recherche->setText( tr("research"));
+        ui->imprimerr->setText( tr("print the sheet"));
+        ui->imprimerrilyes->setText( tr("print a contract"));
+        ui->ajouter_categorie->setText( tr("add"));
+        ui->modifier_categorie->setText( tr("update"));
+        ui->supprimer_categorie->setText( tr("delete"));
+        ui->rechercheee->setText( tr("research"));
+        ui->checkBox_6->setText( tr("version français"));
+        ui->voituree->setText( tr("car"));
+        ui->categoriee->setText( tr("category"));
+        ui->trie->setText( tr("sort by price"));
+        ui->trie_categorie->setText( tr("sort by number of cars"));
+        ui->checkBox->setText( tr("dark mode"));
+        ui->checkBox_2->setText( tr("dark mode"));
+        ui->checkBox_3->setText( tr("dark mode"));
+        ui->checkBox_4->setText( tr("dark mode"));
+        ui->stat->setText( tr("statistics"));
+        ui->label_102->setText( tr("cars management"));
+
+
+
+
+    }
+
+    else
+    {
+         // ilyes nasraoui  -----------------------------------
+
+
+        ui->tabWidget->setTabText(0,"Accueil");
+        ui->tabWidget->setTabText(1,"Categorie");
+        ui->tabWidget->setTabText(2,"Client");
+        ui->tabWidget->setTabText(3,"Marketing");
+        ui->tabWidget->setTabText(4,"Employé");
+        ui->tabWidget->setTabText(5,"Assurance");
+
+
+
+        ui->label_41->setText( tr("carburant"));
+        ui->label_39->setText( tr("prix par jour"));
+        ui->label->setText( tr("etat"));
+        ui->label_42->setText( tr("nombres de places"));
+        ui->label_43->setText( tr("kilométrage"));
+        ui->label_34->setText( tr("ancienneté"));
+        ui->label_35->setText( tr("couleur"));
+        ui->label_40->setText( tr("id categorie"));
+        ui->label_44->setText( tr("matricule"));
+        ui->label_36->setText( tr("id voiture"));
+        ui->label_37->setText( tr("marque"));
+        ui->label_45->setText( tr("nombres de voitures"));
+        ui->label_46->setText( tr("id categorie"));
+        ui->label_47->setText( tr("type"));
+        ui->ajouter->setText( tr("ajouter"));
+        ui->modifier->setText( tr("modifier"));
+        ui->supprimer->setText( tr("supprimer"));
+        ui->recherche->setText( tr("recherche"));
+        ui->imprimerr->setText( tr("imprimer la fiche"));
+        ui->imprimerrilyes->setText( tr("imprimer le contract"));
+        ui->ajouter_categorie->setText( tr("ajouter"));
+        ui->modifier_categorie->setText( tr("modifier"));
+        ui->supprimer_categorie->setText( tr("supprimer"));
+        ui->rechercheee->setText( tr("recherche"));
+        ui->checkBox_6->setText( tr("version Anglais"));
+        ui->voituree->setText( tr("voiture"));
+        ui->categoriee->setText( tr("categorie"));
+        ui->trie->setText( tr("trier selon prix"));
+        ui->trie_categorie->setText( tr("trier selon nombres de voiture"));
+        ui->checkBox->setText( tr("mode sombre"));
+        ui->checkBox_2->setText( tr("mode sombre"));
+        ui->checkBox_3->setText( tr("mode sombre"));
+        ui->checkBox_4->setText( tr("mode sombre"));
+        ui->stat->setText( tr("statistiques"));
+        ui->label_102->setText( tr("gestions des voitures"));
+
+    }
+
+}
+// traductionn  wissem w ilyes ben othmane
+
+
+void MainWindow::on_checkBox_7_clicked()
+{
+    if (ui->checkBox_7->isChecked())
+        {
+
+        ui->tabWidget->setTabText(0,"Home");
+        ui->tabWidget->setTabText(1,"Category");
+        ui->tabWidget->setTabText(2,"Customer");
+        ui->tabWidget->setTabText(3,"Marketing");
+        ui->tabWidget->setTabText(4,"Employee");
+        ui->tabWidget->setTabText(5,"Insurance");
+
+
+
+        ui->ajouter_2->setText( tr("add"));
+        ui->modifier_2->setText( tr("update"));
+        ui->supprimer_2->setText( tr("delete"));
+        ui->label_53->setText( tr("contract username"));
+        ui->label_8->setText( tr("username car"));
+        ui->label_4->setText( tr("customer id card "));
+        ui->label_5->setText( tr("employee id card"));
+        ui->label_3->setText( tr("description"));
+        ui->label_59->setText( tr("sort by "));
+        ui->label_61->setText( tr("research"));
+        ui->AJOUTERC_2->setText( tr("add"));
+        ui->modifierc_2->setText( tr("update"));
+        ui->Supprimerc_2->setText( tr("delete"));
+        ui->label_49->setText( tr("car username "));
+        ui->label_48->setText( tr("quotient"));
+        ui->label_50->setText( tr("amount"));
+        ui->label_24->setText( tr("start date"));
+        ui->label_51->setText( tr("end date"));
+        ui->label_52->setText( tr("research"));
+        ui->label_17->setText( tr("id card"));
+        ui->label_33->setText( tr("id card"));
+        ui->label_29->setText( tr("value"));
+        ui->label_30->setText( tr("start date"));
+        ui->label_31->setText( tr("end date"));
+        ui->ajouterfid->setText( tr("add"));
+        ui->modifierfid->setText( tr("update"));
+        ui->supprimerfid->setText( tr("delete"));
+        ui->label_32->setText( tr("sort by"));
+        ui->label_14->setText( tr("research"));
+        ui->pushButton_10->setText( tr("loyalty"));
+        ui->pushButton_11->setText( tr("customer"));
+        ui->pushButton_12->setText( tr("contract"));
+        ui->pushButton_13->setText( tr("claim"));
+        ui->statsclient->setText( tr("statistics"));
+        ui->pushButton_2->setText( tr("statistics"));
+        ui->label_23->setText( tr("sort by"));
+        ui->label_7->setText( tr("research"));
+        ui->label_18->setText( tr("id card"));
+        ui->label_19->setText( tr("first name"));
+        ui->label_20->setText( tr("name"));
+        ui->label_21->setText( tr("phone number"));
+        ui->label_22->setText( tr("age"));
+        ui->label_27->setText( tr("E-mail"));
+        ui->ajouterclient->setText( tr("add"));
+        ui->modifierclient->setText( tr("update"));
+        ui->supprimerclient->setText( tr("delete"));
+        ui->imprimerrilyes->setText( tr("print a contract"));
+        ui->checkBox_7->setText( tr("version français"));
+        ui->checkBox->setText( tr("dark mode"));
+        ui->checkBox_2->setText( tr("dark mode"));
+        ui->checkBox_3->setText( tr("dark mode"));
+        ui->checkBox_4->setText( tr("dark mode"));
+        ui->label_101->setText( tr("client and contract management"));
+
+
+
+
+    }
+
+    else
+    {
+
+        ui->tabWidget->setTabText(0,"Accueil");
+        ui->tabWidget->setTabText(1,"Categorie");
+        ui->tabWidget->setTabText(2,"Client");
+        ui->tabWidget->setTabText(3,"Marketing");
+        ui->tabWidget->setTabText(4,"Employé");
+        ui->tabWidget->setTabText(5,"Assurance");
+
+
+
+
+
+        ui->pushButton_2->setText( tr("statistiques"));
+        ui->label_53->setText( tr("id contrat"));
+        ui->label_8->setText( tr("id voiture"));
+        ui->label_4->setText( tr("id client "));
+        ui->label_5->setText( tr("id employe"));
+        ui->label_3->setText( tr("description"));
+        ui->label_59->setText( tr("trier par "));
+        ui->label_61->setText( tr("recherche"));
+        ui->AJOUTERC_2->setText( tr("ajouter"));
+        ui->modifierc_2->setText( tr("modifier"));
+        ui->Supprimerc_2->setText( tr("supprimer"));
+        ui->label_49->setText( tr("id voiture"));
+       ui->label_48->setText( tr("quotient"));
+       ui->label_50->setText( tr("montant"));
+        ui->label_24->setText( tr("date deb "));
+        ui->label_51->setText( tr("date fin "));
+        ui->label_52->setText( tr("recherche"));
+        ui->label_17->setText( tr("cin"));
+        ui->label_33->setText( tr("cin"));
+        ui->label_29->setText( tr("valeur"));
+        ui->label_30->setText( tr("date deb "));
+        ui->label_31->setText( tr("date fin "));
+        ui->ajouterfid->setText( tr("ajouter"));
+        ui->modifierfid->setText( tr("modifier"));
+        ui->supprimerfid->setText( tr("supprimer"));
+        ui->ajouter_2->setText( tr("ajouter"));
+        ui->modifier_2->setText( tr("modifier"));
+        ui->supprimer_2->setText( tr("supprimer"));
+        ui->label_32->setText( tr("trier par"));
+        ui->label_14->setText( tr("recherche"));
+        ui->pushButton_10->setText( tr("fidélité"));
+        ui->pushButton_11->setText( tr("client"));
+        ui->pushButton_12->setText( tr("contrat"));
+        ui->pushButton_13->setText( tr("réclamation"));
+        ui->label_23->setText( tr("trier par"));
+        ui->label_7->setText( tr("recherche"));
+        ui->label_18->setText( tr("cin"));
+        ui->label_19->setText( tr("prenom"));
+        ui->label_20->setText( tr("nom"));
+        ui->label_21->setText( tr("tel"));
+        ui->label_22->setText( tr("age"));
+        ui->label_27->setText( tr("email"));
+        ui->ajouterclient->setText( tr("ajouter"));
+        ui->modifierclient->setText( tr("modifier"));
+        ui->supprimerclient->setText( tr("supprimer"));
+        ui->imprimerrilyes->setText( tr("imprimer le contract"));
+        ui->checkBox_7->setText( tr("version Anglais"));
+        ui->checkBox->setText( tr("mode sombre"));
+        ui->checkBox_2->setText( tr("mode sombre"));
+        ui->checkBox_3->setText( tr("mode sombre"));
+        ui->checkBox_4->setText( tr("mode sombre"));
+        ui->statsclient->setText( tr("statistiques"));
+        ui->label_101->setText( tr("gestions des clients et contrats"));
+
+    }
+
+}
+
+
+
+//*************************************************************** khadijaaa
+
+
+void MainWindow::on_checkBox_8_clicked()
+{
+    if (ui->checkBox_8->isChecked())
+        {
+
+
+
+
+
+        ui->tabWidget->setTabText(0,"Home");
+        ui->tabWidget->setTabText(1,"Category");
+        ui->tabWidget->setTabText(2,"Customer");
+        ui->tabWidget->setTabText(3,"Marketing");
+        ui->tabWidget->setTabText(4,"Employee");
+        ui->tabWidget->setTabText(5,"Insurance");
+
+
+
+        ui->typevoiture->setText( tr("type of car"));
+        ui->nbvoiture_2->setText( tr("number of cars "));
+        ui->pourcentage_2->setText( tr("percentage"));
+        ui->DateDebut->setText( tr("start date"));
+        ui->DAtefin->setText( tr("end date"));
+        ui->ID_3->setText( tr("username"));
+        ui->label_54->setText( tr("username"));
+        ui->label_83->setText( tr("quote calculation for a showroom"));
+        ui->label_84->setText( tr("number of persons"));
+        ui->label_85->setText( tr("cost of the room in dinar "));
+        ui->label_86->setText( tr("number of employees"));
+        ui->label_87->setText( tr("cost of food / person"));
+        ui->label_9->setText( tr("description"));
+        ui->label_10->setText( tr("date of event "));
+        ui->ID_2->setText( tr("username"));
+        ui->label_9->setText( tr("description"));
+        ui->label_10->setText( tr("date of event "));
+        ui->label_11->setText( tr("type of event"));
+        ui->pushButton_14->setText( tr("event"));
+        ui->pushButton_15->setText( tr("promotion"));
+        ui->label_13->setText( tr("username"));
+        ui->pb_count->setText( tr("count"));
+        ui->label_12->setText( tr("research per date"));
+        ui->pb_rechercherE->setText( tr("research"));
+        ui->pb_triE->setText( tr("sort by "));
+        ui->pb_ajouterE->setText( tr("add"));
+        ui->pb_modifierE->setText( tr("update"));
+        ui->pb_supprimerE->setText( tr("delete"));
+        ui->pb_rechercherP->setText( tr("research"));
+        ui->pb_triP->setText( tr("sort by "));
+        ui->pb_ajouterP->setText( tr("add"));
+        ui->pb_modifierP->setText( tr("update"));
+        ui->pb_supprimer->setText( tr("delete"));
+        ui->checkBox_8->setText( tr("version français"));
+        ui->checkBox->setText( tr("dark mode"));
+        ui->checkBox_2->setText( tr("dark mode"));
+        ui->checkBox_3->setText( tr("dark mode"));
+        ui->checkBox_4->setText( tr("dark mode"));
+        ui->label_103->setText( tr("promotion management"));
+
+
+
+
+    }
+
+    else
+    {
+
+
+
+
+
+        ui->tabWidget->setTabText(0,"Accueil");
+        ui->tabWidget->setTabText(1,"Categorie");
+        ui->tabWidget->setTabText(2,"Client");
+        ui->tabWidget->setTabText(3,"Marketing");
+        ui->tabWidget->setTabText(4,"Employé");
+        ui->tabWidget->setTabText(5,"Assurance");
+
+
+
+
+        ui->typevoiture->setText( tr("type de voiture"));
+        ui->nbvoiture_2->setText( tr("nombres de voitures "));
+        ui->pourcentage_2->setText( tr("pourcentage"));
+        ui->DateDebut->setText( tr("date debut "));
+        ui->DAtefin->setText( tr("date fin"));
+        ui->ID_3->setText( tr("id"));
+        ui->label_54->setText( tr("id"));
+        ui->label_83->setText( tr("calcul de devis pour un showroom"));
+        ui->label_84->setText( tr("nombre de personnes"));
+        ui->label_85->setText( tr("cout de la salle en dinar"));
+        ui->label_86->setText( tr("nombre d'employés"));
+        ui->label_87->setText( tr("cout nourriture/personne"));
+        ui->ID_2->setText( tr("ID"));
+        ui->label_9->setText( tr("description"));
+        ui->label_10->setText( tr("date d 'évenement "));
+        ui->label_11->setText( tr("type d évenement"));
+        ui->pushButton_14->setText( tr("évenement"));
+        ui->pushButton_15->setText( tr("promotion"));
+        ui->label_13->setText( tr("id"));
+        ui->pb_count->setText( tr("compter"));
+        ui->label_12->setText( tr("recherche par date"));
+        ui->pb_rechercherE->setText( tr("recherche"));
+        ui->pb_triE->setText( tr("trier par "));
+        ui->pb_ajouterE->setText( tr("ajouter"));
+        ui->pb_modifierE->setText( tr("modifier"));
+        ui->pb_supprimerE->setText( tr("supprimer"));
+        ui->pb_rechercherP->setText( tr("recherche"));
+        ui->pb_triP->setText( tr("trier par "));
+        ui->pb_ajouterP->setText( tr("ajouter"));
+        ui->pb_modifierP->setText( tr("modifier"));
+        ui->pb_supprimer->setText( tr("supprimer"));
+        ui->checkBox_8->setText( tr("version Anglais"));
+        ui->checkBox->setText( tr("mode sombre"));
+        ui->checkBox_2->setText( tr("mode sombre"));
+        ui->checkBox_3->setText( tr("mode sombre"));
+        ui->checkBox_4->setText( tr("mode sombre"));
+        ui->label_103->setText( tr("gestions des promotions"));
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// fin traduction -----------------------------------------------------------------------
+
+
+
+
+
+
+
+
 void MainWindow::on_pb_ajouterr_clicked()
 {
     int id = ui->lineEdit_idi->text().toInt();
@@ -3150,7 +3696,9 @@ void MainWindow::on_opt_theme_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-
+    QProcess *process = new QProcess(this);
+        QString file = "C:/Qt/Qt5.11.2/Examples/Qt-5.11.2/widgets/widgets/build-calculator-Desktop_Qt_5_11_2_MinGW_32bit-Debug/debug/calculator.exe";
+        process->start(file);
 }
 
 
@@ -3614,4 +4162,11 @@ void MainWindow::on_tabemployee_clicked(const QModelIndex &index)
 void MainWindow::on_checkBox_2_stateChanged(int arg1)
 {
 
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    QProcess *process = new QProcess(this);
+        QString file = "C:/Users/wissem/Documents/build-convertisseur-Desktop_Qt_5_11_2_MinGW_32bit-Debug/debug/convertisseur.exe";
+        process->start(file);
 }

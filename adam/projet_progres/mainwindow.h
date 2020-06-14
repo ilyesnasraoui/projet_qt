@@ -318,6 +318,17 @@ private slots:
 
         void on_checkBox_2_stateChanged(int arg1);
 
+        void on_pushButton_3_clicked();
+
+
+
+        void on_checkBox_5_clicked();
+        void on_checkBox_6_clicked();
+        void on_checkBox_7_clicked();
+        void on_checkBox_8_clicked();
+
+
+
 private:
 //--------------------------------------
         QTimer *timer;
